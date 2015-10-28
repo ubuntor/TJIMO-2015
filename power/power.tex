@@ -46,18 +46,21 @@ Our connections between our cities in the graph represent only direct connection
 cities, but from our diagram, we can still see it is possible to travel between any two
 cities in our graph.
 
-\textbf{Neither the exact position of each city nor the way that we draw the connection between the cities
-matters.} The following is an equivalent graph:
+Neither the exact position of each city nor how connections might intersect 
+matters. In other words, the way we draw a graph on paper does not change its properties, and for the most part
+are not useful to us. The following is an equivalent graph:
 
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
-\draw (4, 3) node[draw, shape=rectangle] (a) {D.C.};
-\draw (-2, 3) node[draw, shape=rectangle] (b) {Denver};
+\draw (5, 3) node[draw, shape=rectangle] (a) {D.C.};
+\draw (0, 2) node[draw, shape=rectangle] (b) {Denver};
 \draw (1, 4) node[draw, shape=rectangle] (c) {Atlanta};
-\draw (-1, -1) node[draw, shape=rectangle] (d) {Boston};
-\draw (5, 1) node[draw, shape=rectangle] (e) {London};
-\draw (3, -1) node[draw, shape=rectangle] (f) {Bozeman-Yellowstone};
-\draw (a) -- (b) -- (c) -- (d) -- (e);
+\draw (-1, 0) node[draw, shape=rectangle] (d) {Boston};
+\draw (5, 1.5) node[draw, shape=rectangle] (e) {London};
+\draw (3, 0) node[draw, shape=rectangle] (f) {Bozeman-Yellowstone};
+\draw (a) -- (b) -- (c);
+\path (c) edge [bend right=60] (d);
+\draw (d) -- (e);
 \draw (b) -- (f);
 \draw (c) -- (b);
 \draw (a) -- (d);
@@ -71,7 +74,7 @@ matters.} The following is an equivalent graph:
 The only characteristics of a graph we care about are the objects (in this case, cities) themselves, which we'll call \textit{vertices},
 and the connections joining the objects, which we'll call \textit{edges}.
 
-\section{Formal Definition of a Graph}
+\section{Definition of a Graph}
 
 We now have the background necessary to present the mathematical definition of a graph:
 
@@ -167,7 +170,7 @@ Pictured is a clique of 4 vertices, or $K_4$.
 \end{center}
 \end{definition}
 
-\begin{problem}
+\begin{problem} % 3
 Solve each of the following:
 \begin{enumerate}[label=(\alph*)]
 \item How many edges are in the clique of 4 vertices, $K_4$?
@@ -189,6 +192,56 @@ and $n - 1$ ways to choose the second vertex, but the order in which we choose t
 as $\{B, A\}$), so we must divide by 2 to get the correct answer of $\frac{n \cdot (n - 1)}{2}$.
 \end{enumerate}
 \end{solution}
+
+\section{Paths}
+
+\begin{definition}
+\label{def:path}
+A \textit{path} is a sequence of vertices, such that every two consecutive vertices in the graph are connected by an edge.
+All edges in the path must be distinct, and all the vertices must be distinct.
+\end{definition}
+
+\begin{problem} % 4
+In the following graph, answer the questions below.
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
+\draw (6, -1) node [vertex] (A) {$A$};
+\draw (6, 1) node [vertex] (B) {$B$};
+\draw (8, 1) node [vertex] (C) {$C$};
+\draw (8, -1) node [vertex] (D) {$D$};
+\draw (A) -- (B) -- (C) -- (D) -- (B);
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[label=(\alph*)]
+\item Is $B,C$ a path?
+\item Is $B,C,D$ a path?
+\item Is $A,C,B$ a path?
+\item Is $B,C,B$ a path?
+\item Is $B,C,D,B$ a path?
+\item Is $B$ a path?
+\end{enumerate}
+If your answer for any of these was ``no,'' explain why.
+\end{problem}
+
+\begin{solution}
+From Definition \ref{def:path} of a path,
+\begin{enumerate}[label=(\alph*)]
+\item $B,C$ is a path.
+\item $B,C,D$ is a path.
+\item $A,C,B$ is not a path, since $A$ and $C$ are not connected.
+\item $B,C,B$ is not a path, since $B$ is repeated.
+\item $B,C,D,B$ is not a path, since $B$ is repeated.
+\item $B$ is a path.
+\end{enumerate}
+\end{solution}
+
+% complete bipartite graph
+
+% turan
+
+% dijkstra
+
+% euler circuit
 
 \end{document}
 
