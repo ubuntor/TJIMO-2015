@@ -16,7 +16,7 @@ round for each round in the same folder as the actual round.
 
 At the beginning of each round, please call
 
-\usepackage{../tjimo.sty}
+\usepackage{../tjimo}
 
 GitHub Repository
 ---
