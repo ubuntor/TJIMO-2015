@@ -1,0 +1,561 @@
+\documentclass[11pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+
+\usepackage{../tjimo}
+
+%%%%%%%%PUT THIS IN PREAMBLE%%%%%%%%%%
+\DeclareRobustCommand{\frac}[3][0pt]{%
+  {\begingroup\hspace{#1}#2\hspace{#1}\endgroup\over\hspace{#1}#3\hspace{#1}}}
+
+\newcommand{\sevenpoints}{Time limit: 45 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Guts}}
+
+\begin{document}
+
+%Practice Guts, Round 1 - Perry
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+How many factors does $2^{4} \cdot 3^{2} \cdot 4^{3}$ have?
+\end{problem}
+\begin{answer}
+\boxed{33}.
+\end{answer}
+\begin{solution}
+We have to be careful on this problem because we are \textit{not} given the prime factorization of the number. So we rewrite the factorization as
+$$2^{4} \cdot 3^2 \cdot 4^3 = 2^4 \cdot 3^2 \cdot 2^6 = 2^10 \cdot 3^2.$$
+And now we can proceed normally by finding the number of factors as $(10+1)(2+1) = 11\cdot 3 = \boxed{33}$.
+\end{solution}
+
+%Practice Guts, Round 2 - Allen
+
+\begin{problem}Triangle $ABC$ has $AB = 25$ and $BC = 7$. If $\angle C = 90 ^{\circ}$, find the length of $AC$.
+\end{problem}
+
+\answer 24.
+\begin{solution}
+Using the Pythagorean Theorem on right triangle $ABC$, $(AC)^2 + (BC)^2 = (AB)^2$. Solving for $AC$, $AC = \sqrt{(AB)^2 - (BC)^2} = \sqrt{625 - 49} = \sqrt{576} = \boxed{24}$.
+\end{solution}
+
+\begin{problem}Let $f(x) = 7x - \sqrt{x} + 3$. Compute $f(4)$.
+\end{problem}
+
+\answer 29.
+\begin{solution}
+Substituting $x = 4$, $f(4) = 7 \cdot 4 - \sqrt{4} + 3 = 28 - 2 + 3 = \boxed{29}.$
+\end{solution}
+
+\begin{problem}How many squares have all 4 vertices in the array of 16 points below?
+    \tikzstyle{every node}=[circle, draw, fill=black!50, inner sep=0pt, minimum width=4pt]
+    \newline
+    \begin{center}
+    \begin{tikzpicture}
+    \draw (0, 0) node {} (0, 1) node {} (0, 2) node {} (0, 3) node {} (1, 0) node {} (1, 1) node {} (1, 2) node {} (1, 3) node {} (2, 0) node {} (2, 1) node {} (2, 2) node {} (2, 3) node {} (3, 0) node {} (3, 1) node {} (3, 2) node {} (3, 3) node {};
+    \end{tikzpicture}
+    \end{center}
+\end{problem}
+
+%please check
+\answer 20.
+\begin{solution}
+We break down cases based on the slopes of the sides:
+\begin{enumerate}
+\item \emph{Sides are horizontal/vertical.} There are 9 squares of side length 1, 4 of side length 2, and 1 of side length 3, for $9 + 4 + 1 = 14$ total.
+\item \emph{Sides have slope $\pm 1$.} There are 4 such squares.
+\item \emph{Sides have slope $\pm 2, \pm \frac{1}{2}$.} There 2 such squares.
+\end{enumerate}
+Note that no other cases fit in the array of points. Adding these up, there are $14 + 4 + 2 = \boxed{20}$ rectangles.
+\end{solution}
+
+\begin{problem}Express $0.\overline{47} = 0.47474747\ldots$ as a simplified fraction.
+\end{problem}
+
+\answer $\displaystyle \frac{47}{99}$.
+
+\begin{solution}
+$\displaystyle 0.47474747\ldots = 47(0.01 + 0.0001 + 0.000001 + \ldots)$. Using the expression for an infinite sum, this equals $\displaystyle \frac{0.47}{1 - 0.01} = \boxed{\frac{47}{99}}.$
+\end{solution}
+
+%Practice Guts, Round 3 - Michael
+
+\begin{problem}Compute $25 \times 316484$.
+\end{problem}
+\begin{answer}
+\boxed{7912100}
+\end{answer}
+\begin{solution}
+We use 
+$$25 = \frac{100}{4}$$
+so that
+\begin{align*}
+25 \times 316484 &= \frac{100}{4} \times 316484 \\
+&= 100 \times \frac{316484}{4}
+&= 100 \times 79121
+&= \boxed{7912100}.
+\end{align*}
+\end{solution}
+
+\begin{problem}What is the largest prime factor of $25^2-14^2$?
+\end{problem}
+\begin{answer}
+\boxed{13}.
+\end{answer}
+\begin{solution}
+We use the property 
+$$a^2-b^2 = (a+b)(a-b).$$
+So 
+$$25^2-14^2 = (25+14)(25-14) = 39 \cdot 11 = 3 \cdot 11 \cdot 13,$$
+and we see our largest prime factor is $\boxed{13}$.
+
+\end{solution}
+
+\begin{problem}Three consecutive odd integers add up to 27. If I subtract 1 from each of these numbers and multiply them all by 6, what is their new sum?
+\end{problem}
+\begin{answer}
+\boxed{144}.
+\end{answer}
+\begin{solution}
+We can find the three odd integers and perform the operations described by the problem, but there is a faster way. \par
+Instead, why can call the three consecutive odd integers $a, b, c$, so 
+$$a+b+c=27.$$
+We then subtract one from each
+$$(a-1)+(b-1)+(c-1)$$
+and then multiply them all by 6,
+$$6(a-1)+6(b-1)+6(c-1)$$
+we can simplify them
+\begin{align*}
+6(a-1)+6(b-1)+6(c-1) &= 6a-6+6b-6+6c-6
+&= 6(a+b+c) - 18
+\end{align*}
+and since we know $a+b+c=27$ from the problem statement, we can substitute that in:
+$$6(27)-18 = \boxed{144}.$$
+\end{solution}
+
+\begin{problem}Rectangle A has side lengths 5 and 4, and Rectangle B has side lengths 7 and 2. What percentage of Rectangle A’s area is  Rectangle B’s area?
+\end{problem}
+\begin{answer}
+\boxed{70 \%}.
+\end{answer}
+\begin{solution}
+In order to calculate how much of Rectangle A’s area Rectangle B makes up, we do
+\begin{align*} 
+\text{Percent B of A} = \frac{\text{Area of Rectangle B}}{Area of Rectangle A} \times 100 &= \frac{7 \cdot 2}{5 \cdot 4} \times 100
+&= \frac{14}{20} \times 100
+&= 14 \times 5
+&= \boxed{70 \%}.
+\end{align*}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Guts, Round 1 - Perry
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+%Guts, Round 2 -  Allen
+
+\begin{problem}How many primes are there that are less than 60?
+\end{problem}
+
+\answer 17.
+\begin{solution}
+We list primes: Anything less than 60 and not divisible by 2, 3, 5 or 7 (unless the number itself is 2, 3, 5, or 7) is a prime less than 60. Listing these out, we have 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, for \boxed{17} primes less than 60.
+\end{solution}
+
+\begin{problem}Find the area of a circle with radius 6. Express your answer in terms of $\pi$.
+\end{problem}
+
+\answer $36\pi$.
+\begin{solution}
+Using the formula for the area of a circle of radius $r$, $A = \pi r^2$, the area is $\boxed{36 \pi}$.
+\end{solution}
+
+\begin{problem}
+Let $x \star y = x^2 - y^2$, and $x \uplus y = \sqrt{x^2 + y^2}$. Find $8 \star (5 \uplus 12)$.
+\end{problem}
+
+\answer -105.
+\begin{solution}
+Using the definitions provided, $8 \star (5 \uplus 12) = 8 \star \sqrt{12^2 + 5^2} = 8 \star 13 = 8^2 - 13^2 = 64 - 169 = \boxed{-105}.$
+\end{solution}
+
+\begin{problem}In how many different orders can I write the 4 letters in``WORD’’?
+\end{problem}
+
+\answer 24.
+\begin{solution}
+We can choose either ``W,’’ ``O,’’ ``R,’’ or ``D’’ for the first letter, for four choices. However, we only have three letters remaining for the second letter, two for the third letter, and the last remaining letter must go last. So, there are $4 \cdot 3 \cdot 2 \cdot 1 = 4! = \boxed{24}$ to arrange these letters.
+\end{solution}
+
+%Guts, Round 3 - Michael
+
+\begin{problem}
+Compute $733^2-267^2$
+\end{problem}
+\begin{answer}
+\boxed{466000}.
+\end{answer}
+\begin{solution}
+We use the property $a^2-b^2 = (a+b)(a-b)$ so
+$$(733+267)(733-267) = (1000)(466) = \boxed{466000}.$$
+\end{solution}
+
+\begin{problem}In a bizarre world far, far away, an apple is worth three bananas, an orange is worth 8 coconuts, and a coconut is worth 7 bananas. If an apple costs $\$1.50$, how much does an orange cost?
+\end{problem}
+\begin{answer}
+\boxed{26}.
+\end{answer}
+\begin{solution}
+We write the equations that describe the case of the problem, using $a, b, c, o$ to represent the price of apples, bananas, coconuts, and oranges respectively:
+ \[
+    \left\{
+                \begin{array}{ll}
+                  a=3b\\
+                  o=8c\\
+                  c=7b \\
+a=1.50
+                \end{array}
+              \right\}.
+  \]
+We can plug in the value of $a$ to find the price of bananas
+$$b=\frac{a}{3} = \frac{1.50}{3} = 0.50$$
+Then plug in $b$ to find $c$,
+$$c=7b = 7(0.50) = 3.50$$.
+And finally plug in $c$ to find $o$,
+$$o=8c=8(3.50)=26$$.
+So our final answer is $boxed{\$ 26}$.
+\end{solution}
+
+
+\begin{problem}What is the value of $\sqrt{x^{3}+3y}$ if $x=7$ and $y=6$?
+\end{problem}
+\begin{answer}
+\boxed{19}.
+\end{answer}
+\begin{solution}
+We substitute $x=7, y=6$ into the expression,
+$$\sqrt{x^{3}+3y}=\sqrt{7^3+3(6)}=\sqrt{343+18}=\sqrt{361}=\boxed{19}.$$
+\end{solution}
+
+\begin{problem}Find the smallest four digit number that is divisible by 2, 3, and 11.
+\end{problem}
+\begin{answer}
+\boxed{1056}.
+\end{answer}
+\begin{solution}
+We first find the smallest number that is divisible by 2, 3, and 11. That number is simply the least common multiple of the three numbers, which is 
+$$2\cdot 3\cdot 11=66$$
+Since any multiple of 66 will be divisible by 2, 3, and 11, we need to find the smallest multiple of 66 that is a four digit number. This can be found by
+$$\floor{\frac{1000}{66}}=15$$
+So $66 \cdot 15$ will be less than 100 and the next multiple will be the first multiple greater than 1000 (and thus a four digit number). $66 \cdot 16 = \boxed{1056}.$
+\end{solution}
+
+%Guts, Round 4 - Perry
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+
+%Guts, Round 5 - Allen
+
+\begin{problem}Three VMT officers can write a lecture in two seconds. How many second would it take 5 VMT officers to write 10 lectures?
+\end{problem}
+
+\answer 12 (seconds).
+\begin{solution}
+Since 3 VMT officers can write a lecture in two seconds, 3 VMT officers write half of a lecture in one second, so 1 VMT officer write $\displaystyle \frac{1}{6}$ of a lecture in one second. So, 5 VMT officers write $\displaystyle \frac{5}{6}$ of a lecture in one second and 5 VMT officers can write 10 lectures in $\displaystyle \frac[5pt]{10}{\frac{5}{6}} = \boxed{12}$ seconds.
+\end{solution}
+
+\begin{problem}Find the next term in the following series: $1, \frac{3}{2}, \frac{7}{4}, \frac{15}{8}, \frac{31}{16}, ???$.
+\end{problem}
+
+\answer $\displaystyle \frac{63}{32}$.
+\begin{solution}
+Notice that the $n^{\text{th}}$ term of the series is given by $\displaystyle 2 - \frac{1}{2^{n-1}}$. The next term is the $6^{\text{th}}$ term, so it is $\displaystyle 2 - \frac{1}{2^{5}} = 2 - \frac{1}{32} = \frac{64 - 1}{32} = \boxed{\frac{63}{32}}$.
+\end{solution}
+
+\begin{problem} Samel is a crazy kid who is only happy if he has his favorite number of camels. Four of these are purple and the others are white. Samel knows when he has his favorite number of camels, three times the number of white camels equals the sum of the number of white camels and the total number of camels. What is Samel’s favorite number of camels?
+\end{problem} 
+
+\answer 8 (camels).
+\begin{solution}
+Let $x$ be the number of camels. Then, there are 4 purple camels and $x - 4$ white camels. Writing the condition given, $3(x - 4) = x - 4 + x$. Solving, $x = 3 \cdot 4 - 2 = \boxed{8}$ camels.
+\end{solution}
+
+\begin{problem} Compute the number of factors of 900.
+\end{problem}
+
+\answer 27.
+\begin{solution}
+Note that $900 = 2^2 \cdot 3^2 \cdot 5^2$, so it has $(2 + 1)(2 + 1)(2 + 1) = \boxed{27}$ factors.
+\end{solution}
+
+%Guts, Round 6 Michael
+
+\begin{problem}What is the smallest positive integer that has a remainder of 2 when divided by 7 and 1 when divided by 9?
+\end{problem}
+\begin{answer}
+\end{answer}
+\begin{solution}
+We can write a system of modular arithmetic equations to describe the problem, calling our number $x$:
+$$ \begin{array}{ll}
+                  x \equiv 2 \pmod{7}\\
+                  x \equiv 1 \pmod{9} 
+\end{array}.
+$$
+We can use the Chinese remainder theorem to solve this system, but we can also use another technique. We can just list out all numbers which satisfy remainder 2 when divided by 7, and remainder 1 when divided by 9, and find the smallest number that appears on both lists.
+\begin{align*}
+2, 9, 16, 23, 30, \underline{37} \\
+1, 10, 19, 28, \underline{37}
+\end{align*}
+So our answer is $\boxed{37}$.
+\end{solution}
+
+\begin{problem}On a $5 \times 7$ grid, Charles can only move upwards or to the right and can only move along gridlines. In how many ways can he move from the lower left corner to the top right corner? 
+\end{problem}
+\begin{answer}
+\end{answer}
+\begin{solution}
+We know in order to get from corner to corner, Charles will have to move right 5 times, and move up 7 times. Therefore, we can think of his sequence of steps from going from corner to corner as a sequence of 5 R’s and 7 U’s. This is just
+$$\frac{(5+7)!}{5!7!}=\frac{12!}{5!7!} = \frac{12 \cdot 11 \cdot 10 \cdot 9 \cdot 8}{5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = \boxed{792}.$$
+\end{solution}
+
+\begin{problem}What are the last two digits of $7^{1685}$?
+\end{problem}
+\begin{answer}
+\boxed{07}. The leading zero is necessary.
+\end{answer}
+\begin{solution}
+We begin by listing the last two digits of some smaller powers of 7.
+\begin{align*}
+7^1 = 7
+7^2 = 49
+7^3 = 43
+7^4 = 01
+7^5 = 07
+\end{align*}
+So we see the last two digits of seven repeat every four powers. 1685 has a remainder of 1 when divided by 4, so our answer is $\boxed{07}$. (The leading 0 is important!)
+\end{solution}
+
+\begin{problem}If $3^{2x-4} = 4$, what is the value of $3^{x}$?
+\end{problem}
+\begin{answer}
+\boxed{18}.
+\end{answer}
+\begin{solution}
+Since solving for $x$ in the first equation is not very nice, we instead look for ways to manipulate the first equation. 
+\begin{align*}
+3^{2x-4} &= 3^{2x} \cdot 3^{-4} \\
+&= (3^x)^2 \cdot 3^{-4}.
+\end{align*}
+We now see we can isolate $3^{x}$ and thus solve for it.
+\begin{align*}
+(3^x)^2 \cdot 3^{-4} &= 4 \\
+(3^x)^2 &= 324 \\
+3^x &= \boxed{18}.
+\end{align*}
+\end{solution}
+
+
+%Guts, Round 7 - Perry
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+%Guts, Round 8 - Allen
+
+\begin{problem}Jendy is shipping herself down a river. Paddling furiously in her cardboard box, she travels downstream to her chosen man in 3 hours. However, when she realizes that she chose the wrong man, it takes her 5 hours to paddle upstream to her starting point. What is the ratio of Jendy’s paddling speed in still water to the speed of the current?
+\end{problem}
+
+\answer 4.
+\begin{solution}
+Let Jendy have speed $j$, the current have speed $c$, and the distance she travels to be $d$. Then, $3(j + c) = d = 5(j- c),$ and $8c = 2j$, so the desired ratio $\displaystyle \frac{j}{c} = \frac{8}{2} = \boxed{4}.$
+\end{solution}.
+
+\begin{problem}
+Everyone in VMT is either an Akshaj, who always tells the truth, or a Franklyn, who always lies. A group of confused freshmen meets VMT members Will, Michael, Ruiran, and Alex. The VMT members say the following:
+    \begin{itemize}
+        \item Will says, ``Only Franklyns get cancer.''
+        \item Michael says, ``Will is so rich that he's a Franklyn.''
+        \item Ruiran says, ``Will does not have cancer.''
+        \item Alex says, ``Both Will and I are Franklyns.''
+    \end{itemize}
+    How many of the 4 VMT members are Franklyns?
+\end{problem}
+
+\answer 2.
+\begin{solution}
+Notice that neither an Akshaj nor a Franklyn can say that they are a Franklyn. So, Alex is lying and is a Franklyn. That means that since it is not true that both Will and Alex are Franklyns and Alex is a Franklyn, Will must be an Akshaj. Therefore, Michael is a Franklyn. Since Will is an Akshaj and he says only Franklyns get cancer, he does not have cancer, and Ruiran is telling the truth. So, only Michael and Alex are Franklyns, and our answer is \boxed{2}.
+\end{solution}
+
+\begin{problem} How many convex hexagons are there drawn below? A polygon is said to be convex if all of its interior angles have measure less than $180^{\circ}$. %(Edward Cheng) See his email for diagram
+\end{problem}
+
+\answer 4096.
+\begin{solution}
+Note that for each side of the hexagon, we may choose any of the 4 segments there grouped together to be that side. As there are 6 sides and we have 4 choices for each side, we have $4 \cdot 4 \cdot 4 \cdot 4 \cdot 4 \cdot 4 = 4^6 = \boxed{4096}$.
+\end{solution}
+
+\begin{problem}Find the area of the shaded region.
+    \begin{center}
+    \begin{tikzpicture}
+    \filldraw[color=black!60, fill=black!20, thick] (4, 4) -- (0, -1) -- (-2, 3) -- (-3, 4) -- (-4, 2) -- (-3, -3) -- (5, -2) -- (3, 0) -- cycle;
+    \fill[black,font=\footnotesize](4, 4) node [above] {$(4, 4)$}
+    (0, -1) node [below] {$(0, -1)$}
+    (-2, 3) node [right] {$(-2, 3)$}
+    (-3, 4) node [above] {$(-3, 4)$}
+    (-4, 2) node [left] {$(-4, 2)$}
+    (-3, -3) node [below] {$(-3, -3)$}
+    (5, -2) node [right] {$(5, -2)$}
+    (3, 0) node [right] {$(3, 0)$};
+    \end{tikzpicture}
+    \end{center}
+\end{problem}
+
+\answer $\displaystyle \frac{53}{2}$.
+\begin{solution}
+We consider the rectangle with vertices $(-4, -3), (-4, 4), (5, 4),$ and $(5, -3)$. The area of the shaded area is the area of this rectangle minus the areas that are not shaded. These areas are as follows:
+\begin{itemize}
+    \item The triangle with vertices $(-4, -3), (-4, 2),$ and $(-3, 3)$ has area $\frac{1}{2} 1 \cdot 5 = \frac{5}{2}$.
+    \item The triangle with vertices $(-4, 2), (-4, 4),$ and $(-3, 4)$ has area $\frac{1}{2} 1 \cdot 3 = \frac{3}{2}$.
+    \item The triangle with vertices $(-3, 4), (-2, 4),$ and $(-2, 3)$ has area $\frac{1}{2} 1 \cdot 1 = \frac{1}{2}$.
+    \item The trapezoid with vertices $(-2, 4), (0, 4), (0, -1),$ and $(-2, 3)$ has area $\frac{1}{2} 2(1 + 5) = 6$.
+    \item The triangle with vertices $(0, 4), (4, 4),$ and $(0, -1)$ has area $\frac{1}{2} 4 \cdot 5 = 10$.
+    \item The trapezoid with vertices $(4, 4), (5, 4), (5, 0),$ and $(3, 0)$ has area $\frac{1}{2}     4(1+2) = 6$.
+    \item The triangle with vertices $(3, 0), (5, 0),$ and $(5, -2)$ has area $\frac{1}{2} 2 \cdot 2 = 2$,
+    \item The triangle with vertices $(5, -2), (5, -3),$ and $(-3, -3)$ has area $\frac{1}{2} 8 \cdot 1 = 4$.
+\end{itemize}
+Subtracting the sum of these areas from that of the rectangle, the area of the shaded region is $\displaystyle 9 \cdot 7 - (\frac{5}{2} + \frac{3}{2} + \frac{1}{2} + 6 + 10 + 6 + 2 + 4) = 63 - 36 - \frac{1}{2} =\boxed{\frac{53}{2}}$.
+\end{solution}
+
+%Guts, Round 9 - Michael
+
+\begin{problem}If $\frac{1}{x} + 3 = \sqrt{10}$, what is $x$ to the nearest integer?
+\end{problem}
+
+\begin{answer}
+\boxed{6}.
+\end{answer}
+\begin{solution}
+Since we want to know what $x$ is closest to, we can subtract both sides by 3 and take the reciprocal of both sides of the given equation.
+$$x = frac{1}{\sqrt{10}-3}$$
+We now rationalize the denominator
+\begin{align*}
+x &= \frac{1}{\sqrt{10}-3} \times \frac{\sqrt{10}+3}{\sqrt{10}+3}
+&= \frac{\sqrt{10}+3}{10-9}
+&= \sqrt{10}+3
+\end{align*}
+We see that $\sqrt{10}$ rounds down to 3 because $3.5^2 = 12.25$ so our answer is $3+3=\boxed{6}$.
+\end{solution}
+
+\begin{problem}The time is now 4:00 on an analog clock (a normal clock with hands). In how many minutes will the minute and hour hands of this clock be exactly together? %variation would be the time is now 4:00 and the minute hand is 120 degrees behind the hour hand. At what time will the minute hand be 120 degrees ahead of the hour hand?
+\end{problem}
+
+\begin{answer}
+$\boxed{4:21 \frac{9}{11}}$.
+\end{answer}
+\begin{solution}
+At 4:00, the hour hand is $120 \deg$ ahead of the minute hand. Since the rate of the minute hand is $360 \deg / 60 \text{min} = 6 \deg / \text{min}$ and the rate of the hour hand is $30 \deg / 60 \text{min}= \frac{1}{2} \deg / \text{min}$, the minute hand ``catches up’’ at a rate of 
+$$6 \deg / \text{min}-\frac{1}{2} \deg \text{min} = \frac{11}{2} \deg / \text{min}$$
+So the time it takes the minute hand to close the $120 \deg$ gap is
+$$\frac{120 \deg}{\frac{11}{2} \deg / \text{min}} = \frac{240}{11} \text{min} = 21 \frac{9}{11} \text{min}.$$
+The question asks for what \textbf{time}, not the amount of time, so the answer is $\boxed{4:21 \frac{9}{11}}$.
+\end{solution}
+
+\begin{problem}Evaluate $1\cdot2^{0} + 2\cdot2^1 + 3\cdot2^2 +\cdots+12\cdot2^{11}$
+\end{problem}
+
+\begin{answer}
+\boxed{45059}.
+\end{answer}
+\begin{solution}
+We set the sum equal to $S$. If we multiply $S$ by 2, 
+\begin{align*}
+S = 1\cdot2^{0} + 2\cdot2^1 + 3\cdot2^2 +\cdots+12\cdot2^{11} \\
+2S = 1\cdot2^{1} + 2\cdot2^2 + 3\cdot2^3 +\cdots+12\cdot2^{12}
+\end{align*}
+If we subtract the original equation from the second one, we see that we can get some terms and a geometric sequence, which we can easily calculate:
+\begin{align*}
+2S-S=S &=1 \cdot - (2^1+2^2+\cdots+2^11)+2^{12} \\
+&= 12\cdot 2^{12}+1 - (\frac{2(2^11-1)}{2-1})
+&= 12\cdot 2^{12}+1-2^{12}+2
+&= 11 \cdot 2^{12} +3
+&= 11(4096) +3 = 45056+3 = \boxed{45059}.
+\end{align*}
+\end{solution}
+
+\begin{problem}What is the remainder when $3^{178}$ is divided by 30?
+\end{problem}
+\begin{answer}
+\boxed{9}.
+\end{answer}
+\begin{solutionone}
+We can find $a$ and $b$ such that 
+$$3^{177} = 10a+b$$
+and therefore 
+$$3^{177} \cdot 3 = 3(10a+b) = 30a+3b$$
+So our remainder is $3b$. Since it is much easier to find $b$ with the first equation, since
+$$3^2 \equiv 9 \equiv -1 \pmod{10},$$
+We do:
+\begin{align*}
+3^{177} &\equiv (9)^{88} \cdot 3  \pmod{10} \\
+&\equiv (-1)^{88} \cdot 3 \pmod{10} \\
+&\equiv 3 \pmod{10}.
+\end{align*}
+So we see $b=3$ and our remainder when we divide $3^{178}$ by 30 is $3b = \boxed{9}$.
+\end{solutionone}
+\begin{solutiontwo}
+Since 3 is not relatively prime to 30, we cannot use Euler’s totient theorem so we proceed by computation. \par
+We note that 
+$$3^3 \equiv 27 \equiv -3 \pmod{30}.$$
+So 
+\begin{align*}
+3^{178} &\equiv (27)^{59} \cdot 3 \pmod{30} \\
+&\equiv (-3)^{59} \cdot 3 \pmod{30}\\
+&\equiv -(3)^{59} \cdot 3 \pmod{30}\\
+&\equiv -(27)^{19} \cdot 3^2 \cdot 3 \pmod{30}\\
+&\equiv 3^{19} \cdot (-3) \pmod{30}\\
+&\equiv (27)^6 \cdot 3 \cdot -3  \pmod{30}\\
+&\equiv (-3)^6 \cdot -9 \pmod{30}\\
+&\equiv (27)^2 \cdot -9 \pmod{30}\\
+&\equiv -81 \pmod{30}\\
+&\equiv \boxed{9} \pmod{30}\\
+\end{align*}
+\end{solutiontwo}
+
+\end{document}
