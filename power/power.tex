@@ -1,5 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
 
 \usepackage{../tjimo}
 
@@ -10,7 +13,13 @@
 
 \section{What is a Graph?}
 
-At its core, a graph consists of two sets: a group of objects, and a group of connectors that each join two objects.
+You might have heard of a graph in your math class as a plot with an $x$ and $y$ axis. Or maybe in science you looked at
+bar graphs and pie graphs. Maybe in history you took a look at line graphs. But the graphs we are going to talk about today
+are none of the above.
+
+\subsection{Some Introduction}
+
+At its core, a \textit{graph} consists of two sets: a group of objects, and a group of connectors that each join two objects.
 
 To gain insight into what a graph is, let's first consider flights that connect airports around the world.
 We depend on airplanes to travel quickly and efficiently. When we want to travel between major cities,
@@ -74,7 +83,7 @@ are not useful to us. The following is an equivalent graph:
 The only characteristics of a graph we care about are the objects (in this case, cities) themselves, which we'll call \textit{vertices},
 and the connections joining the objects, which we'll call \textit{edges}.
 
-\section{Definition of a Graph}
+\subsection{Definition of a Graph}
 
 We now have the background necessary to present the mathematical definition of a graph:
 
@@ -193,7 +202,96 @@ as $\{B, A\}$), so we must divide by 2 to get the correct answer of $\frac{n \cd
 \end{enumerate}
 \end{solution}
 
-\section{Paths}
+\section{Special Graphs}
+
+Sometimes graphs have unique properties that are interesting to us.
+
+\subsection{Bipartite Graphs}
+
+\begin{definition}
+\label{def:bipartite}
+A \textit{bipartite graph} is a graph whose vertices can be divided into two disjoint, or nonoverlapping, sets, $S$ and $T$, such that every
+edge in the graph connects one vertex in $S$ to one vertex in $T$. The following is an example of a bipartite graph:
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
+\draw (-2, 0) node [vertex] (A) {$A$};
+\draw (-2, -1) node [vertex] (B) {$B$};
+\draw (-2, -2) node [vertex] (C) {$C$};
+\draw (-2, -3) node [vertex] (D) {$D$};
+\draw (2, 0) node [vertex] (E) {$E$};
+\draw (2, -1) node [vertex] (F) {$F$};
+\draw (2, -2) node [vertex] (G) {$G$};
+\draw (2, -3) node [vertex] (H) {$J$};
+\draw (2, -4) node [vertex] (I) {$I$};
+\draw (A) -- (F);
+\draw (A) -- (G);
+\draw (B) -- (I);
+\draw (B) -- (H);
+\draw (C) -- (E);
+\draw (C) -- (F);
+\draw (C) -- (H);
+\draw (D) -- (I);
+\end{tikzpicture}
+\end{center}
+As you can see, we can split the vertices into two sets: $S=\{A,B,C,D\}$ and $T=\{E,F,G,H,I\}$. Every edge in the graph connects a vertex in $S$ to
+one in $T$. No edge connects two vertices from $S$, and no edge connects two vertices from $T$.
+\end{definition}
+
+\begin{problem} % 4
+Given a graph $G$, three vertices $A$, $B$, and $C$ in the graph are such that an edge connects $A$ and $B$, an edge connects $B$ and $C$, and an edge
+connects $C$ and $A$. Show that the graph $G$ cannot be bipartite.
+\end{problem}
+
+\begin{solution}
+If $G$ were bipartite, then its vertices can be partitioned into exactly two sets such that the vertices in each set are not connected by an edge.
+This means that $A$ and $B$ are in different sets, $B$ and $C$ are in different sets, and $C$ and $A$ are in different sets. However, this is not possible
+with only two sets, so $G$ must not be bipartite.
+\end{solution}
+
+\subsection{Tur\'{a}n's Theorem}
+
+As a result of the previous problem, bipartite graphs are graphs with no $K_3$. This means we cannot find three vertices in the graph such that
+every pair of vertices in the three are connected by edges. We generalize this idea to graphs with no $K_{r+1}$, where $r \ge 2$.
+
+\begin{problem} % 5
+Let $n$ be an even integer. What is the maximum number of edges in a graph $G$, where $G$ has $n$ vertices, and $G$ has no $K_3$? Express your answer
+in terms of $n$, and remember to explain your solution!
+
+You might find the following fact useful:
+\begin{theorem}[AM-GM]
+\label{thm:am-gm}
+Given two nonnegative numbers $a$ and $b$,
+\[\frac{a + b}{2} \ge \sqrt{a \cdot b}.\]
+\end{theorem}
+\end{problem}
+
+\begin{solution}
+We have that $G$ is a bipartite graph. Then we can separate the graph into two sets, $S$ and $T$, such that $\abs{S} + \abs{T} = n$,
+and no edges connect each set's vertices. The maximum number of edges in a graph separated into $S$ and $T$ is $\abs{S} \cdot \abs{T}$. However, by the
+AM-GM Inequality,
+\[\abs{S} \cdot \abs{T} \le \left(\frac{\abs{S} + \abs{T}}{2}\right)^2 \le \boxed{\frac{n^2}{4}}. \]
+We see that this number of edges can be achieved by separating the $n$ vertices into two equally-sized sets.
+\end{solution}
+
+\begin{problem}[Tur\'{a}n] % 6
+Let $r$ be an integer such that $r \ge 2$, and let $n$ be an integer such that $n$ is divisible by $r$.
+What is the maximum number of edges in a graph $G$, where $G$ has $n$ vertices, and $G$ has no $K_{r+1}$? Express your answer
+in terms of $n$ and $r$, and remember to explain your solution!
+\end{problem}
+
+\begin{solution}
+\end{solution}
+
+\section{Shortest Paths}
+
+
+Graphs represent connections between different objects. We might, for example, have different cities connected in some way.
+It takes a certain amount of time to get in between different neighboring cities. Perhaps to travel from D.C. to St. Louis,
+we must either stop at Chicago or Cincinnati along the way. It might be faster to travel through Cincinnati, but it might be
+cheaper to stop at Chicago. Either way, we need to devise some kind of system to determine for us the best way to travel between
+vertices in our graph, through following some kind of \textit{path}.
+
+\subsection{Introduction to Paths}
 
 \begin{definition}
 \label{def:path}
@@ -201,7 +299,7 @@ A \textit{path} is a sequence of vertices, such that every two consecutive verti
 All edges in the path must be distinct, and all the vertices must be distinct.
 \end{definition}
 
-\begin{problem} % 4
+\begin{problem} % 1
 In the following graph, answer the questions below.
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
@@ -235,13 +333,76 @@ From Definition \ref{def:path} of a path,
 \end{enumerate}
 \end{solution}
 
-% complete bipartite graph
+\subsection{Dijkstra's Shortest Path Algorithm}
 
-% turan
+In this subsection we explore an algorithm to compute the shortest path from one vertex to another in a graph.
+Thus, we'll want to assign some kind of value to each edge. For example, it might be the distance between two
+vertices. We'll call this value the \textit{weight}.
 
-% dijkstra
+\begin{definition}
+\label{def:weight}
+We assign to each edge $\{U,V\}$ a \textit{weight} $w(U,V)$. This is simply a number associated with the edge.
+For example, it might represent the distance between $U$ and $V$ or the cost to travel between $U$ and $V$.
+\end{definition}
 
-% euler circuit
+Our main goal is to find a path from one vertex to another such that the sum of the weights along the path is
+minimized.
+
+\begin{definition}
+\label{def:shortest-path}
+Given a graph $G$, the \textit{shortest path} $V_0$, $V_1$, $V_2$, $V_3$, $\cdots$, $V_{m-2}$, $V_{m-1}$, $V_m$
+from vertex $V_0$ to vertex $V_m$ is the path that minimizes
+the sum
+\[w(V_0,V_1) + w(V_1,V_2) + w(V_2, V_3) + \cdots + w(V_{m-2}, V_{m-1}) + w(V_{m-1}, V_{m}).\]
+\begin{center}
+\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
+\draw (0, 0) node [vertex] (v1) {$A$};
+\draw (1, 4) node [vertex] (v2) {$B$};
+\draw (4, 1) node [vertex] (v3) {$C$};
+\draw (5, 5) node [vertex] (v4) {$D$};
+\draw (8, 3) node [vertex] (v5) {$E$};
+\draw[->] (v1) -- (v2) node[midway, left] {4};
+\draw[->] (v2) -- (v3) node[midway, above right] {2};
+\draw[->] (v1) -- (v3) node[midway, below] {7};
+\draw[->] (v2) -- (v4) node[midway, above] {6};
+\draw[->] (v3) -- (v4) node[midway, right] {3};
+\draw[->] (v3) -- (v5) node[midway, below] {5};
+\draw[->] (v4) -- (v5) node[midway, above] {4};
+\end{tikzpicture}
+\end{center}
+In the above graph, the shortest path from $A$ to $E$ is $A$, $B$, $C$, $E$. The shortest
+distance from $A$ to $E$ is then 11. No other path can do better.
+\end{definition}
+
+\begin{algorithm}[H]
+\caption{Dijkstra}
+\begin{algorithmic}
+\ForAll{vertices $v$}
+	\State $dist(v) \gets \infty$
+	\State $visited(v) \gets 0$
+    \State $prev(v) \gets -1$
+\EndFor
+\State $dist(src) \gets 0$
+\While{$\exists v$ s.t. $visited(v)=0$}
+	\State $v \equiv v$ s.t. $visited(v)=0$ with min $dist(v)$
+    \State $visited(v) \gets 1$
+	\ForAll{neighbors $u$ of $v$}
+    	\If{$visited(u) = 0$}
+    		\State $alt \gets dist(v) + weight(v, u)$
+			\If{$alt < dist(u)$}
+				\State $dist(u) \gets alt$
+   	        	\State $prev(u) \gets v$
+			\EndIf
+        \EndIf
+    \EndFor
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+\section{Euler Circuits}
+
+\subsection{Introduction to Cycles}
+
+\subsection{Seven Bridges of K\"{o}nigsberg}
 
 \end{document}
-
