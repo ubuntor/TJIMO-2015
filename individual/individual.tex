@@ -1,0 +1,354 @@
+\documentclass[11pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+
+\usepackage{../tjimo}
+
+\newcommand{\sevenpoints}{Time limit: 45 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Individual}}
+
+\begin{document}
+
+\begin{problem}
+Kathleen goes to the supermarket and buys $\$17.04$ worth of food for a party she is having. If she pays the cashier with a 20 dollar bill, how much change will she receive?
+\end{problem}
+\begin{answer}
+$\boxed{\$2.96}$
+\end{answer}
+\begin{solution}
+With some arithmetic, we find that $20 - 17.04 = 2.96$, giving Kathleen her change of $\boxed{\$2.96}$.
+\end{solution}
+
+\begin{problem} Arobin, Brobin, Crobin, and Drobin are standing in a line, from left to right. Arobin is to the left of Crobin, but not directly next to him. Crobin and Drobin have exactly one person between them. Who is farthest to the right?
+\end{problem}
+\begin{answer}
+\boxed{Crobin}
+\end{answer}
+\begin{solution}
+Let's number the positions that the four could be standing in 1 throught 4 and the people as A through D. Because A is to the left of C but not directly next to him, we could have one of three cases:
+
+\begin{enumerate}
+\item A is at 1, C is at 3
+\item A is at 1, C is at 4
+\item A is at 2, C is at 4
+\end{enumerate}
+
+Using the next piece of information, C and D must have a difference of two in their positions. In case (1), D would have to be at 1, which is taken, or 5, which doesn't exist. In case (2), D would have to be at 2, which is possible, or 6, which doesn't exist. In case (3), D would have to be at 2, which is taken, or 6, which doesn't exist. 
+
+Therefore, we only have one working possiblity: for case (2) to happen with A at 1, D at 2, B at 3, and C at 4, which means that the person farthest to the right is C, or \boxed{Crobin}.
+\end{solution}
+\begin{problem}
+Elsa and Anna are making snowballs together. If Elsa can make 3 every minute, and Anna can make 2 every minute, how many snowballs can they make in 10 minutes?
+\end{problem}
+\begin{answer}
+$\boxed{50}$
+\end{answer}
+\begin{solution}
+Together, they make $3 + 2 = 5$ snowballs every minute. Therefore, they make $5\times10 = \boxed{50}$ snowballs in 10 minutes.
+\end{solution}
+
+\begin{problem}
+In the year 2010, Jennifer decided to start collecting stamps. Her collection increases by 7 stamps each year. In 2010, she had 7 stamps, in 2011, she had 14 stamps, and so on. How many stamps will she have in 2020?
+\end{problem}
+\begin{answer}
+$\boxed{77}$
+\end{answer}
+\begin{solution}
+Since she gets 7 more stamps each year, and she has been collecting stamps for 11 years by 2020, the answer is $7 \cdot 11 = \boxed{77}$
+\end{solution}
+
+\begin{problem}Saroja goes to the grocery store to buy mangoes and watermelons, where the mangoes are equally priced and the watermelons are equally priced. If she buys two mangoes and three watermelons, she will pay \$3.39. If she buys five mangoes and four watermelons, she will pay \$5.50. How much would she need to pay for one watermelon and one mango?
+\end{problem}
+\begin{answer}
+$\boxed{\$1.27}$
+\end{answer}
+\begin{solution} This problem is a system of two equations with two variables. While any of the many commonly known techniques for such problems can be applied here, we can also note that by adding the two equations, we get a nice result. If we call the number of mangoes $m$ and the number of watermelons $w$, we get:
+\begin{align*}
+2m + 3w = 3.39\\
+5m + 4w = 5.50
+\end{align*}
+By adding these two equations, we get $7m + 7w = 8.89$, or $m+w = \boxed{1.27}$
+\end{solution}
+
+\begin{problem} A recipe for oreo truffles, which makes 400 truffles, calls for 10 bars of chocolate, 12 packs of oreos, and 16 sticks of cream cheese. If Josh wants to make 200 truffles, what is the sum of the number of bars of chocolate and the number of packs of oreos he will need?
+\end{problem}
+\begin{answer}
+$\boxed{11}$
+\end{answer}
+\begin{solution}This question is a question of proportions. Because 200 truffles is half of the serving size of the recipe, which makes 400 truffles, we need half as many of each of the ingredients in the recipe. This means we need $\frac{10}{2} = 5$ bars of chocolate and $\frac{12}{2} = 6$ packs of oreos. Therefore, the sum of these two is $\boxed{11}$.
+\end{solution}
+
+\begin{problem} Michael makes a pigeon shaped robot for his Robot Project. He tests his robot by making it run in a straight line. There are markings along this line with 6-inch spaces between each pair of markings. If his robot travels 80 spaces, calculate the speed of his robot in ft/sec.
+\end{problem}
+\begin{answer}
+$\boxed{4}$ feet/sec.
+\end{answer}
+\begin{solution} Since 6 inches is half a foot, Michael's robot traveled a total of $\frac{1}{2} \times 80 = 40$ feet in 10 seconds, giving his robot a speed of $\frac{40}{10} = \boxed{4}$ feet/sec.
+\end{solution}
+
+\begin{problem}
+A circle is inscribed into a square with side length 4. What is the area of the circle?
+\end{problem}
+\begin{answer}
+$\boxed{4\pi}$
+\end{answer}
+\begin{solution}
+Since the circle is inscribed in the square, that means it has a radius of 2. Plugging this into the formula for an area of a circle, we get $2^2\times\pi = \boxed{4\pi}$.
+\end{solution}
+
+\begin{problem} 
+Catherine, Franklin, and Lillian are trying to guess Jeffrey's test grade (out of a maximum of 100 points). He tells each of them one hint about his test grade.
+\\Catherine: His test grade is above 90.
+\\Franklin: His test grade is an odd integer.
+\\Lillian: His test grade has 6 factors.
+\\What was Jeffrey's test grade?
+\end{problem}
+\begin{answer}
+$\boxed{99}$
+\end{answer}
+\begin{solution} Catherine's hint narrows Jeffrey's test grade to the range 91-100. Franklin's hint narrows Jeffrey's test grade to 91, 93, 95, 97, or 99. 91 has 4 factors, 93 has 4 factors, 95 has 4 factors, 97 has 1 factor, and 99 has 6 factors. Based on Lillian's hint, Jeffrey's test grade must have been $\boxed{99}$.
+\end{solution}
+
+\begin{problem}
+Pradeep's Pizza Parlor offers 10 different toppings for pizzas. If Aaditaya wants to get a pizza with 2 different toppings, how many different combinations of pizza toppings can Aaditaya get? Assume that order of toppings doesn't matter (Topping A and Topping B is the same as Topping B and Topping A).
+\end{problem}
+\begin{answer}
+$\boxed{45}$
+\end{answer}
+\begin{solution}
+Since Aaditaya wants two different toppings, there are $10\times9 = 90$ different combinations. However, since order of the toppings doesn't matter, we double counted all of the possibilities. Therefore, we divide 90 by 2 to get $\boxed{45}$.
+\end{solution}
+
+\begin{problem}
+A set of the first $n$ odd integers has a sum of 64. How many integers are in the set?
+\end{problem}
+\begin{answer}
+$\boxed{8}$
+\end{answer}
+\begin{solution}
+The formula for the sum of the first $n$ odd integers is $n^2$. Therefore, the answer is $\sqrt{64} = \boxed{8}$.
+\end{solution}
+\begin{problem}A triangle with integer side lengths has two sides of length 3 and 4. How many possible lengths are there for the third side of the triangle?
+\end{problem}
+\begin{answer}
+$\boxed{5}$
+\end{answer}
+\begin{solution}Here is a problem which requires application of the Triangle Inequality. This will state that the sum of any two side lengths must be longer than the third. Setting up three inequalities, we get
+\begin{align*}
+3+x>4\\
+x+4>3\\
+3+4>x
+\end{align*}
+
+This all simplifies to $x>1$, $x>-1$, and $x<7$. The second inequality is redundant with the first, along with the fact that we can't have negative or zero-length sides. Therefore, $1<x<7$, and the integers which satisfy this are 2, 3, 4, 5, and 6. This is \boxed{5} possible side lengths.
+\end{solution}
+
+\begin{problem}
+Alice, Bob, Charles, Diana, and Ethan participated in a race. Charles finished directly after Ethan, but did not finish last. Diana finished second, and Alice did not finish next to Diana. Assuming there were no ties, who finished first?
+\end{problem}
+\begin{answer}
+$\boxed{Bob}$
+\end{answer}
+\begin{solution}
+Since Diana finished second, Ethan and Charles must have finished third and fourth, respectively because Charles did not finish last. Then, Alice must have finished last, leaving \boxed{Bob} to have finished first.
+\end{solution}
+
+\begin{problem}
+Lynne has 2 metronomes, one is set at 80 beats per minute, and the other is set at 120 beats per minute. Lynne switches on her 2 metronomes at the exact same time. In one minute, how many times will they share a common beat?
+\end{problem}
+\begin{answer}
+$\boxed{40}$
+\end{answer}
+\begin{solution}
+The metronome set at 80 beats per minute beats every $\frac{60}{80} = \frac{3}{4}$ a second, while her metronome set at 120 beats per minute beats every $\frac{60}{120} = \frac{1}{2}$ a second. The least common multiple of these two fractions is $\frac{3}{2}$, so every $\frac{3}{2}$ of a second, they share a common beat. Therefore, Lynne's two metronomes will share $\frac{60}{\frac{3}{2}} = \boxed{40}$ common beats.
+\end{solution}
+
+\begin{problem}
+Two guests at dinner each received a slice of pie. A piece of pie was cut out for the first guest, and the second guest received $3/8$ of the remaining pie. If the second guest’s portion of pie was $1/3$ of the entire pie, then what fraction of the entire pie did the first guest receive?
+\end{problem}
+\begin{answer}
+$\boxed{\frac{1}{9}}$
+\end{answer}
+\begin{solution}
+Let $r$ denote the fraction of the entire pie that is equal to the remaining pie after the first slice is taken. $\frac{3}{8}$ of the remaining pie may be represented as $\frac{3}{8}r$, and so we know that $\frac{3}{8}r = \frac{1}{3}$. Multiply both sides by $\frac{8}{3}$ to get $r = \frac{8}{9}$. If $\frac{8}{9}$ is the remaining portion, then the portion of the pie eaten by the first guest was $\boxed{\frac{1}{9}}$.
+\end{solution}
+
+\begin{problem}
+How many two-digit positive integers have an odd number of factors?
+\end{problem}
+\begin{answer}
+$\boxed{6}$
+\end{answer}
+\begin{solution}
+We note that only perfect squares have an odd number of factors. There are 6 two-digit squares.
+\end{solution}
+
+\begin{problem}
+Emily has a playlist of Liszt's Transcendental Etudes, which there are 12 of, on shuffle. If she only likes 3 of them, what is the probability that those will be the first three she hears?
+\end{problem}
+\begin{answer}
+$\small\boxed{\frac{1}{220}\normalsize}$
+\end{answer}
+\begin{solution}
+The probability that she likes the first Etude she hears is $\frac{3}{12}$. Then, since there are 2 Etudes remaining that she likes, and 11 total remaining Etudes, the probability that she likes the second Etude she hears is $\frac{2}{11}$. With only one remaining Etude that she likes, and 10 total remaining Etudes, the probability that she third Etude she hears is the last one she likes is $\frac{1}{10}$. Multiplying these fractions gives $\frac{3}{12}\cdot\frac{2}{11}\cdot\frac{1}{10}=\small\boxed{\frac{1}{220}\normalsize}$
+\end{solution}
+
+\begin{problem}
+Franklyn the frog is doing combinatorics problems given to him by Akshaj the combinatorialist. Akshaj gives Franklyn 9 problems in the form: "If Jame has $n$ shirts and $n$ pants, how many unique outfits of 1 shirt and 1 pair of pants can Jame dress up in?" Problem 1 has with $n=1$, Problem 2 has $n=2$, and so on up to Problem 9 has $n=9$. What is the sum of the answers to these 9 problems?
+\end{problem}
+\begin{answer}
+$\boxed{315}$
+\end{answer}
+\begin{solution}
+We see that we can choose 1 of $n$ shirts and 1 of $n$ pants, so there are $n^2$ choices for a single problem. We therefore need to sum $n^2$ from $n=1$ to $n=9$. We could manually sum this, or use the formula $\frac{(n)(n+1)(2n+1)}{6} = \frac{9(10)(21)}{6} =15*21=\boxed{315}$.
+\end{solution}
+
+\begin{problem}
+In the land of Darnia, Darnians use the currency of Darns, and they have two kinds of bills: bills worth 2 Darns and bills worth 3 Darns. If Alec has plenty of both 2-Darn bills and 3-Darn bills, how many combinations of bills could Alec use to be worth 37 Darns? (One example would be 17 2-Darn bills and 1 3-Darn bill)
+\end{problem}
+\begin{answer}
+$\boxed{6}$
+\end{answer}
+\begin{solution} We start with the given example of 17 2-Darn bills and 1 3-Darn bill. We note that to change the number of each kind of bill and keep the same total amount of Darns, the only exchange we can make is 3 2-Darn bills for 2 3-Darn bills and vice versa. Therefore, we can count out the possibilities as $(17, 1), (14, 3), (11, 5), (8, 7), (5, 9), (2, 11)$. This is \boxed{6} ways to make 37 Darns.
+\end{solution}
+
+\begin{problem}
+Geoffrey the Geometer is surveying his new plot of land, because he wants to make space for his pet giraffe. If his plot of land is a regular hexagon with side length of 40 meters, and his giraffe needs $400\sqrt{3}$ meters$^2$ of land to roam, how many square meters of land does he have left to build his house on?
+\end{problem}
+\begin{answer}
+$\boxed{2000\sqrt{3}}$ meters$^2$
+\end{answer}
+\begin{solution}
+The total area of his plot of land is $\frac{3}{2}\cdot40^2\cdot\sqrt{3} = 2400\sqrt{3}$ meters$^2$. We then subtract the $400\sqrt{3}$ meters$^2$ of land his giraffe needs, to get $\boxed{2000\sqrt{3}}$ meters$^2$.
+\end{solution}
+
+\begin{problem}
+Given $x + \frac{1}{x} = 3$, find $x^3+\frac{1}{x^3}$.
+\end{problem}
+\begin{answer}
+$\boxed{18}$
+\end{answer}
+\begin{solution}
+Cubing $x + \frac{1}{x} = 3$ gives us $x^3+3x+\frac{3}{x}+\frac{1}{x^3} = 27$. However, we notice that $3x+\frac{3}{x}$ is actually just $3\cdot (x + \frac{1}{x})$, which we were given the value of in the problem. Therefore, $x^3+\frac{1}{x^3} = 27 - 3 \cdot 3 = \boxed{18}$
+\end{solution}
+\begin{problem}
+Hcir the dragon likes to collect gold pieces for his cave. Every day, he collects either 3 or 7 gold pieces to add to his collection. What is the largest possible number of gold pieces that Hcir could not own?
+\end{problem}
+\begin{answer}
+$\boxed{11}$
+\end{answer}
+\begin{solution}
+By the Chicken McNugget theorem, the largest integer that cannot be made with combinations of 3 and 7 is $7\times3 - (7 + 3) = \boxed{11}$
+\end{solution}
+
+\begin{problem} Sam1 lives on a Cartesian coordinate plane at $(1,1)$. He wants to walk to his friend Sam5's house at $(5,5)$, but he can only move either one unit right or one unit up at a time. However, Sam1 cannot move to the point at (2,3) because there is construction there. How many distinct paths can Sam1 take to get to Sam5's house?
+\end{problem}
+\begin{answer}
+$\boxed{40}$
+\end{answer}
+\begin{solution}
+Sam1 must move right 4 times and up 4 times, which is $8 \choose 4$, or $\frac{8!}{4!4!} = 70$ ways. Of these 70 ways, we must subtract the number of ways going through $(2,3)$. This requires us to first arrange 1 right and 2 ups and then arrange 3 rights and 2 ups. This is $3 \choose 2$ multiplied by $5 \choose 2$, or $3 \times 10 = 30$ ways which go through $(2,3)$. Therefore, the total number of possible ways is $70-30 = \boxed{40}$ ways.
+\end{solution}
+
+\begin{problem}
+A walrus and a whale are playing catch with a fish. They both have a $\frac{1}{3}$ chance of catching the fish and a $\frac{2}{3}$ of dropping the fish. The game ends whenever one of them drops the fish. What is the probability that the whale will win (meaning the walrus drops the fish first), if the whale is the first one to throw the fish?
+\end{problem}
+\begin{answer}
+$\small\boxed{\frac{3}{4}\normalsize}$
+\end{answer}
+\begin{solution}
+The probability that the walrus does not catch the fish right away is $\frac{2}{3}$. The probability that the walrus does not catch the fish on the second try means that the walrus catches the fish, then the whale catches the fish, and then the walrus does not catch the fish: $\frac{1}{3}\cdot\frac{1}{3}\cdot\frac{2}{3}$. If we continue in this manner (the walrus does not catch the fish on its third try, fourth try, etc.), we can notice that these probabilities form a geometric sequence, where the first term is $\frac{2}{3}$ and we are multiplying by a ratio of $\frac{1}{3}\cdot\frac{1}{3} = \frac{1}{9}$ each time. We can plug these values into the formula for an infinite geometric series, and we get $\frac{\frac{2}{3}}{1 - \frac{1}{9}} = \small\boxed{\frac{3}{4}\normalsize}$
+\end{solution}
+
+\begin{problem}
+Peter counts the number of times the hour hand and the minute hand of the clock cross each other on an analog clock. He starts watching the clock at exactly 11:30 AM and keeps watching until 11:30 AM the next day. How many times will the hands will have crossed eachother?
+\end{problem}
+\begin{answer}
+$\boxed{22}$
+\end{answer}
+\begin{solution}
+In one day, the hour hand makes two full revolutions around the clock, and the minute hand makes 24 full revolutions. At the end of the day, the minute hand has completed 22 more revolutions than the hour hand, so they must have met up $\boxed{22}$ times throughout the entire day.
+\end{solution}
+
+\begin{problem}
+What are the last two digits of $47^{83}$?
+\end{problem}
+\begin{answer}
+$\boxed{23}$
+\end{answer}
+\begin{solution}
+We note that we are looking for the value of $47^{83}$ in mod 100. By Euler's Totient theorem, we find that totient of 100 is 40, so $47^{83} \equiv 47^3 \pmod{100}$. Thus we can simply find $47^3$ in mod 100 and arrive at the answer, $\boxed{23}$.
+\end{solution}
+
+\begin{problem} Given that the roots of the equation $x^2 - 15x + 36 = 0$ are $p$ and $q$, and $p<q$, find the sum of the roots of the equation $x^2 - \frac{p}{3}x - q = 0$.
+\end{problem}
+\begin{answer}
+$\boxed{1}$
+\end{answer}
+\begin{solutionone}
+$x^2 - 15x + 36$ can be factored as $(x-3)(x-12)$, so the roots of that equation are 3 and 12. Since $p<q$, $p=3$ and $q=12$. Plugging these values into the second equation, we have $x^2 - x - 12 = 0$. We can either factor to get $(x-4)(x+3)$ so the roots are $4$ and $-3$ and $4 + (-3) = \boxed{1}$.
+\end{solutionone}
+\begin{solutiontwo}
+We proceed the same way as solution one and get $x^2 - x - 12 = 0$. We can then instead use Vieta's formula and get the sum of the roots as $-\frac{b}{a} = -\frac{-1}{1} = \boxed{1}$.
+\end{solutiontwo}
+
+\begin{problem}
+Let $p$, $q$, and $r$ be real numbers between 0 and 10, inclusive. What is the probability that $p + q + r$ is between 5 and 10, inclusive? Express your answer as a common fraction.
+\end{problem}
+\begin{answer}
+$\boxed{\frac{7}{48}}$
+\end{answer}
+\begin{solution}
+This problem can be solved geometrically. Let C be a set in the 3D-coordinate space that contains every point $(p, q, r)$. We know that each coordinate of the point lies between 0, and 10. Thus, C is a cube with side length 10. Let V denote the volume of C. The inequality $0 <= p + q + r <= 10$ produces a pyramid with a right-triangle base that has half the area of the square base of C. Then, the volume of the pyramid is $\frac{V}{6}$.
+
+Another inequality to analyze is $0 <= p + q + r <= 5$. This produces the same pyramid as the one from before, only now each dimension is halved. The volume of this smaller pyramid is thus ${\frac{1}{2}}^3 * \frac{V}{6} = {V}{48}$. Because the problem asks for the probability that $5 <= p + q + r <= 10$, we subtract the volume of the smaller pyramid from the volume of the larger pyramid: $\frac{V}{6} - \frac{V}{48} = \frac{7V}{48}$. Finally we divide this difference by the volume of C: $\frac{\frac{7V}{48}}{V} = \boxed{\frac{7}{48}}$.
+\end{solution}
+
+\begin{problem} Winston and Allen are playing a game with Allen's collection of 2015 tennis racquets that are numbered from 1 to 2015. Allen will choose a tennis racquet at random and will tell Winston the number of factors of 5 it has. Winston wins if he correctly guesses the number on the tennis racquet given what Allen tells him. If Winston guesses one of the racquets which agrees with Allen's statement, what is the probability that Winston will guess the right racquet number? 
+\end{problem}
+\begin{answer}
+$\boxed{\frac{1}{403}}$
+\end{answer}
+\begin{solution} We make one important observation. Given any number of factors of 5 Allen gives, say there are $x$ numbers which satisfy this number of factors. If Winston guesses one of these $x$ racquets, he has a $\frac{1}{x}$ probability of guessing the right racquet. We note that there is a $\frac{x}{2015}$ chance of Allen picking a racquet which has that certain number of factors. Therefore, for any number of factors of 5 that Allen picks, there should be a $\frac{1}{x} \times \frac{x}{2015} = \frac{1}{2015}$ chance of picking the right racquet. 
+
+The minimum number of factors of 5 possible is 0. The maximum, in this case, is 4 factors of 5, because $625$, $1250$, and $1875$ have 4 factors of 5 and are in the range, but no such numbers in this range have 5 factors of 5.
+
+We can see how the previous logic works by applying it to 4 factors of 5. There is a $\frac{3}{2015}$ chance of picking one of the 3 racquets with 4 factors of 5 and a $\frac{1}{3}$ chance of Winston guessing the right one if one of those are picked. Thus multiplying $\frac{3}{2015}$ and $\frac{1}{3}$ gives us $\frac{1}{2015}$. Because we add these cases up to get the total probability, we add $\frac{1}{2015}$ for each of the possible number of factors of 5 from 0 to 4, inclusive, or 5 numbers. This gives us an answer of $5 \times \frac{1}{2015} = \boxed{\frac{1}{403}}$.
+\end{solution}
+
+\begin{problem}
+Each minute, a broken robot has a $\frac{2}{3}$ chance of moving forward 1 meter and a $\frac{1}{3}$ chance of moving backward 1 meter. What is the probability that it reaches its destination 3 meters ahead of it before it falls off the cliff 2 meters behind it?
+\end{problem}
+\begin{answer}
+$\boxed{\frac{24}{31}}$
+\end{answer}
+\begin{solution}
+Let $P(x)$ define the probability of moving a net 3 meters forward before moving a net 2 meters back at space $x$ (where the starting space occurs at $x = 0$). We ultimately wish to calculate $P(0)$.
+
+\begin{align*}
+P(0) &= \frac{1}{3}P(-1) + \frac{2}{3}P(1)\\
+P(-1) &= \frac{1}{3}P(-2) + \frac{2}{3}P(0)\\
+P(-2) &= 0\\
+P(1) &= \frac{1}{3}P(0) + \frac{2}{3}P(2)\\
+P(2) &= \frac{1}{3}P(1) + \frac{2}{3}P(3)\\
+P(3) &= 1
+\end{align*}
+Substituting backwards, we get $P(2) = \frac{1}{3}P(1) + \frac{2}{3}$, so
+
+\begin{align*}
+P(1) &= \frac{1}{3}P(0) + \frac{2}{3}(\frac{1}{3}P(1) + \frac{2}{3})\\
+(7/9)P(1) &= \frac{1}{3}P(0) + 4/9\\
+P(1) &= \frac{3}{7}P(0) + \frac{4}{7}
+\end{align*}
+
+Then, using $P(-1) = \frac{2}{3}P(0)$, we get:
+
+\begin{align*}
+P(0) &= \frac{1}{3}\times\frac{2}{3}P(0) + \frac{2}{3}(\frac{3}{7}P(0) + \frac{4}{7})\\
+P(0) &= \frac{2}{9}P(0) + \frac{2}{7}P(0) + \frac{8}{21}\\
+\frac{31}{63}P(0) &= \frac{8}{21}\\
+P(0) &= \boxed{\frac{24}{31}}
+\end{align*}
+
+\end{solution}
+
+\end{document}
