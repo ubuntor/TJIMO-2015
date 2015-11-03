@@ -6,7 +6,7 @@
 
 \usepackage{../tjimo}
 
-% \def\solution{\comment}
+\def\solution{\comment}
 
 \newcommand{\sevenpoints}{Time limit: 45 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Power}}
@@ -387,19 +387,19 @@ $dist(v)$ will represent the shortest distance from the source to $v$. Dijkstra'
 \caption{Dijkstra}
 \begin{algorithmic}
 \ForAll{vertices $v$}
-	\State $dist(v) \gets \infty$ \Comment{This means set $dist(v)$ to be $\infty$.}
-	\State $visited(v) \gets 0$ \Comment{This means set $visited(v)$ to be $0$.}
-    \State $prev(v) \gets -1$ \Comment{This allows us to trace our path backwards to the source.}
+	\State $dist(v) \gets \infty$ \Comment{this means set $dist(v)$ to be $\infty$}
+	\State $visited(v) \gets 0$ \Comment{this means set $visited(v)$ to be $0$}
+    \State $prev(v) \gets -1$ \Comment{this allows us to trace our path backwards to the source}
 \EndFor
-\State $dist(src) \gets 0$ \Comment{Initialize the value of $dist$ for the source.}
+\State $dist(src) \gets 0$ \Comment{initialize the value of $dist$ for the source}
 \While{there exists a vertex $v$ such that $visited(v)=0$}
-	\State Let $v$ be the vertex such that $visited(v)=0$ that minimizes $dist(v)$
+	\State let $v$ be the vertex such that $visited(v)=0$ that minimizes $dist(v)$
     \State $visited(v) \gets 1$ \Comment{Visit the vertex.}
 	\ForAll{neighbors $u$ of $v$}
     	\If{$visited(u) = 0$}
     		\State $alt \gets dist(v) + weight(v, u)$
 			\If{$alt < dist(u)$}
-				\State $dist(u) \gets alt$ \Comment{If we found a different path, update the value of $dist$.}
+				\State $dist(u) \gets alt$ \Comment{if we found a different path, update the value of $dist$}
    	        	\State $prev(u) \gets v$
 			\EndIf
         \EndIf
