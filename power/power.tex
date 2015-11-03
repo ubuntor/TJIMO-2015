@@ -6,86 +6,19 @@
 
 \usepackage{../tjimo}
 
+\def\solution{\comment}
+
 \newcommand{\sevenpoints}{Time limit: 45 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Power}}
 
 \begin{document}
 
-\section{What is a Graph?}
+This power round is divided into three sections. In the first section, the definitions from the Practice Power are reproduced for your convenience.
+In the second section, we explore shortest paths. In the third section, we explore Eulerian circuits. Sections 2 and 3 cover different material;
+you do not need section 2 to complete section 3. It might be wise to split up your team, with  working on section 2 and the other team working
+on section 3.
 
-You might have heard of a graph in your math class as a plot with an $x$ and $y$ axis. Or maybe in science you looked at
-bar graphs and pie graphs. Maybe in history you took a look at line graphs. But the graphs we are going to talk about today
-are none of the above.
-
-\subsection{Some Introduction}
-
-At its core, a \textit{graph} consists of two sets: a group of objects, and a group of connectors that each join two objects.
-
-To gain insight into what a graph is, let's first consider flights that connect airports around the world.
-We depend on airplanes to travel quickly and efficiently. When we want to travel between major cities,
-like between D.C. and Boston, we can often take a single flight to make the trip. Enough people want to travel between
-these two cities for it to be economical to offer a single flight between them.
-
-However, it is not always the case that single-flight trips are economically feasible, either due to lack of demand
-or due to needing to refuel. To travel from London to Yellowstone, for example, one must first stop in Atlanta, hop
-on a connecting flight to Denver, and then finally travel to Yellowstone. Denver and Atlanta are what we call
-hubs, since they are very large airports that accomodate heavy travel loads. To travel between smaller airports, we often
-need to stop at one of these larger hubs.
-
-\begin{center}
-\begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
-\draw (0, 0) node[draw, shape=rectangle] (a) {D.C.};
-\draw (-4, 1) node[draw, shape=rectangle] (b) {Denver};
-\draw (0, -2) node[draw, shape=rectangle] (c) {Atlanta};
-\draw (2, 2) node[draw, shape=rectangle] (d) {Boston};
-\draw (5, 2) node[draw, shape=rectangle] (e) {London};
-\draw (-4, 2) node[draw, shape=rectangle] (f) {Bozeman-Yellowstone};
-\draw (a) -- (b) -- (c) -- (d) -- (e);
-\draw (b) -- (f);
-\draw (c) -- (b);
-\draw (a) -- (d);
-\draw (b) -- (d);
-\draw (a) -- (c);
-\draw (c) -- (e);
-\draw (a) -- (e);
-\end{tikzpicture}
-\end{center}
-
-Our connections between our cities in the graph represent only direct connections between
-cities, but from our diagram, we can still see it is possible to travel between any two
-cities in our graph.
-
-Neither the exact position of each city nor how connections might intersect 
-matters. In other words, the way we draw a graph on paper does not change its properties, and for the most part
-are not useful to us. The following is an equivalent graph:
-
-\begin{center}
-\begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
-\draw (5, 3) node[draw, shape=rectangle] (a) {D.C.};
-\draw (0, 2) node[draw, shape=rectangle] (b) {Denver};
-\draw (1, 4) node[draw, shape=rectangle] (c) {Atlanta};
-\draw (-1, 0) node[draw, shape=rectangle] (d) {Boston};
-\draw (5, 1.5) node[draw, shape=rectangle] (e) {London};
-\draw (3, 0) node[draw, shape=rectangle] (f) {Bozeman-Yellowstone};
-\draw (a) -- (b) -- (c);
-\path (c) edge [bend right=60] (d);
-\draw (d) -- (e);
-\draw (b) -- (f);
-\draw (c) -- (b);
-\draw (a) -- (d);
-\draw (b) -- (d);
-\draw (a) -- (c);
-\draw (c) -- (e);
-\draw (a) -- (e);
-\end{tikzpicture}
-\end{center}
-
-The only characteristics of a graph we care about are the objects (in this case, cities) themselves, which we'll call \textit{vertices},
-and the connections joining the objects, which we'll call \textit{edges}.
-
-\subsection{Definition of a Graph}
-
-We now have the background necessary to present the mathematical definition of a graph:
+\section{Definitions from Practice Power}
 
 \begin{definition}
 \label{def:graph}
@@ -133,39 +66,9 @@ We also have the set of edges
 Given a set $A$, the cardinality $\abs{A}$ denotes the number of elements in $A$.
 \end{definition}
 
-\begin{problem} % problem 1
-Evaluate $\abs{V}$ and $\abs{E}$ for the sets $V$ and $E$ in Definition \ref{def:set}, the definition of the set.
-Note that $\{a,b\}$ counts as one single edge.
-\end{problem}
-
-\begin{solution}
-Answer: $\abs{V} = \abs{E} = \boxed{10}$. \\
-There are 10 vertices and 10 edges in the graph.
-\end{solution}
-
-\begin{problem} % 2
-Draw any graph with 5 vertices and 8 edges.
-\end{problem}
-
-\begin{solution}
-The following graph has 5 vertices and 8 edges.
-\begin{center}
-\begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
-\draw (6, -1) node [vertex] (a) {$a$};
-\draw (6, 1) node [vertex] (b) {$b$};
-\draw (8, 1) node [vertex] (c) {$c$};
-\draw (8, -1) node [vertex] (d) {$d$};
-\draw (10, 0) node [vertex] (e) {$e$};
-\draw (a) -- (b) -- (c) -- (d) -- (a) -- (c) -- (e) -- (d) -- (b);
-\end{tikzpicture}
-\end{center}
-\end{solution}
-
-\subsection{Graph Basics}
-
 \begin{definition}
 \label{def:degree}
-The $degree$ of a vertex is the number of neighbors it has. For vertex $b$ in the following graph, we write $deg(b) = 3$,
+The $degree$ of a vertex is the number of edges that connect that vertex to another. For vertex $b$ in the following graph, we write $deg(b) = 3$,
 meaning the degree of $b$ is 3.
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
@@ -181,24 +84,6 @@ meaning the degree of $b$ is 3.
 \end{tikzpicture}
 \end{center}
 \end{definition}
-
-\begin{problem} % 3
-Show that the total number of edges in a graph is equal to
-\[\frac{1}{2} \cdot \sum_{\text{all vertices $v$}} deg(v).\]
-The symbol $\sum$ means add up $deg(v)$ over all vertices $v$. In the graph in Definition \ref{def:degree},
-\begin{align*}
-\sum_{\text{all vertices $v$}} deg(v) &= deg(a) + deg(b) + deg(c) + deg(d) \\
-&= 2 + 3 + 3 + 2 \\
-&= 10.
-\end{align*}
-\end{problem}
-
-\begin{solution}
-The degree of a vertex represents the total number of edges that include that vertex. When we sum all the degrees together,
-we consider every edge in the graph twice, since each edge contributes to the degrees of two different vertices. Thus, the total number
-of edges in the graph is equal to 
-\[\frac{1}{2} \cdot \sum_{\text{all vertices $v$}} deg(v).\]
-\end{solution}
 
 \begin{definition}
 \label{def:clique}
@@ -217,33 +102,6 @@ Pictured is a clique of 4 vertices, or $K_4$.
 \end{tikzpicture}
 \end{center}
 \end{definition}
-
-\begin{problem} % 4
-Solve each of the following:
-\begin{enumerate}[label=(\alph*)]
-\item How many edges are in the clique of 4 vertices, $K_4$?
-\item How many edges are in the clique of 5 vertices, $K_5$?
-\item In terms of $n$, how many edges are in the clique of $n$ vertices, $K_n$, where $n$ is any positive integer?
-\end{enumerate}
-\end{problem}
-
-\begin{solution} 
-The number of edges in a clique are as follows:
-\begin{enumerate}[label=(\alph*)]
-\item $K_4$ has \boxed{6} edges: $\{a, b\}$, $\{a, c\}$, $\{b, c\}$, $\{a, d\}$, $\{b, d\}$, $\{c, d\}$.
-\item $K_5$ has \boxed{10} edges: $\{a, b\}$, $\{a, c\}$, $\{b, c\}$, $\{a, d\}$, $\{b, d\}$, $\{c, d\}$, $\{a, e\}$, $\{b, e\}$, $\{c, e\}$, $\{d,e\}$.
-\item In general, $K_n$ has
-\[\binom{n}{2} = \boxed{\frac{n \cdot (n - 1)}{2}}\]
-edges. \\
-We need to count the total number of possible ways to choose two different vertices from $n$ total vertices. We have $n$ ways to choose the first vertex
-and $n - 1$ ways to choose the second vertex, but the order in which we choose the vertices doesn't matter (that is, $\{A,B\}$ represents the same edge
-as $\{B, A\}$), so we must divide by 2 to get the correct answer of $\frac{n \cdot (n - 1)}{2}$.
-
-Alternatively, we could have used the previous problem directly and plugged into our formula.
-\end{enumerate}
-\end{solution}
-
-\section{Bipartite Graphs}
 
 \begin{definition}
 \label{def:bipartite}
@@ -274,54 +132,6 @@ We can split the vertices into two sets: $S=\{a,b,c,d\}$ and $T=\{e,f,g,h,i\}$. 
 one in $T$. No edge connects two vertices from $S$, and no edge connects two vertices from $T$.
 \end{definition}
 
-\begin{problem} % 5
-Given a graph $G$, three vertices $a$, $b$, and $c$ in the graph are such that an edge connects $a$ and $b$, an edge connects $b$ and $c$, and an edge
-connects $c$ and $a$. Show that the graph $G$ cannot be bipartite.
-\end{problem}
-
-\begin{solution}
-If $G$ were bipartite, then its vertices can be partitioned into exactly two sets such that the vertices in each set are not connected by an edge.
-this means that $a$ and $b$ are in different sets, $b$ and $c$ are in different sets, and $c$ and $a$ are in different sets. however, this is not possible
-with only two sets, so $g$ must not be bipartite.
-\end{solution}
-
-\begin{problem} % 6
-As a result of the previous problem, bipartite graphs have no $K_3$. However, given a graph $G$ with no $K_3$, must it be bipartite?
-\end{problem}
-
-\begin{solution}
-No. The following graph has no $K_3$, but is not bipartite.
-\begin{center}
-\begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
-\draw (0, 1) node [vertex] (a) {$a$};
-\draw (-0.951, 0.309) node [vertex] (b) {$b$};
-\draw (-0.588, -0.809) node [vertex] (c) {$c$};
-\draw (0.588, -0.809) node [vertex] (d) {$d$};
-\draw (0.951, 0.309) node [vertex] (e) {$e$};
-\draw (a) -- (b) -- (c) -- (d) -- (e) -- (a);
-\end{tikzpicture}
-\end{center}
-If it were bipartite, $a$ would be in a different set as $b$, so it would be in the same set as $c$, and so on, meaning $a$ is in a different set as $a$, a contradiction.
-\end{solution}
-
-\begin{problem}
-Let $n$ be an even integer. What is the maximum number of edges in a bipartite graph with $n$ vertices? Express your answer
-in terms of $n$, and remember to explain your solution! You might find the following fact useful:
-\begin{theorem}[AM-GM]
-\label{thm:am-gm}
-Given two nonnegative numbers $x$ and $y$,
-\[\frac{x + y}{2} \ge \sqrt{x \cdot y}.\]
-\end{theorem}
-\end{problem}
-
-\begin{solution}
-Since the graph is bipartite, we can separate the graph into two sets, $S$ and $T$, such that $\abs{S} + \abs{T} = n$,
-and no edges connect each set's vertices. The maximum number of edges in a graph separated into $S$ and $T$ is $\abs{S} \cdot \abs{T}$. However, by the
-AM-GM Inequality,
-\[\abs{S} \cdot \abs{T} \le \left(\frac{\abs{S} + \abs{T}}{2}\right)^2 \le \boxed{\frac{n^2}{4}}. \]
-We see that this number of edges can be achieved by separating the $n$ vertices into two equally-sized sets.
-\end{solution}
-
 \section{Shortest Paths}
 
 Graphs represent connections between different objects. We might, for example, have different cities connected in some way.
@@ -333,12 +143,41 @@ vertices in our graph, through following some kind of \textit{path}.
 \subsection{Introduction to Paths}
 
 \begin{definition}
+\label{def:walk}
+A \textit{walk} is a sequence of vertices such that every two consecutive vertices in the walk are connected by an edge.
+\end{definition}
+
+\begin{definition}
 \label{def:path}
-A \textit{path} is a sequence of vertices, such that every two consecutive vertices in the graph are connected by an edge.
-All edges in the path must be distinct, and all the vertices must be distinct.
+A \textit{path} is a walk in which all edges in the path are distinct and all the vertices are distinct.
+\end{definition}
+
+\begin{definition}
+\label{def:connected}
+A graph is called \textit{connected} when there is a path between every pair of vertices. For example, the following graph is not connected,
+since there is no path from $a$ to $c$.
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
+\draw (0, 1) node [vertex] (a) {$a$};
+\draw (0, -1) node [vertex] (b) {$b$};
+\draw (2, 0) node [vertex] (c) {$c$};
+\draw (a) -- (b);
+\end{tikzpicture}
+\end{center}
 \end{definition}
 
 \begin{problem} % 1
+What is the minimum number of edges needed for a graph with $n$ vertices to be connected? Remember to explain your answer!
+\end{problem}
+
+\begin{solution}
+We need $\boxed{n-1}$ edges. Our graph begins with $n$ parts that are not connected. An edge can connect at most two of these at a time, so
+$n-1$ edges are necessary to merge $n$ parts.
+\end{solution}
+
+From now on, all graphs we consider will be connected.
+
+\begin{problem} % 2
 In the following graph, answer the questions below.
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
@@ -350,12 +189,12 @@ In the following graph, answer the questions below.
 \end{tikzpicture}
 \end{center}
 \begin{enumerate}[label=(\alph*)]
-\item Is $b,c$ a path?
-\item Is $b,c,d$ a path?
-\item Is $a,c,b$ a path?
-\item Is $b,c,b$ a path?
-\item Is $b,c,d,b$ a path?
-\item Is $b$ a path?
+\item Is $\{b,c\}$ a path? That is, is the walk that starts at $b$ and travels to $c$ a path?
+\item Is $\{b,c,d\}$ a path? That is, is the walk that starts at $b$, goes to $c$, and ends at $d$ a path?
+\item Is $\{a,c,b\}$ a path?
+\item Is $\{b,c,b\}$ a path?
+\item Is $\{b,c,d,b\}$ a path?
+\item Is $\{b\}$ a path?
 \end{enumerate}
 If your answer for any of these was ``no,'' explain why.
 \end{problem}
@@ -363,12 +202,12 @@ If your answer for any of these was ``no,'' explain why.
 \begin{solution}
 From Definition \ref{def:path} of a path,
 \begin{enumerate}[label=(\alph*)]
-\item $b,c$ is a path.
-\item $b,c,d$ is a path.
-\item $a,c,b$ is not a path, since $a$ and $c$ are not connected.
-\item $b,c,b$ is not a path, since $b$ is repeated.
-\item $b,c,d,b$ is not a path, since $b$ is repeated.
-\item $b$ is a path.
+\item $\{b,c\}$ is a path.
+\item $\{b,c,d\}$ is a path.
+\item $\{a,c,b\}$ is not a path, since $a$ and $c$ are not connected.
+\item $\{b,c,b\}$ is not a path, since $b$ is repeated.
+\item $\{b,c,d,b\}$ is not a path, since $b$ is repeated.
+\item $\{b\}$ is a path.
 \end{enumerate}
 \end{solution}
 
@@ -389,7 +228,7 @@ minimized. To travel along an edge in the path, we have to pay the weight of tha
 
 \begin{definition}
 \label{def:shortest-path}
-Given a graph $G$, the \textit{shortest path} $v_0$, $v_1$, $v_2$, $v_3$, $\cdots$, $v_{m-2}$, $v_{m-1}$, $v_m$
+Given a graph $G$, the \textit{shortest path} $\{v_0, v_1, v_2, v_3, \cdots, v_{m-2}, v_{m-1}, v_m\}$
 from vertex $v_0$ to vertex $v_m$ is the path that minimizes
 the sum
 \[w(v_0,v_1) + w(v_1,v_2) + w(v_2, v_3) + \cdots + w(v_{m-2}, v_{m-1}) + w(v_{m-1}, v_{m}).\]
@@ -413,7 +252,7 @@ In the above graph, the shortest path from $a$ to $e$ is $a$, $b$, $c$, $e$. The
 distance from $a$ to $e$ is then 9. No other path can do better.
 \end{definition}
 
-\begin{problem} % 2
+\begin{problem} % 3
 \label{example-computation}
 Determine the shortest path and shortest-path length of each vertex from $a$. List the vertices in increasing order of the distance
 from $a$ to that vertex.
@@ -421,11 +260,11 @@ from $a$ to that vertex.
 
 \begin{solution}
 Shortest paths, in order: \\
-$a$: $a$; length 0 \\
-$b$: $a$, $b$; length 4 \\
-$c$: $a$, $b$, $c$; length 6 \\
-$e$: $a$, $b$, $c$, $e$; length 9 \\
-$d$: $a$, $b$, $c$, $d$; length 11
+$a$: $\{a\}$; length 0 \\
+$b$: $\{a, b\}$; length 4 \\
+$c$: $\{a, b, c\}$; length 6 \\
+$e$: $\{a, b, c, e\}$; length 9 \\
+$d$: $\{a, b, c, d\}$; length 11
 \end{solution}
 
 \begin{definition}
@@ -434,7 +273,7 @@ A \textit{source} is a vertex from which paths begin. In the above problem, $a$ 
 is a single-source algorithm, which means it computes the shortest path from one source to all other vertices.
 \end{definition}
 
-\begin{problem} % 3
+\begin{problem} % 4
 Let $u$ be a vertex immediately prior to vertex $v$ along the shortest path from source $s$ to $v$. Show that the shortest path from $s$ to $v$ must
 pass along a shortest path to $u$ before traversing one final edge from $u$ to $v$.
 \end{problem}
@@ -503,7 +342,7 @@ $e$ & 10 & no
 
 $dist(b) = 4$, which agrees with the actual shortest path distance to $b$.
 
-\begin{problem} % 4
+\begin{problem} % 5
 What is the next vertex we should visit? (Hint: which unvisited vertex has the minimum $dist$?)
 Copy the table in your answer and update it so that three vertices are visited. Does $dist$ of this vertex agree with the actual
 shortest path distance to it, as you computed in Problem \ref{example-computation}?
@@ -527,7 +366,7 @@ $dist(c) = 6$, which agrees with the actual shortest path distance to $c$.
 
 What you should notice is that $dist(v)$ is the actual shortest distance to $v$ for all visited vertices $v$.
 
-\begin{problem} % 5
+\begin{problem} % 6
 Suppose that we have just visited $k$ vertices, where $k > 0$ is some positive integer. Furthermore, suppose that these $k$ vertices
 are the $k$ closest of all the vertices to the source. Show that, of all the unvisited vertices, the vertex $v$ with the minimum $dist(v)$
 is such that $dist(v)$ is equal to the actual shortest distance from the source to $v$. In other words, show that we can visit this vertex
@@ -542,7 +381,7 @@ Therefore, $dist(v)$ must be equal to the least distance from the source to $v$.
 \end{solution}
 
 The previous problem allows us to continue to visit the closest unvisited vertex, until we have visited all the vertices. Once we finish visiting all the vertices,
-$dist(v)$ will represent the shortest distance from the source to $v$. Dijkstra's algorithm in its entirety is outlined below!
+$dist(v)$ will represent the shortest distance from the source to $v$. Dijkstra's algorithm in its entirety is outlined below.
 
 \begin{algorithm}[H]
 \caption{Dijkstra}
@@ -577,22 +416,89 @@ a second! Perhaps in high school, you will code this up yourself and see it in a
 
 \begin{definition}
 \label{def:eulerian-circuit}
-A \textit{walk} is a sequence of vertices in which every pair of consecutive vertices is connected by an edge. Note that this is different from a path: walks are allowed
-to repeat vertices.
-\end{definition}
-
-\begin{definition}
-\label{def:eulerian-circuit}
 An \textit{Eulerian circuit}, named after the Swiss mathematician Leonhard Euler, is a walk that begins and ends on the same vertex and traverses every edge in the
-graph exactly once.
+graph exactly once. In the following graph, one possible Eulerian circuit is $\{a, b, c, d, b, e, d, a\}$.
+\begin{center}
+\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
+\draw (0, 0) node [vertex] (a) {$a$};
+\draw (3, 0) node [vertex] (b) {$b$};
+\draw (3, 3) node [vertex] (c) {$c$};
+\draw (0, 3) node [vertex] (d) {$d$};
+\draw (5, 5) node [vertex] (e) {$e$};
+\draw (a) -- (b) -- (c) -- (d) -- (b) -- (e) -- (d) -- (a);
+\end{tikzpicture}
+\end{center}
+Notice how each edge is traversed exactly once. Not once in one direction and once in the other -- once in total!
 \end{definition}
 
-\begin{problem}
-
+\begin{problem} % 7
+Can any connected graph have an Eulerian circuit? If not, draw a graph that does not have an Eulerian circuit.
 \end{problem}
 
-\subsection{Introduction to Cycles}
+\begin{solution}
+No. The following graph is the simplest graph without an Eulerian circuit.
+\begin{center}
+\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
+\draw (0, 0) node [vertex] (a) {$a$};
+\draw (3, 0) node [vertex] (b) {$b$};
+\draw (a) -- (b);
+\end{tikzpicture}
+\end{center}
+\end{solution}
 
-\subsection{Seven Bridges of K\"{o}nigsberg}
+\begin{problem} % 8
+Show that, if a connected graph has an Eulerian circuit, the degree of every vertex must be even. Remember that the degree of a vertex is the number of edges
+adjacent to it.
+\end{problem}
+
+\begin{solution}
+If a graph has an Eulerian circuit, then for every edge into the vertex in the circuit, there must be an edge leaving it. Therefore, the number of edges adjacent
+to that vertex must be even.
+\end{solution}
+
+\begin{problem}[Seven Bridges of K\"{o}nigsberg] % 9
+The port city of K\"{o}nigsberg in Prussia (now Kaliningrad, Russia) lies on two sides of a large river. In addition, there are two islands within the river
+also part of the city. Seven bridges connect the four land masses, as pictured. Is it possible to walk through the city but cross every bridge exactly once?
+Euler famously solved this problem in 1736; this is his drawing of K\"{o}nigsberg, from his paper ``Solutio problematis ad geometriam situs pertinentis.''
+\begin{center}
+\includegraphics[width=10cm]{bridges.png}
+\end{center}
+\end{problem}
+
+\begin{solution}
+No, it is not possible. The drawing is equivalent to the following graph:
+\begin{center}
+\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
+\draw (0, 0) node [vertex] (a) {$a$};
+\draw (0, 3) node [vertex] (c) {$c$};
+\draw (0, -3) node [vertex] (b) {$b$};
+\draw (4, 0) node [vertex] (d) {$d$};
+\path (a) edge [bend left] (c);
+\path (c) edge [bend left] (a);
+\path (a) edge [bend left] (b);
+\path (b) edge [bend left] (a);
+\draw (a) -- (d);
+\draw (b) -- (d);
+\draw (c) -- (d);
+\end{tikzpicture}
+\end{center}
+The degrees of all vertices is odd, so no Euler circuit exists by the previous problem.
+\end{solution}
+
+\begin{problem} % 10
+In connected graph $G$, every vertex has even degree. Suppose we began a walk at vertex $v$. We get stuck if we enter a vertex that has no outgoing edge
+we haven't yet traversed. Show that it is impossible to get stuck at a vertex other than $v$, and use this fact to show that any connected graph $G$, with
+all vertices having even degree, has an Euler circuit.
+\end{problem}
+
+\begin{solution}
+We can't get stuck because every vertex has even degree. When we enter a vertex, we use up one edge, but since there are an odd number of edges remaining,
+there must be at least one we can leave through. Therefore the walk must end at vertex $v$.
+
+We use this fact to construct any circuit beginning and ending with $v$ for an arbitrary $v$. The graph that remains after removing all the edges in the first circuit
+also has even degree, so we can simply repeat this process. We can combine multiple circuits to create one larger circuit.
+\end{solution}
+
+That concludes the Power Round. We hope you learned something cool!
 
 \end{document}
