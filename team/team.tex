@@ -1,19 +1,38 @@
-\documentclass[11pt]{article}
-\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{asymptote}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{xlop}
 
-\usepackage{../tjimo}
+\setlength{\parindent}{0pt}
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
 
-\newcommand{\sevenpoints}{Time limit: 45 minutes.}
-\newcommand{\righthead}{\fdbox{Round}{Team}}
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{answer}{Answer}
+\newtheorem*{solutionone}{Solution 1}
+\newtheorem*{solutiontwo}{Solution 2}
 
+\def\answer{\comment}
+\def\solution{\comment}
+\def\solutionone{\comment}
+\def\solutiontwo{\comment}
+
+\title{TJIMO Team Round 2015}
+\author{VMT Officers}
+\date{November 14th, 2015}
 \begin{document}
+\maketitle
 
-\section{Formatting}
-Each problem is ranked 1-5 in terms of difficulty.
-
-\section{Algebra}
+\section{Team Round}
 \begin{problem}
-(1.5) (2016azhang) Kangaskhan-Mega knows a move called Double Hit, which hits twice and deals $x$ damage per hit. However, Kangaskhan-Mega also has a special ability that allows it to use each move twice, with the second instance of the move dealing half damage. If Kangaskhan-Mega deals 105 damage in total using Double Hit and its special ability, find $x$.
+(1.5) (2016azhang) Upon reaching level 19, Kangaskhan can learn the move ``Double Hit'', which hits twice and deals $x$ damage per hit. However, upon Mega-Evolving into Kangaskhan-Mega, Kangaskhan gains a special ability that allows it to use each move twice, with the second instance of the move dealing half damage. If Kangaskhan-Mega deals 105 damage in total using Double Hit, find $x$.
 \end{problem}
 
 \begin{answer}
@@ -21,11 +40,23 @@ Each problem is ranked 1-5 in terms of difficulty.
 \end{answer}
 
 \begin{solution}
-If Kangaskhan-Mega uses Double Hit without its special ability, it will deal $2x$ damage. With its special ability, it will deal $x$ additional damage. Thus, $2x + x = 105$, and we get $x = 35$.
+If Kangaskhan-Mega uses Double Hit without its special ability, it will deal $2x$ damage. With its special ability, it will deal $x$ additional damage. Thus, $2x + x = 105$, and we get $x = \boxed{35}$ (which is actually true.)
 \end{solution}
 
 \begin{problem}
-(2) (2016azhang) Cubone is chopping up a cube with side length 3 in. into 27 little cubes with side length 1 in. Find the minimum number of straight cuts this takes, if Cubone can rearrange pieces that have been chopped off in any manner.
+(2.5) (2016skim) In triangle ABC, AB = 12 feet and BC = 10 feet. If the altitude of ABC from side AB is equal to 5 feet, what is the altitude of ABC from side BC in inches?
+\end{problem}
+
+\begin{answer}
+\boxed{72}.
+\end{answer}
+
+\begin{solution}
+The area of a triangle is $\frac{1}{2}*b*h$, where $b$ is a base of a triangle and $h$ is the base's corresponding height. Looking at the base of 5, the area is $\frac{1}{2}*12*5 = 30$. Looking at the other pair, the area is $\frac{1}{2}*10*h$. Thus, $\frac{1}{2}*10*h = 30$, so $h = 6$ feet, or \boxed{72} inches.
+\end{solution}
+
+\begin{problem}
+(2.5) (2016azhang) Cubone is chopping up a cube with side length 3 in. into 27 little cubes with side length 1 in. Find the minimum number of straight cuts this takes, if Cubone can rearrange pieces that have been chopped off in any manner.
 \end{problem}
 
 \begin{answer}
@@ -36,6 +67,17 @@ If Kangaskhan-Mega uses Double Hit without its special ability, it will deal $2x
 Cubone can chop the cube with side length 3 in. into 27 unit cubes with 6 straight cuts; imagine cutting up a Rubik's Cube. Thus we know our answer must be less than or equal to 6. However, note that the unit cube in the center of the 3 in. cube can only be obtained by at least 6 cuts, no matter how we rearrange the leftover pieces. Thus, the minimum number of cuts is 6 cuts.
 \end{solution}
 
+\begin{problem}
+(2.5) (2016skim + 2016azhang) Alan, Allen, Allan, Chang, Cheng, and Ch@ng are standing in line to buy tickets for a movie. However, Allen and Cheng insist on standing next to each other. How many ways can the 6 people stand in line?
+\end{problem}
+
+\begin{answer}
+\boxed{240}.
+\end{answer}
+
+\begin{solution}
+We can think of Allen and Cheng as one person, since they need to be next to each other. This gives us $5! = 120$ ways of arranging them. We also need to multiply by 2 at the end to account for the arrangement of Allen and Cheng: either AllenCheng or ChengAllen. This gives us $120\cdot2 = \boxed{240}$.
+\end{solution}
 
 \begin{problem}
 (3) (2016azhang) Ships Jendy and Sam6 are racing down a 500 km waterway. Jendy is going full speed ahead at 30 km/hr, but the captain of Sam6, Mr. Skim, is currently sleeping and has set the ship Sam6 on autopilot at 20 km/hr. When Mr. Skim wakes up, he instantly increases Sam6's speed to 45 km/hr in an effort to catch up. What is the maximum time in hours Mr. Skim can spend sleeping to be able to catch up to Jendy by the end of the race?
@@ -46,119 +88,19 @@ Cubone can chop the cube with side length 3 in. into 27 unit cubes with 6 straig
 \end{answer}
 
 \begin{solution}
-We have that Jendy finishes in $\frac{500 \text{ km}}{30 \text{ km/hr}} = \frac{50}{3}$ hours, so Sam6 must also finish in $\frac{50}{3}$ hours in order to catch up to Jendy. Let $x$ denote the maximum time in hours that Mr. Skim can spend sleeping. Then, $\frac{50}{3} - x$ denotes the time in hours that Mr. Skim is awake and sailing Sam6 at 45 km/hr. Thus, we have that $20x + 45(\frac{50}{3}-x) = 500$. Solving gives us $x = \fbox{$\frac{107}{13}$}$.
+We have that Jendy finishes in $\frac{500 \text{ km}}{30 \text{ km/hr}} = \frac{50}{3}$ hours, so Sam6 must also finish in $\frac{50}{3}$ hours in order to catch up to Jendy. Let $x$ denote the maximum time in hours that Mr. Skim can spend sleeping. Then, $\frac{50}{3} - x$ denotes the time in hours that Mr. Skim is awake and sailing Sam6 at 45 km/hr. Thus, we have that $20x + 45(\frac{50}{3}-x) = 500$. Solving gives us $x = \boxed{\frac{107}{13}}$.
 \end{solution}
 
 \begin{problem}
-(5) (2016azhang) Compute $\sqrt{7+4\sqrt{3}} - \sqrt{7-4\sqrt{3}}$.
+(3.5) (2016azhang) Pikachu is facing off against Blissey, who has a high special defense. Luckily, Pikachu knows the move Charge Beam, which has a 70 percent chance of boosting Pikachu's special attack by 1 stage. What is the probability that Pikachu gets at least 2 special attack boosts in 3 moves?
 \end{problem}
 
 \begin{answer}
-\boxed{2\sqrt{3}}.
+\boxed{\frac{98}{125}}.
 \end{answer}
 
 \begin{solution}
-Let $x = \sqrt{7+4\sqrt{3}} - \sqrt{7-4\sqrt{3}}$. Then $x^2 = (7+4\sqrt{3}) - 2\sqrt{(7+4\sqrt{3}(7-4\sqrt{3})} + (7-4\sqrt{3}) = 14 - 2\sqrt{1} = 12$. Since $x$ is positive by inspection, we take the positive square root to obtain $x = 2\sqrt{3}$.
-\end{solution}
-
-%-----------------------------------%
-\section{Geometry}
-
-\begin{problem}
-(1.5) (2016skim) What is the area of the figure below, if it is made up of two overlapping squares of side length 10?
-\begin{center}
-\includegraphics[width=9cm]{squares.png}
-\end{center}
-\end{problem}
-
-\begin{answer}
-\boxed{119}.
-\end{answer}
-
-\begin{solution}
-We can view this as a $11\times11$ square with 2 unit squares cut off at the corners. The total area is $(11)(11)-2(1) = 119$.
-\end{solution}
-
-
-\begin{problem}
-(3) (2016skim) If the area of the shaded area, made up of quarter-circles, is $16\pi$, what is the area of the nonshaded area?
-\begin{center}
-\includegraphics[width=9cm]{asteroid.png}
-\end{center}
-\end{problem}
-
-\begin{answer}
-\boxed{64 - 16\pi}.
-\end{answer}
-
-\begin{solution}
-The shaded area is made up of 4 quarter-circles, which is equal to 1 circle of the same radius in area. Let the radius of this circle be $r$. Then $r^{2}\pi = 16\pi$, so $r = 4$. The nonshaded area is thus the area of a square with side length $2r = 8$ minus the shaded area, or $64 - 16\pi$.
-\end{solution}
-
-
-\begin{problem}
-(2.5) (2016skim) If a triangle has an altitude of 12 from a side of 5, what is the altitude from a side of 10?
-\end{problem}
-
-\begin{answer}
-\boxed{6}
-\end{answer}
-
-\begin{solution}
-The area of a triangle is $\frac{1}{2} \cdot b \cdot h$. Looking at the base of 5, the area is
-$\frac{1}{2} \cdot 5 \cdot 12 = 30$. Looking at the other pair, $\frac{1}{2} \cdot 10 \cdot h = 30$, so $h = 6$.
-\end{solution}
-
-%------------------------------%
-\section{Combo}
-\begin{problem}
-(2016azhang) Pikachu is facing off against Blissey, who has a high special defense. Luckily, Pikachu knows the move Charge Beam, which has a 70 percent chance of boosting Pikachu's special attack by 1 stage. 
-
-\begin{enumerate}
-\item (1) If Pikachu uses Charge Beam 3 times, what is the probability that Pikachu's special attack will not be boosted at all?
-\item (2.5) What is the probability that Pikachu gets 2 special attack boosts in 3 moves? 
-\item (2.5) Find the expected number of special attack boosts Pikachu gets in 5 moves.
-\item (4) What is the probability that Pikachu gets at least 2 special attack boosts in 4 moves?
-\end{enumerate}
-\end{problem}
-
-\begin{problem}
-\item (2.5) (2016skim) How many ways can you arrange six (distinct) people in a row, given that (person A) and (person B) have to be next to each other?
-\end{problem}
-
-\begin{answer}
-\boxed{240}
-\end{answer}
-
-\begin{solution}
-We can think of A and B as one person, since they need to be next to each other. This gives us $5! = 120$ ways of arranging them. We also need to multiply by 2 at the end to account for the arrangement of A and B: either AB or BA. This gives us $120\cdot2 = 240$.
-\end{solution}
-
-
-\begin{problem}
-%(4) Kevlin and Kelvin are playing ERS, a card game played with a deck of 52 cards. They randomly split the deck, but if one person gets at least 5 more cards than the other person, the difference is noticeable. (What about 3 players?)
-
-(4) (2016azhang) Kevlin and Kelvin are playing Monopoly with a slight twist. Instead of receiving \$1500 each at the beginning, they will receive a random real amount of money from \$0 to \$2000, determined by a computer. However, if the difference in money between them is over \$1800, they will run the computer randomizer again. What is the probability that they won't have to run the computer randomizer again? (Note: "random real amount of money" implies that \$1989.42425 can be earned; money is not limited to just cents.)
-\end{problem}
-
-\begin{answer}
-\boxed{\frac{99}{100}}.
-\end{answer}
-
-\begin{solution}
-\end{solution}
-
-\section{NT}
-\begin{problem}
-(2) (2016azhang) Candide has 120 pieces of candy. In how many ways can Candide split all of his candies into equally sized pile(s)? (Two examples are 1 pile of 120 pieces, and 20 piles of 6 pieces.)
-\end{problem}
-
-\begin{answer}
-\boxed{16}.
-\end{answer}
-
-\begin{solution}
-Note that the number of piles (or the number of pieces in a pile) can only be a factor of 120. Since each number of piles leads to a unique pile distribution, our answer is just the number of factors of $120 = 2^{3}\cdot3\cdot5$, which is $(3+1)(1+1)(1+1) = 16$.
+Let Y denote the event that Pikachu gets a special attack boost from one use of Charge Beam, and let N denote the event that Pikachu doesn't get a special attack boost from one Charge Beam. Then, to have at least 2 special attack boosts in 3 moves, we need one of the following sequences: YYN, YNY, NYY, or YYY. YYN, YNY, and NYY each have a $(\frac{7}{10})^2\cdot\frac{3}{10}$ probability of happening, while YYY has a $(\frac{7}{10})^3$ probability of happening. Summing the probabilities of all 4 sequences gives us $3\cdot(\frac{7}{10})^2\cdot\frac{3}{10} + (\frac{7}{10})^3 = \boxed{\frac{98}{125}}$.
 \end{solution}
 
 \begin{problem}
@@ -173,30 +115,50 @@ Note that the number of piles (or the number of pieces in a pile) can only be a 
 60300 has a prime factorization of $2^2\cdot3^2\cdot5^2\cdot67$. A factor of 60300 can only be the product of one number in every set of the following: $\{2^0, 2^1, 2^2\}, \{3^0, 3^1, 3^2\}, \{5^0, 5^1, 5^2\}$, and $\{67^0, 67^1\}$. For a factor to be divisible by $30 = 2\cdot3\cdot5$, we must choose $2^1$ or $2^2$ from the first set, $3^1$ or $3^2$ from the second set, and $5^1$ or $5^2$ from the third set; we can choose any number from the last set. Thus, our answer is $2\cdot2\cdot2\cdot2 = 16$.
 \end{solution}
 
-\section{Logic}
 \begin{problem}
-(4) (2018hkang) There are 4 boys who wish to ask Wendy to homecoming, Jeffrey, Jeff, Geoffrey, and Jeh-frey. However, among these 4 boys, there is only one truth-teller; the other three are liars. Only the truth-teller will actually ask Wendy to homecoming. 
-
-Jeffrey says: ``Jeh-frey is telling the truth."
-
-Jeff says: ``Jeffrey is a liar."
-
-Geoffrey says: ``Jeff is a liar."
-
-Jeh-frey says: ``I will ask Wendy to homecoming."
-
-Which boy will ask Wendy to homecoming?
+(4) (2016azhang) Kevlin and Kelvin are playing a game where they normally each start out with 1500 points. However, both of them think 1500 is a boring number, so they decide to each start out with a random real number of points from 0 to 2000, determined by a computer randomizer. However, if the difference in points between them is over 1800, they will run the computer randomizer again. What is the probability that they won't have to run the computer randomizer again? 
 \end{problem}
 
 \begin{answer}
-\boxed{\text{Jeff}}.
+\boxed{\frac{99}{100}}.
 \end{answer}
 
 \begin{solution}
-Assume that Jeffrey is the truth-teller. Then Jeff, Geoffrey, and Jeh-frey must be liars. Truth-teller Jeffrey says that Jeh-frey is telling the truth; but this is false based on our assumption above. Thus, Jeffrey must be a liar.
+We can picture the probability space of Kevlin's and Kelvin's money on a coordinate grid. Take the first quadrant of the Cartesian plane; let the $x$-value denote Kevlin's points and let the $y$-value denote Kelvin's points. The probability space is thus the square with coordinates (0, 0), (2000, 0), (0, 2000), and (2000, 2000). We can then see that the regions where the point difference is over 1800 is the shaded area in the diagram below:
 
-Next, assume that Jeff is the truth-teller. Then Jeffrey, Geoffrey, and Jeh-frey must be liars. Truth-teller Jeff says that Jeffrey is a liar, which is indeed true. Liar Jeffrey says that Jeh-frey is telling the truth, which is indeed false. Liar Geoffrey says that Jeff is a liar, which is indeed false. Finally, Liar Jeh-frey says that he will ask Wendy to homecoming, which is indeed false. Thus, we conclude that Jeff must be the truth-teller.
+\begin{center}
+\includegraphics[width=9cm]{probspace.png}
+\end{center}
+
+The shaded area thus has a total area of two triangles of base 200 and height 200, or a total of $2\cdot\frac{1}{2}\cdot200\cdot200 = 40000$. The total area of the probability space is $2000\cdot2000=400000$. Thus, the probability that we need to run the computer randomizer again is $\frac{40000}{400000} = \frac{1}{100}$. However, we want the probability that we don't need to run the computer randomizer again, which is $1 - \frac{1}{100} = \boxed{\frac{99}{100}}$.
 \end{solution}
 
-\end{document}
+\begin{problem}
+(5) (2016azhang) Let $x^2 = 7 + 4\sqrt{3}$ and $y^2 = 7 - 4\sqrt{3}$. There are then four distinct values of $x-y$. What is the minimum value of these four values?
+\end{problem}
 
+\begin{answer}
+\boxed{-4}.
+\end{answer}
+
+\begin{solution}
+Note that $7 + 4\sqrt{3} = (2 + \sqrt{3})^2$ and $7 - 4\sqrt{3} = (2 - \sqrt{3})^2$. Then, we have $x = \pm(2 + \sqrt{3})$ and $y = \pm(2 - \sqrt{3})$. The four values of $x-y$ are then $2\sqrt{3}$, $4$, $-4$, and $-2\sqrt{3}$, and the minimum of these values is \boxed{-4}.
+\end{solution}
+
+\begin{problem}
+(5) (2016skim + 2016azhang) A shuriken-shaped design is made by cutting off four quarter-circles from the corners of a square of side length 8 inches. A circle is then inscribed in the shuriken, as shown below. Find the area of the shuriken outside the circle, in square inches.
+\begin{center}
+\includegraphics[width=9cm]{shuriken.png}
+\end{center}
+\end{problem}
+
+\begin{answer}
+\boxed{64 - 64\pi + 32\sqrt{2}\pi}.
+\end{answer}
+
+\begin{solution}
+The non-shuriken area is made up of 4 quarter-circles, which is equal to 1 circle of the same radius in area. Let the radius of this circle be $r$. Then $r^{2}\pi = 16\pi$, so $r = 4$. The shuriken area is thus the area of a square with side length $2r = 8$ minus the shaded area, or $64 - 16\pi$.
+
+To solve for the area outside the circle in the shuriken, we need to find the area of the circle. Let the radius of the inner circle be $R$. Consider a diagonal of the square, with length $8\sqrt{2}$. It is made up of $r$, $2R$, and then $r$ again. Thus, $2r + 2R = 8\sqrt{2}$. Solving for $R$ gives $R = 4\sqrt{2} - 4$, and thus the area of the inner circle is $R^2\pi = 48\pi - 32\sqrt{2}\pi$. Subtracting this from the shuriken's area, $64 - 16\pi$, gives us the final answer of \boxed{64 - 64\pi + 32\sqrt{2}\pi}.
+\end{solution}
+\end{document}
