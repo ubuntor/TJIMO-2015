@@ -13,12 +13,24 @@
 
 \begin{document}
 
+<<<<<<< HEAD
 This power round is divided into three sections. In the first section, the definitions from the Practice Power are reproduced for your convenience.
 In the second section, we explore shortest paths. In the third section, we explore Eulerian circuits. Sections 2 and 3 cover different material;
 you do not need section 2 to complete section 3. It might be wise to split up your team, with  working on section 2 and the other team working
 on section 3.
 
 \section{Definitions from Practice Power}
+=======
+This power round is divided into three sections. In the first section, the definitions from the Practice Power are reproduced for your convenience,
+along with some new basic material.
+In the second section, we explore shortest paths. In the third section, we explore Eulerian circuits. Sections 2 and 3 cover different material;
+you do not need section 2 to complete section 3. After you complete section 1, it might be wise to split up your team, with one half working on 
+section 2 and the other half working on section 3.
+
+\section{Definitions}
+
+\subsection{Definitions from Practice power}
+>>>>>>> 18d937e7f8c4132dc13d187f344aa4b3a2fad333
 
 \begin{definition}
 \label{def:graph}
@@ -132,6 +144,7 @@ We can split the vertices into two sets: $S=\{a,b,c,d\}$ and $T=\{e,f,g,h,i\}$. 
 one in $T$. No edge connects two vertices from $S$, and no edge connects two vertices from $T$.
 \end{definition}
 
+<<<<<<< HEAD
 \section{Shortest Paths}
 
 Graphs represent connections between different objects. We might, for example, have different cities connected in some way.
@@ -177,6 +190,45 @@ $n-1$ edges are necessary to merge $n$ parts.
 
 From now on, all graphs we consider will be connected.
 
+=======
+\subsection{New Definitions}
+
+\begin{definition}
+\label{def:walk}
+A \textit{walk} is a sequence of vertices such that every two consecutive vertices in the walk are connected by an edge.
+\end{definition}
+
+\begin{definition}
+\label{def:path}
+A \textit{path} is a walk in which all edges in the path are distinct and all the vertices are distinct.
+\end{definition}
+
+\begin{definition}
+\label{def:connected}
+A graph is called \textit{connected} when there is a path between every pair of vertices. For example, the following graph is not connected,
+since there is no path from $a$ to $c$.
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
+\draw (0, 1) node [vertex] (a) {$a$};
+\draw (0, -1) node [vertex] (b) {$b$};
+\draw (2, 0) node [vertex] (c) {$c$};
+\draw (a) -- (b);
+\end{tikzpicture}
+\end{center}
+\end{definition}
+
+\begin{problem} % 1
+What is the minimum number of edges needed for a graph with $n$ vertices to be connected? Remember to explain your answer!
+\end{problem}
+
+\begin{solution}
+We need $\boxed{n-1}$ edges. Our graph begins with $n$ parts that are not connected. An edge can connect at most two of these at a time, so
+$n-1$ edges are necessary to merge $n$ parts.
+\end{solution}
+
+From now on, all graphs we consider will be connected.
+
+>>>>>>> 18d937e7f8c4132dc13d187f344aa4b3a2fad333
 \begin{problem} % 2
 In the following graph, answer the questions below.
 \begin{center}
@@ -211,7 +263,13 @@ From Definition \ref{def:path} of a path,
 \end{enumerate}
 \end{solution}
 
-\subsection{Dijkstra's Shortest Path Algorithm}
+\section{Dijkstra's Shortest Path Algorithm}
+
+Graphs represent connections between different objects. We might, for example, have different cities connected in some way.
+It takes a certain amount of time to get in between different neighboring cities. Perhaps to travel from D.C. to St. Louis,
+we must either stop at Chicago or Cincinnati along the way. It might be faster to travel through Cincinnati, but it might be
+cheaper to stop at Chicago. Either way, we need to devise some kind of system to determine for us the best way to travel between
+vertices in our graph, through following some kind of path.
 
 In this subsection we explore an algorithm to compute the shortest, or cheapest, path from one vertex to another in a graph.
 Thus, we'll want to assign some kind of value to each edge. For example, it might be the distance between two
@@ -434,6 +492,7 @@ Notice how each edge is traversed exactly once. Not once in one direction and on
 \begin{problem} % 7
 Can any connected graph have an Eulerian circuit? If not, draw a graph that does not have an Eulerian circuit.
 \end{problem}
+<<<<<<< HEAD
 
 \begin{solution}
 No. The following graph is the simplest graph without an Eulerian circuit.
@@ -446,6 +505,20 @@ No. The following graph is the simplest graph without an Eulerian circuit.
 \end{center}
 \end{solution}
 
+=======
+
+\begin{solution}
+No. The following graph is the simplest graph without an Eulerian circuit.
+\begin{center}
+\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
+\draw (0, 0) node [vertex] (a) {$a$};
+\draw (3, 0) node [vertex] (b) {$b$};
+\draw (a) -- (b);
+\end{tikzpicture}
+\end{center}
+\end{solution}
+
+>>>>>>> 18d937e7f8c4132dc13d187f344aa4b3a2fad333
 \begin{problem} % 8
 Show that, if a connected graph has an Eulerian circuit, the degree of every vertex must be even. Remember that the degree of a vertex is the number of edges
 adjacent to it.
