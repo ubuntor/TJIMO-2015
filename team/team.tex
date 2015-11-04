@@ -1,36 +1,23 @@
-\documentclass{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{asymptote}
-\usepackage{verbatim}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\graphicspath{ {images/} }
-\usepackage{xlop}
+\documentclass[11pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
 
-\setlength{\parindent}{0pt}
-\pdfpagewidth 8.5in
-\pdfpageheight 11in
+\usepackage{../tjimo}
 
-\theoremstyle{definition}
-\newtheorem{problem}{Problem}
-\newtheorem*{solution}{Solution}
-\newtheorem*{answer}{Answer}
-\newtheorem*{solutionone}{Solution 1}
-\newtheorem*{solutiontwo}{Solution 2}
-
+\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
 \def\solutionone{\comment}
 \def\solutiontwo{\comment}
+\end{comment}
 
-\title{TJIMO Team Round 2015}
-\author{VMT Officers}
-\date{November 14th, 2015}
+\newcommand{\sevenpoints}{Time limit: 30 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Team}}
+
 \begin{document}
-\maketitle
 
-\section{Team Round}
 \begin{problem}
 (1.5) (2016azhang) Upon reaching level 19, Kangaskhan can learn the move ``Double Hit'', which hits twice and deals $x$ damage per hit. However, upon Mega-Evolving into Kangaskhan-Mega, Kangaskhan gains a special ability that allows it to use each move twice, with the second instance of the move dealing half damage. If Kangaskhan-Mega deals 105 damage in total using Double Hit, find $x$.
 \end{problem}

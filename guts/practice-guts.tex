@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+
+\usepackage{../tjimo}
+
+%\begin{comment}
+\def\answer{\comment}
+\def\solution{\comment}
+\def\solutionone{\comment}
+\def\solutiontwo{\comment}
+%\end{comment}
+
+\newcommand{\sevenpoints}{Time limit: 10 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Practice Guts}}
+
+%%%%%%%%PUT THIS IN PREAMBLE%%%%%%%%%%
+\usepackage{commath}
+%\newcommand\floor[1]{\lfloor#1\rfloor}
+%\newcommand\ceil[1]{\lceil#1\rceil}
+\DeclareRobustCommand{\frac}[3][0pt]{%
+  {\begingroup\hspace{#1}#2\hspace{#1}\endgroup\over\hspace{#1}#3\hspace{#1}}}
+
+\begin{document}
+
+%Practice Guts, Round 1 - Perry
+
+\begin{problem}
+Alfredo rolls a fair, six-sided die. What is the probability that he rolls an odd number?
+\end{problem}
+
+\begin{answer} $\boxed{\frac{1}{2}}$. \end{answer}
+\begin{solution}
+There are six equally likely outcomes: Alfredo can roll a 1, 2, 3, 4, 5, or 6. The odd numbers Alfredo could roll are 1, 3, and 5. So, the probability that he rolls an odd number is $\frac{3}{6} = \boxed{\frac{1}{2}}$.
+\end{solution}
+
+\begin{problem}
+The expression $(2x - 3)(5x + 2)$ can be written as $ax^2 + bx + c$. Find $a + b+ c$.
+\end{problem}
+
+\begin{answer} $\boxed{-7}$. \end{answer}
+\begin{solution}
+We multiply the given expression using the distributive property (or FOIL):
+\begin{align*}
+(2x - 3)(5x + 2) &= 5x(2x - 3) + 2(2x - 3) \\
+&= 10x^2 - 15x + 4x - 6 \\
+&= 10x^2 - 11x - 6.
+\end{align*}
+So, $a = 10$, $b = -11$, and $c = -6$, and $a + b + c = \boxed{-7}$.
+\end{solution}
+
+\begin{problem}
+Simplify the fraction $\displaystyle \frac[5pt]{\frac{12}{33}} {\frac{24}{35}}$.
+\end{problem}
+
+\begin{answer} $\boxed{\frac{35}{66}}$. \end{answer}
+\begin{solution}
+Invert the denominator, prime factor, then cancel:
+\begin{align*}
+\frac[5pt]{\frac{12}{33}} {\frac{24}{35}} &= \frac{12}{33} \frac{35}{24} \\
+&= \frac{2^2 \cdot 3}{3 \cdot 11} \frac{5 \cdot 7}{2^3 \cdot 3} \\
+&= \frac{5 \cdot 7}{2 \cdot 3 \cdot 11} \\
+&= \boxed{\frac{35}{66}}.
+\end{align*}
+\end{solution}
+
+\begin{problem}
+How many factors does $2^{4} \cdot 3^{2} \cdot 4^{3}$ have?
+\end{problem}
+\begin{answer}
+\boxed{33}.
+\end{answer}
+\begin{solution}
+We have to be careful on this problem because we are \textit{not} given the prime factorization of the number. So we rewrite the factorization as
+$$2^{4} \cdot 3^2 \cdot 4^3 = 2^4 \cdot 3^2 \cdot 2^6 = 2^10 \cdot 3^2.$$
+And now we can proceed normally by finding the number of factors as $(10+1)(2+1) = 11\cdot 3 = \boxed{33}$.
+\end{solution}
+
+%Practice Guts, Round 2 - Allen
+
+\begin{problem}Triangle $ABC$ has $AB = 25$ and $BC = 7$. If $\angle C = 90 ^{\circ}$, find the length of $AC$.
+\end{problem}
+
+\begin{answer}
+\boxed{24}.
+\end{answer}
+\begin{solution}
+Using the Pythagorean Theorem on right triangle $ABC$, $(AC)^2 + (BC)^2 = (AB)^2$. Solving for $AC$, $AC = \sqrt{(AB)^2 - (BC)^2} = \sqrt{625 - 49} = \sqrt{576} = \boxed{24}$.
+\end{solution}
+
+\begin{problem}Let $f(x) = 7x - \sqrt{x} + 3$. Compute $f(4)$.
+\end{problem}
+
+\begin{answer} \boxed{29}. \end{answer}
+\begin{solution}
+Substituting $x = 4$, $f(4) = 7 \cdot 4 - \sqrt{4} + 3 = 28 - 2 + 3 = \boxed{29}.$
+\end{solution}
+
+\begin{problem}
+How many squares have all 4 vertices in the array of 16 points below?
+	\tikzstyle{every node}=[circle, draw, fill=black!50, inner sep=0pt, minimum width=4pt]
+	\newline
+	\begin{center}
+	\begin{tikzpicture}
+	\draw (0, 0) node {} (0, 1) node {} (0, 2) node {} (0, 3) node {} (1, 0) node {} (1, 1) node {} (1, 2) node {} (1, 3) node {} (2, 0) node {} (2, 1) node {} (2, 2) node {} (2, 3) node {} (3, 0) node {} (3, 1) node {} (3, 2) node {} (3, 3) node {};
+	\end{tikzpicture}
+	\end{center}
+\end{problem}
+
+%please check
+\begin{answer} \boxed{20}. \end{answer}
+\begin{solution}
+We break down cases based on the slopes of the sides:
+\begin{enumerate}
+\item \emph{Sides are horizontal/vertical.} There are 9 squares of side length 1, 4 of side length 2, and 1 of side length 3, for $9 + 4 + 1 = 14$ total.
+\item \emph{Sides have slope $\pm 1$.} There are 4 such squares.
+\item \emph{Sides have slope $\pm 2, \pm \frac{1}{2}$.} There 2 such squares.
+\end{enumerate}
+Note that no other cases fit in the array of points. Adding these up, there are $14 + 4 + 2 = \boxed{20}$ rectangles.
+\end{solution}
+
+\begin{problem}Express $0.\overline{47} = 0.47474747\ldots$ as a simplified fraction.
+\end{problem}
+
+\begin{answer} $\boxed{\displaystyle \frac{47}{99}}$. \end{answer}
+
+\begin{solution}
+$\displaystyle 0.47474747\ldots = 47(0.01 + 0.0001 + 0.000001 + \ldots)$. Using the expression for an infinite sum, this equals $\displaystyle \frac{0.47}{1 - 0.01} = \boxed{\frac{47}{99}}.$
+\end{solution}
+
+%Practice Guts, Round 3 - Michael
+
+\begin{problem}Compute $25 \times 316484$.
+\end{problem}
+\begin{answer}
+\boxed{7912100}.
+\end{answer}
+\begin{solution}
+We use
+$$25 = \frac{100}{4}$$
+so that
+\begin{align*}
+25 \times 316484 &= \frac{100}{4} \times 316484 \\
+&= 100 \times \frac{316484}{4}
+&= 100 \times 79121
+&= \boxed{7912100}.
+\end{align*}
+\end{solution}
+
+\begin{problem}What is the largest prime factor of $25^2-14^2$?
+\end{problem}
+\begin{answer}
+\boxed{13}.
+\end{answer}
+\begin{solution}
+We use the property
+$$a^2-b^2 = (a+b)(a-b).$$
+So,
+$$25^2-14^2 = (25+14)(25-14) = 39 \cdot 11 = 3 \cdot 11 \cdot 13,$$
+and we see our largest prime factor is $\boxed{13}$.
+
+\end{solution}
+
+\begin{problem}Three consecutive odd integers add up to 27. If I subtract 1 from each of these numbers and multiply them all by 6, what is their new sum?
+\end{problem}
+\begin{answer}
+\boxed{144}.
+\end{answer}
+\begin{solution}
+We can find the three odd integers and perform the operations described by the problem, but there is a faster way. \par
+Instead, why can call the three consecutive odd integers $a, b, c$, so
+$$a+b+c=27.$$
+We then subtract one from each
+$$(a-1)+(b-1)+(c-1)$$
+and then multiply them all by 6,
+$$6(a-1)+6(b-1)+6(c-1)$$
+we can simplify them
+\begin{align*}
+6(a-1)+6(b-1)+6(c-1) &= 6a-6+6b-6+6c-6
+&= 6(a+b+c) - 18
+\end{align*}
+and since we know $a+b+c=27$ from the problem statement, we can substitute that in:
+$$6(27)-18 = \boxed{144}.$$
+\end{solution}
+
+\begin{problem}Rectangle A has side lengths 5 and 4, and Rectangle B has side lengths 7 and 2. What percentage of Rectangle A's area is  Rectangle B's area?
+\end{problem}
+\begin{answer}
+\boxed{70 \%}.
+\end{answer}
+\begin{solution}
+In order to calculate how much of Rectangle A's area Rectangle B makes up, we do
+\begin{align*}
+\text{Percent B of A} &= \frac{\text{Area of Rectangle B}}{\text{Area of Rectangle A}} \times 100 \\
+&= \frac{7 \cdot 2}{5 \cdot 4} \times 100 \\
+&= \frac{14}{20} \times 100 \\
+&= 14 \times 5 \\
+&= \boxed{70 \%}.
+\end{align*}
+\end{solution}
+
+\end{document}

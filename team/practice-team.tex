@@ -1,37 +1,23 @@
-\documentclass{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{asymptote}
-\usepackage{verbatim}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\graphicspath{ {images/} }
-\usepackage{xlop}
+\documentclass[11pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
 
-\setlength{\parindent}{0pt}
-\pdfpagewidth 8.5in
-\pdfpageheight 11in
+\usepackage{../tjimo}
 
-\theoremstyle{definition}
-\newtheorem{problem}{Problem}
-\newtheorem*{solution}{Solution}
-\newtheorem*{answer}{Answer}
-\newtheorem*{solutionone}{Solution 1}
-\newtheorem*{solutiontwo}{Solution 2}
-
+\begin{comment}
 \def\answer{\comment}
-%\def\solution{\comment}
+\def\solution{\comment}
 \def\solutionone{\comment}
 \def\solutiontwo{\comment}
+\end{comment}
 
-\title{TJIMO Practice Team Round 2015}
-\author{VMT Officers}
-\date{November 14th, 2015}
+\newcommand{\sevenpoints}{Time limit: 30 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Practice Team}}
 
 \begin{document}
-\maketitle
 
-\section{Practice Team Round}
 \begin{problem}
 (1) (2016skim) There are 2015 potatoes in a basket. If you can only take out 11 at a time, what is the minimum number of potatoes you can leave in the basket?
 \end{problem}
@@ -157,6 +143,5 @@ Let Y represent the event that Archer hits a bulls-eye of one target, and N repr
 \begin{solution}
 By symmetry, we can cut up the hexagon into 6 equilateral triangles, calculate the area for one triangle, then multiply by 6 to get the total area. Looking at a triangle, the area of the sector is $\frac{1}{6}\cdot\pi\cdot(1)^2 = \frac{\pi}{6}$. The area of the triangle is $1\cdot\frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$. Taking the difference gives us $\frac{\pi}{6} - \frac{\sqrt{3}}{3}$, so the total area is $6\cdot(\frac{\pi}{6} - \frac{\sqrt{3}}{3}) = \boxed{\pi - 2\sqrt{3}}$.
 \end{solution}
-
 
 \end{document}
