@@ -1,8 +1,5 @@
 \documentclass[11pt]{article}
 \usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage[noend]{algpseudocode}
 
 \usepackage{../tjimo}
 
@@ -31,7 +28,7 @@ This is simply finding the remainder when dividing 2015 by 11, which is \boxed{2
 \end{solution}
 
 \begin{problem}
-(1.5) (2016skim) A 8x8x8 cube is cut up into unit cubes, and one is randomly removed. What is the probability that the cube still looks the same from the outside? (Ignore the effects of gravity, i.e. cubes will stay floating.)
+(1.5) (2016skim) A $8 \times 8 \times 8$ cube is cut up into unit cubes, and one is randomly removed. What is the probability that the cube still looks the same from the outside? (Ignore the effects of gravity, i.e. cubes will stay floating.)
 \end{problem}
 
 \begin{answer}
@@ -137,11 +134,11 @@ Let Y represent the event that Archer hits a bulls-eye of one target, and N repr
 \end{problem}
 
 \begin{answer}
-\boxed{\pi-2\sqrt{3}}.
+$\boxed{2\sqrt{3} - \pi}.$
 \end{answer}
 
 \begin{solution}
-By symmetry, we can cut up the hexagon into 6 equilateral triangles, calculate the area for one triangle, then multiply by 6 to get the total area. Looking at a triangle, the area of the sector is $\frac{1}{6}\cdot\pi\cdot(1)^2 = \frac{\pi}{6}$. The area of the triangle is $1\cdot\frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$. Taking the difference gives us $\frac{\pi}{6} - \frac{\sqrt{3}}{3}$, so the total area is $6\cdot(\frac{\pi}{6} - \frac{\sqrt{3}}{3}) = \boxed{\pi - 2\sqrt{3}}$.
+By symmetry, we can cut up the hexagon into 6 equilateral triangles, calculate the area for one triangle, then multiply by 6 to get the total area. Looking at a triangle, the area of the sector is $\frac{1}{6}\cdot\pi\cdot(1)^2 = \frac{\pi}{6}$. The area of the triangle is $1\cdot\frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$. Taking the difference gives us $\frac{\sqrt{3}}{3} - \frac{\pi}{6}$, so the total area is $6\cdot(\frac{\sqrt{3}}{3} - \frac{\pi}{6}) = \boxed{2\sqrt{3} - \pi}$.
 \end{solution}
 
 \end{document}
