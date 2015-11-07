@@ -58,7 +58,17 @@ Note that the number of piles (or the number of pieces in a pile) can only be a 
 % (1.5) (2016skim) 
 What is the area of the figure below, if it is made up of two overlapping squares of side length 10?
 \begin{center}
-\includegraphics[width=6cm]{squares.png}
+\begin{figure}[h]
+\centering
+\begin{asy}
+size(5cm);
+draw((1,0)--(11,0)--(11,10)--(10,10)--(10,11)--(0,11)--(0,1)--(1,1)--cycle, linewidth(1.5));
+label("1", (1,1), SW);
+label("10", (6, 0), S);
+label("10", (0, 6), W);
+\end{asy}
+\end{figure}
+%\includegraphics[width=6cm]{squares.png}
 \end{center}
 \end{problem}
 
@@ -97,7 +107,8 @@ Letting b = the cost of a biology textbook in dollars, c = the cost of a chemist
 \end{solution}
 
 \begin{problem}
-(2.5) (2016skim) A, B, C, D, E, and F want to sit at a round table with 6 equally spaced out seats. However, A and B cannot sit directly across each other. If the rotation of the table doesn't matter (ABCDEF is identical to BCDEFA), how many ways are there for the 6 people to sit?
+%(2.5) (2016skim) 
+A, B, C, D, E, and F want to sit at a round table with 6 equally spaced out seats. However, A and B cannot sit directly across each other. If the rotation of the table doesn't matter (ABCDEF is identical to BCDEFA), how many ways are there for the 6 people to sit?
 \end{problem}
 
 \begin{answer}
@@ -111,9 +122,31 @@ Let's consider the people in order. A can sit anywhere, so there are 6 ways. B c
 \begin{problem}
 % (3-3.5) (2016azhang) 
 The figure below shows an isosceles triangle ABC and its inscribed circle O. Given that OD = 3 and AE = 4, where D is the midpoint of BC and E is the point of tangency of the circle with side AC, find OC. Express your answer in simplest radical form. (Note: Figure not drawn to scale.)
-\begin{center}
-\includegraphics[width=6cm]{triangle.png}
-\end{center}
+%\includegraphics[width=6cm]{triangle.png}
+\begin{figure}[h]
+\centering
+\begin{asy}
+import graph;
+size(6cm);
+pair A=(0, 8), B=(-6, 0), C=(6,0), D=(0, 0);
+draw(A--B--C--cycle, linewidth(1.5));
+draw(A--D, linewidth(1.5));
+draw(Circle((0, 3), 3), linewidth(1.5));
+draw((0,3)--C, linewidth(1.5));
+
+dot((0, 3));
+
+label("$A$", A, NW);
+label("$B$", B, W);
+label("$C$", C, E);
+label("$D$", D, S);
+label("$O$", (0, 3), W);
+label("$E$", (2.4, 4.8), E);
+
+label("3", (0, 1.5), W);
+label("4", (1.2, 6.4), NE);
+\end{asy}
+\end{figure}
 \end{problem}
 
 \begin{answer}
