@@ -3,12 +3,12 @@
 
 \usepackage{../tjimo}
 
-\begin{comment}
+%\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
 \def\solutionone{\comment}
 \def\solutiontwo{\comment}
-\end{comment}
+%\end{comment}
 
 \newcommand{\sevenpoints}{Time limit: 30 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Practice Team}}
@@ -58,8 +58,6 @@ Note that the number of piles (or the number of pieces in a pile) can only be a 
 % (1.5) (2016skim) 
 What is the area of the figure below, if it is made up of two overlapping squares of side length 10?
 \begin{center}
-\begin{figure}[h]
-\centering
 \begin{asy}
 size(5cm);
 draw((1,0)--(11,0)--(11,10)--(10,10)--(10,11)--(0,11)--(0,1)--(1,1)--cycle, linewidth(1.5));
@@ -67,7 +65,6 @@ label("1", (1,1), SW);
 label("10", (6, 0), S);
 label("10", (0, 6), W);
 \end{asy}
-\end{figure}
 %\includegraphics[width=6cm]{squares.png}
 \end{center}
 \end{problem}
@@ -123,8 +120,7 @@ Let's consider the people in order. A can sit anywhere, so there are 6 ways. B c
 % (3-3.5) (2016azhang) 
 The figure below shows an isosceles triangle ABC and its inscribed circle O. Given that OD = 3 and AE = 4, where D is the midpoint of BC and E is the point of tangency of the circle with side AC, find OC. Express your answer in simplest radical form. (Note: Figure not drawn to scale.)
 %\includegraphics[width=6cm]{triangle.png}
-\begin{figure}[h]
-\centering
+\begin{center}
 \begin{asy}
 import graph;
 size(6cm);
@@ -146,7 +142,7 @@ label("$E$", (2.4, 4.8), E);
 label("3", (0, 1.5), W);
 label("4", (1.2, 6.4), NE);
 \end{asy}
-\end{figure}
+\end{center}
 \end{problem}
 
 \begin{answer}
