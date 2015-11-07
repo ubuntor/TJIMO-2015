@@ -137,17 +137,17 @@ Archer is currently doing target practice. Archer is also extremely accurate, as
 Let Y represent the event that Archer hits a bulls-eye of one target, and N represent the event that Archer does not hit the bulls-eye of that target. Then we have three possible courses of events where Archer only hits one bulls-eye: YNN, NYN, and NNY. The probability of each event is $\frac{9}{10}\cdot(\frac{1}{10})^2 = \frac{9}{1000}$, and adding up the probabilities gives $3\cdot\frac{9}{1000} = \boxed{\frac{27}{1000}}$.
 \end{solution}
 
-\begin{problem} Winston and Allen are playing a game with Allen's collection of 2015 tennis racquets that are numbered from 1 to 2015. Allen will choose a tennis racquet at random and will tell Winston the number of factors of 5 it has. Winston wins if he correctly guesses the number on the tennis racquet given what Allen tells him. If Winston guesses one of the racquets which agrees with Allen's statement, what is the probability that Winston will guess the right racquet number? 
+\begin{problem}
+% (3.5) (2016skim) 
+A unit circle is inscribed in a regular hexagon. What is the area between the hexagon and the circle?
 \end{problem}
+
 \begin{answer}
-$\boxed{\frac{1}{403}}$
+$\boxed{2\sqrt{3} - \pi}.$
 \end{answer}
-\begin{solution} We make one important observation. Given any number of factors of 5 Allen gives, say there are $x$ numbers which satisfy this number of factors. If Winston guesses one of these $x$ racquets, he has a $\frac{1}{x}$ probability of guessing the right racquet. We note that there is a $\frac{x}{2015}$ chance of Allen picking a racquet which has that certain number of factors. Therefore, for any number of factors of 5 that Allen picks, there should be a $\frac{1}{x} \times \frac{x}{2015} = \frac{1}{2015}$ chance of picking the right racquet. 
 
-The minimum number of factors of 5 possible is 0. The maximum, in this case, is 4 factors of 5, because $625$, $1250$, and $1875$ have 4 factors of 5 and are in the range, but no such numbers in this range have 5 factors of 5.
-
-We can see how the previous logic works by applying it to 4 factors of 5. There is a $\frac{3}{2015}$ chance of picking one of the 3 racquets with 4 factors of 5 and a $\frac{1}{3}$ chance of Winston guessing the right one if one of those are picked. Thus multiplying $\frac{3}{2015}$ and $\frac{1}{3}$ gives us $\frac{1}{2015}$. Because we add these cases up to get the total probability, we add $\frac{1}{2015}$ for each of the possible number of factors of 5 from 0 to 4, inclusive, or 5 numbers. This gives us an answer of $5 \times \frac{1}{2015} = \boxed{\frac{1}{403}}$.
+\begin{solution}
+By symmetry, we can cut up the hexagon into 6 equilateral triangles, calculate the area for one triangle, then multiply by 6 to get the total area. Looking at a triangle, the area of the sector is $\frac{1}{6}\cdot\pi\cdot(1)^2 = \frac{\pi}{6}$. The area of the triangle is $1\cdot\frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$. Taking the difference gives us $\frac{\sqrt{3}}{3} - \frac{\pi}{6}$, so the total area is $6\cdot(\frac{\sqrt{3}}{3} - \frac{\pi}{6}) = \boxed{2\sqrt{3} - \pi}$.
 \end{solution}
 
 \end{document}
-
