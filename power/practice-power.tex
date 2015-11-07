@@ -33,7 +33,7 @@ these two cities for it to be economical to offer a single flight between them.
 However, it is not always the case that single-flight trips are economically feasible, either due to lack of demand
 or due to needing to refuel. To travel from London to Yellowstone, for example, one must first stop in Atlanta, hop
 on a connecting flight to Denver, and then finally travel to Yellowstone. Denver and Atlanta are what we call
-hubs, since they are very large airports that accomodate heavy travel loads. To travel between smaller airports, we often
+hubs, since they are very large airports that accommodate heavy travel loads. To travel between smaller airports, we often
 need to stop at one of these larger hubs.
 
 \begin{center}
@@ -61,7 +61,7 @@ cities in our graph.
 
 Neither the exact position of each city nor how connections might intersect 
 matters. In other words, the way we draw a graph on paper does not change its properties, and for the most part
-are not useful to us. The following is an equivalent graph:
+is not useful to us. The following is an equivalent graph:
 
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
@@ -206,7 +206,7 @@ of edges in the graph is equal to
 
 \begin{definition}
 \label{def:clique}
-A \textit{clique} is a graph such that there is exactly one edge covering every pair of distince vertices in the graph.
+A \textit{clique} is a graph such that there is exactly one edge covering every pair of distinct vertices in the graph.
 We denote a clique of $n$ vertices as $K_n$.
 Pictured is a clique of 4 vertices, or $K_4$.
 \begin{center}
@@ -280,7 +280,7 @@ one in $T$. No edge connects two vertices from $S$, and no edge connects two ver
 
 \begin{problem}[2 points] % 5
 Given a graph $G$, three vertices $a$, $b$, and $c$ in the graph are such that an edge connects $a$ and $b$, an edge connects $b$ and $c$, and an edge
-connects $c$ and $a$. Show that the graph $G$ cannot be bipartite.
+connects $c$ and $a$. Give an explanation for why the graph $G$ cannot be bipartite.
 \end{problem}
 
 \begin{solution}
@@ -290,7 +290,7 @@ with only two sets, so $g$ must not be bipartite.
 \end{solution}
 
 \begin{problem}[2 points] % 6
-As a result of the previous problem, bipartite graphs have no $K_3$. However, given a graph $G$ with no $K_3$, must it be bipartite?
+As a result of the previous problem, bipartite graphs have no $K_3$. However, given a graph $G$ with no $K_3$, must it be bipartite? If yes, prove why; if no, give a counterexample.
 \end{problem}
 
 \begin{solution}
