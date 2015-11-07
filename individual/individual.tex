@@ -16,44 +16,6 @@
 \begin{document}
 
 \begin{problem}
-Kathleen goes to the supermarket and buys $\$17.04$ worth of food for a party she is having. If she pays the cashier with a 20 dollar bill, how much change will she receive?
-\end{problem}
-\begin{answer}
-$\boxed{\$2.96}$
-\end{answer}
-\begin{solution}
-With some arithmetic, we find that $20 - 17.04 = 2.96$, giving Kathleen her change of $\boxed{\$2.96}$.
-\end{solution}
-
-\begin{problem} Arobin, Brobin, Crobin, and Drobin are standing in a line, from left to right. Arobin is to the left of Crobin, but not directly next to him. Crobin and Drobin have exactly one person between them. Who is farthest to the right?
-\end{problem}
-\begin{answer}
-\boxed{Crobin}
-\end{answer}
-\begin{solution}
-Let's number the positions that the four could be standing in 1 throught 4 and the people as A through D. Because A is to the left of C but not directly next to him, we could have one of three cases:
-
-\begin{enumerate}
-\item A is at 1, C is at 3
-\item A is at 1, C is at 4
-\item A is at 2, C is at 4
-\end{enumerate}
-
-Using the next piece of information, C and D must have a difference of two in their positions. In case (1), D would have to be at 1, which is taken, or 5, which doesn't exist. In case (2), D would have to be at 2, which is possible, or 6, which doesn't exist. In case (3), D would have to be at 2, which is taken, or 6, which doesn't exist. 
-
-Therefore, we only have one working possiblity: for case (2) to happen with A at 1, D at 2, B at 3, and C at 4, which means that the person farthest to the right is C, or \boxed{Crobin}.
-\end{solution}
-\begin{problem}
-Elsa and Anna are making snowballs together. If Elsa can make 3 every minute, and Anna can make 2 every minute, how many snowballs can they make in 10 minutes?
-\end{problem}
-\begin{answer}
-$\boxed{50}$
-\end{answer}
-\begin{solution}
-Together, they make $3 + 2 = 5$ snowballs every minute. Therefore, they make $5\times10 = \boxed{50}$ snowballs in 10 minutes.
-\end{solution}
-
-\begin{problem}
 In the year 2010, Jennifer decided to start collecting stamps. Her collection increases by 7 stamps each year. In 2010, she had 7 stamps, in 2011, she had 14 stamps, and so on. How many stamps will she have in 2020?
 \end{problem}
 \begin{answer}
@@ -61,6 +23,17 @@ $\boxed{77}$
 \end{answer}
 \begin{solution}
 Since she gets 7 more stamps each year, and she has been collecting stamps for 11 years by 2020, the answer is $7 \cdot 11 = \boxed{77}$
+\end{solution}
+
+\begin{problem}Josh divides some number by 7. He adds the quotient, the dividend, and the remainder and gets an answer of 14. What is the value of his original number?
+\end{problem}
+
+\begin{answer}
+$\boxed{10}$
+\end{answer}
+
+\begin{solution}
+The dividend must be less than or equal to 14 else the sum is clearly greater than 14, so we can just try each of the numbers from 1 to 14. We see that 10 divided by 7 gives a quotient of 1 and a remainder of 3, and adding these together gives $10+1+3=14$. The other numbers from 1 to 14 do not give this value, and so we know the only answer must be $\boxed{10}$.
 \end{solution}
 
 \begin{problem}Saroja goes to the grocery store to buy mangoes and watermelons, where the mangoes are equally priced and the watermelons are equally priced. If she buys two mangoes and three watermelons, she will pay \$3.39. If she buys five mangoes and four watermelons, she will pay \$5.50. How much would she need to pay for one watermelon and one mango?
@@ -74,6 +47,25 @@ $\boxed{\$1.27}$
 5m + 4w = 5.50
 \end{align*}
 By adding these two equations, we get $7m + 7w = 8.89$, or $m+w = \boxed{1.27}$
+\end{solution}
+
+\begin{problem} Arobin, Brobin, Crobin, and Drobin are standing in a line, from left to right. Arobin is to the left of Crobin, but not directly next to him. Crobin and Drobin have exactly one person between them. Who is farthest to the right?
+\end{problem}
+\begin{answer}
+\boxed{Crobin}
+\end{answer}
+\begin{solution}
+Let's number the positions that the four could be standing in 1 through 4 and the people as A through D. Because A is to the left of C but not directly next to him, we could have one of three cases:
+
+\begin{enumerate}
+\item A is at 1, C is at 3
+\item A is at 1, C is at 4
+\item A is at 2, C is at 4
+\end{enumerate}
+
+Using the next piece of information, C and D must have a difference of two in their positions. In case (1), D would have to be at 1, which is taken, or 5, which doesn't exist. In case (2), D would have to be at 2, which is possible, or 6, which doesn't exist. In case (3), D would have to be at 2, which is taken, or 6, which doesn't exist. 
+
+Therefore, we only have one working possiblity: for case (2) to happen with A at 1, D at 2, B at 3, and C at 4, which means that the person farthest to the right is C, or \boxed{Crobin}.
 \end{solution}
 
 \begin{problem} A recipe for oreo truffles, which makes 400 truffles, calls for 10 bars of chocolate, 12 packs of oreos, and 16 sticks of cream cheese. If Josh wants to make 200 truffles, what is the sum of the number of bars of chocolate and the number of packs of oreos he will need?
@@ -93,6 +85,19 @@ $\boxed{4}$ feet/sec.
 \end{solution}
 
 \begin{problem}
+A set of the first $n$ odd integers has a sum of 64. How many integers are in the set?
+\end{problem}
+\begin{answer}
+$\boxed{8}$
+\end{answer}
+\begin{solutionone}
+Because the case is so small, we can just keep adding integers until we get 64. We finally get to $1,3,5,7,9,11,13,15$, which we realize adds to 64, as wanted. Therefore this is $\boxed{8}$ integers.
+\end{solutionone}
+\begin{solutiontwo}
+The formula for the sum of the first $n$ odd integers is $n^2$. Therefore, the answer is $\sqrt{64} = \boxed{8}$.
+\end{solutiontwo}
+
+\begin{problem}
 A circle is inscribed into a square with side length 4. What is the area of the circle?
 \end{problem}
 \begin{answer}
@@ -100,6 +105,16 @@ $\boxed{4\pi}$
 \end{answer}
 \begin{solution}
 Since the circle is inscribed in the square, that means it has a radius of 2. Plugging this into the formula for an area of a circle, we get $2^2\times\pi = \boxed{4\pi}$.
+\end{solution}
+
+\begin{problem}
+Elsa and Anna are building a snowman together. If Elsa can build a snowman in 7 hours and Anna can build a snowman in 5 hours, how long (in minutes) would it take them to build one snowman if they worked together?
+\end{problem}
+\begin{answer}
+$\boxed{175}$
+\end{answer}
+\begin{solution}
+Elsa's rate of building a snowman is one snowman in 7 hours, or $\frac{1}{7}$ snowmen per hour. Similarly, Anna's rate of building a snowman is one snowman in 5 hours or $\frac{1}{5}$ snowmen per hour. Adding, their combined rate is therefore $\frac{1}{7} + \frac{1}{5} = \frac{12}{35}$ snowmen per hour if they were always working. Therefore, it would take them $\frac{35}{12}$ hours to build one snowman, or $\boxed{175}$ minutes.
 \end{solution}
 
 \begin{problem} 
@@ -125,16 +140,7 @@ $\boxed{45}$
 Since Aaditaya wants two different toppings, there are $10\times9 = 90$ different combinations. However, since order of the toppings doesn't matter, we double counted all of the possibilities. Therefore, we divide 90 by 2 to get $\boxed{45}$.
 \end{solution}
 
-\begin{problem}
-A set of the first $n$ odd integers has a sum of 64. How many integers are in the set?
-\end{problem}
-\begin{answer}
-$\boxed{8}$
-\end{answer}
-\begin{solution}
-The formula for the sum of the first $n$ odd integers is $n^2$. Therefore, the answer is $\sqrt{64} = \boxed{8}$.
-\end{solution}
-\begin{problem}A triangle with integer side lengths has two sides of length 3 and 4. How many possible lengths are there for the third side of the triangle?
+\begin{problem}A triangle with all integer side lengths has two sides of length 3 and 4. How many possible lengths are there for the third side of the triangle?
 \end{problem}
 \begin{answer}
 $\boxed{5}$
@@ -186,7 +192,7 @@ How many two-digit positive integers have an odd number of factors?
 $\boxed{6}$
 \end{answer}
 \begin{solution}
-We note that only perfect squares have an odd number of factors. There are 6 two-digit squares.
+We note that only perfect squares have an odd number of factors. There are 6 two-digit squares. (Counting the number of factors can be done by prime factorizing, then adding one to each of the exponents and multiplying, therefore for an odd number of factors each exponent of a prime factor must be even.)
 \end{solution}
 
 \begin{problem}
@@ -200,13 +206,13 @@ The probability that she likes the first Etude she hears is $\frac{3}{12}$. Then
 \end{solution}
 
 \begin{problem}
-Franklyn the frog is doing combinatorics problems given to him by Akshaj the combinatorialist. Akshaj gives Franklyn 9 problems in the form: "If Jame has $n$ shirts and $n$ pants, how many unique outfits of 1 shirt and 1 pair of pants can Jame dress up in?" Problem 1 has with $n=1$, Problem 2 has $n=2$, and so on up to Problem 9 has $n=9$. What is the sum of the answers to these 9 problems?
+Franklyn the frog is doing combinatorics problems given to him by Akshaj the combinatorialist. Akshaj gives Franklyn 9 problems in the same form: "If Jame has $n$ shirts and $n$ pants, how many unique outfits of 1 shirt and 1 pair of pants can Jame dress up in?" Problem 1 has with $n=1$, Problem 2 has $n=2$, and so on up to Problem 9 has $n=9$. What is the sum of the answers to these 9 problems?
 \end{problem}
 \begin{answer}
-$\boxed{315}$
+$\boxed{285}$
 \end{answer}
 \begin{solution}
-We see that we can choose 1 of $n$ shirts and 1 of $n$ pants, so there are $n^2$ choices for a single problem. We therefore need to sum $n^2$ from $n=1$ to $n=9$. We could manually sum this, or use the formula $\frac{(n)(n+1)(2n+1)}{6} = \frac{9(10)(21)}{6} =15*21=\boxed{315}$.
+We see that we can choose 1 of $n$ shirts and 1 of $n$ pants, so there are $n^2$ choices for a single problem. We therefore need to sum $n^2$ from $n=1$ to $n=9$. We could manually sum this, or use the formula $\frac{(n)(n+1)(2n+1)}{6} = \frac{9(10)(19)}{6} =15*19=\boxed{285}$.
 \end{solution}
 
 \begin{problem}
@@ -216,16 +222,6 @@ In the land of Darnia, Darnians use the currency of Darns, and they have two kin
 $\boxed{6}$
 \end{answer}
 \begin{solution} We start with the given example of 17 2-Darn bills and 1 3-Darn bill. We note that to change the number of each kind of bill and keep the same total amount of Darns, the only exchange we can make is 3 2-Darn bills for 2 3-Darn bills and vice versa. Therefore, we can count out the possibilities as $(17, 1), (14, 3), (11, 5), (8, 7), (5, 9), (2, 11)$. This is \boxed{6} ways to make 37 Darns.
-\end{solution}
-
-\begin{problem}
-Geoffrey the Geometer is surveying his new plot of land, because he wants to make space for his pet giraffe. If his plot of land is a regular hexagon with side length of 40 meters, and his giraffe needs $400\sqrt{3}$ meters$^2$ of land to roam, how many square meters of land does he have left to build his house on?
-\end{problem}
-\begin{answer}
-$\boxed{2000\sqrt{3}}$ meters$^2$
-\end{answer}
-\begin{solution}
-The total area of his plot of land is $\frac{3}{2}\cdot40^2\cdot\sqrt{3} = 2400\sqrt{3}$ meters$^2$. We then subtract the $400\sqrt{3}$ meters$^2$ of land his giraffe needs, to get $\boxed{2000\sqrt{3}}$ meters$^2$.
 \end{solution}
 
 \begin{problem}
@@ -243,9 +239,12 @@ Hcir the dragon likes to collect gold pieces for his cave. Every day, he collect
 \begin{answer}
 $\boxed{11}$
 \end{answer}
-\begin{solution}
-By the Chicken McNugget theorem, the largest integer that cannot be made with combinations of 3 and 7 is $7\times3 - (7 + 3) = \boxed{11}$
-\end{solution}
+\begin{solutionone}
+We can proceed by trial-and-error, testing each number up to 11, which cannot be made. At this point, we see that we can make 12 through 4 3-pieces, we can make 13 through 2 3-pieces and 1 7-piece, and we can make 14 through 2 7-pieces. Now, with $n\geq4$, for any number of the form $3n$, we can make it entirely of $n$ 3-pieces. Any number of the form $3n+1$, we can make from $(n-2)$ 3-pieces and 1 7-piece. Any number of the form $3n+2$, we can make from $(n-4)$ 3-pieces and 2 7-pieces, which covers all possibilities in $\pmod{3}$. Thus the largest number we can't make is $\boxed{11}$.
+\end{solutionone}
+\begin{solutiontwo}
+By the Frobenius Coin Problem (colloquially known as the Chicken McNugget theorem), the largest integer that cannot be made with combinations of 3 and 7 is $7\times3 - (7 + 3) = \boxed{11}$
+\end{solutiontwo}
 
 \begin{problem} Sam1 lives on a Cartesian coordinate plane at $(1,1)$. He wants to walk to his friend Sam5's house at $(5,5)$, but he can only move either one unit right or one unit up at a time. However, Sam1 cannot move to the point at (2,3) because there is construction there. How many distinct paths can Sam1 take to get to Sam5's house?
 \end{problem}
@@ -254,16 +253,6 @@ $\boxed{40}$
 \end{answer}
 \begin{solution}
 Sam1 must move right 4 times and up 4 times, which is $8 \choose 4$, or $\frac{8!}{4!4!} = 70$ ways. Of these 70 ways, we must subtract the number of ways going through $(2,3)$. This requires us to first arrange 1 right and 2 ups and then arrange 3 rights and 2 ups. This is $3 \choose 2$ multiplied by $5 \choose 2$, or $3 \times 10 = 30$ ways which go through $(2,3)$. Therefore, the total number of possible ways is $70-30 = \boxed{40}$ ways.
-\end{solution}
-
-\begin{problem}
-A walrus and a whale are playing catch with a fish. They both have a $\frac{1}{3}$ chance of catching the fish and a $\frac{2}{3}$ chance of dropping the fish. The game ends whenever one of them drops the fish. What is the probability that the whale will win (meaning the walrus drops the fish first), if the whale is the first one to throw the fish?
-\end{problem}
-\begin{answer}
-$\small\boxed{\frac{3}{4}\normalsize}$
-\end{answer}
-\begin{solution}
-The probability that the walrus does not catch the fish right away is $\frac{2}{3}$. The probability that the walrus does not catch the fish on the second try means that the walrus catches the fish, then the whale catches the fish, and then the walrus does not catch the fish: $\frac{1}{3}\cdot\frac{1}{3}\cdot\frac{2}{3}$. If we continue in this manner (the walrus does not catch the fish on its third try, fourth try, etc.), we can notice that these probabilities form a geometric sequence, where the first term is $\frac{2}{3}$ and we are multiplying by a ratio of $\frac{1}{3}\cdot\frac{1}{3} = \frac{1}{9}$ each time. We can plug these values into the formula for an infinite geometric series, and we get $\frac{\frac{2}{3}}{1 - \frac{1}{9}} = \small\boxed{\frac{3}{4}\normalsize}$
 \end{solution}
 
 \begin{problem}
@@ -299,6 +288,16 @@ We proceed the same way as solution one and get $x^2 - x - 12 = 0$. We can then 
 \end{solutiontwo}
 
 \begin{problem}
+Geoffrey the Geometer is surveying his new plot of land, because he wants to make space for his pet giraffe. If his plot of land is a regular hexagon with side length of 40 meters, and his giraffe needs $400\sqrt{3}$ meters$^2$ of land to roam, how many square meters of land does he have left to build his house on?
+\end{problem}
+\begin{answer}
+$\boxed{2000\sqrt{3}}$ meters$^2$
+\end{answer}
+\begin{solution}
+The total area of his plot of land is $\frac{3}{2}\cdot40^2\cdot\sqrt{3} = 2400\sqrt{3}$ meters$^2$. We then subtract the $400\sqrt{3}$ meters$^2$ of land his giraffe needs, to get $\boxed{2000\sqrt{3}}$ meters$^2$.
+\end{solution}
+
+\begin{problem}
 Let $p$, $q$, and $r$ be real numbers between 0 and 10, inclusive. What is the probability that $p + q + r$ is between 5 and 10, inclusive? Express your answer as a common fraction.
 \end{problem}
 \begin{answer}
@@ -310,16 +309,27 @@ This problem can be solved geometrically. Let C be a set in the 3D-coordinate sp
 Another inequality to analyze is $0 <= p + q + r <= 5$. This produces the same pyramid as the one from before, only now each dimension is halved. The volume of this smaller pyramid is thus ${\frac{1}{2}}^3 * \frac{V}{6} = {V}{48}$. Because the problem asks for the probability that $5 <= p + q + r <= 10$, we subtract the volume of the smaller pyramid from the volume of the larger pyramid: $\frac{V}{6} - \frac{V}{48} = \frac{7V}{48}$. Finally we divide this difference by the volume of C: $\frac{\frac{7V}{48}}{V} = \boxed{\frac{7}{48}}$.
 \end{solution}
 
-\begin{problem} Winston and Allen are playing a game with Allen's collection of 2015 tennis racquets that are numbered from 1 to 2015. Allen will choose a tennis racquet at random and will tell Winston the number of factors of 5 it has. Winston wins if he correctly guesses the number on the tennis racquet given what Allen tells him. If Winston guesses one of the racquets which agrees with Allen's statement, what is the probability that Winston will guess the right racquet number? 
+\begin{problem}
+% (3.5) (2016skim) 
+A unit circle is inscribed in a regular hexagon. What is the area between the hexagon and the circle?
+\end{problem}
+
+\begin{answer}
+$\boxed{2\sqrt{3} - \pi}.$
+\end{answer}
+
+\begin{solution}
+By symmetry, we can cut up the hexagon into 6 equilateral triangles, calculate the area for one triangle, then multiply by 6 to get the total area. Looking at a triangle, the area of the sector is $\frac{1}{6}\cdot\pi\cdot(1)^2 = \frac{\pi}{6}$. The area of the triangle is $1\cdot\frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$. Taking the difference gives us $\frac{\sqrt{3}}{3} - \frac{\pi}{6}$, so the total area is $6\cdot(\frac{\sqrt{3}}{3} - \frac{\pi}{6}) = \boxed{2\sqrt{3} - \pi}$.
+\end{solution}
+
+\begin{problem}
+A walrus and a whale are playing catch with a fish. They both have a $\frac{1}{3}$ chance of catching the fish and a $\frac{2}{3}$ chance of dropping the fish. The game ends whenever one of them drops the fish. What is the probability that the whale will win (meaning the walrus drops the fish first), if the whale is the first one to throw the fish?
 \end{problem}
 \begin{answer}
-$\boxed{\frac{1}{403}}$
+$\small\boxed{\frac{3}{4}\normalsize}$
 \end{answer}
-\begin{solution} We make one important observation. Given any number of factors of 5 Allen gives, say there are $x$ numbers which satisfy this number of factors. If Winston guesses one of these $x$ racquets, he has a $\frac{1}{x}$ probability of guessing the right racquet. We note that there is a $\frac{x}{2015}$ chance of Allen picking a racquet which has that certain number of factors. Therefore, for any number of factors of 5 that Allen picks, there should be a $\frac{1}{x} \times \frac{x}{2015} = \frac{1}{2015}$ chance of picking the right racquet. 
-
-The minimum number of factors of 5 possible is 0. The maximum, in this case, is 4 factors of 5, because $625$, $1250$, and $1875$ have 4 factors of 5 and are in the range, but no such numbers in this range have 5 factors of 5.
-
-We can see how the previous logic works by applying it to 4 factors of 5. There is a $\frac{3}{2015}$ chance of picking one of the 3 racquets with 4 factors of 5 and a $\frac{1}{3}$ chance of Winston guessing the right one if one of those are picked. Thus multiplying $\frac{3}{2015}$ and $\frac{1}{3}$ gives us $\frac{1}{2015}$. Because we add these cases up to get the total probability, we add $\frac{1}{2015}$ for each of the possible number of factors of 5 from 0 to 4, inclusive, or 5 numbers. This gives us an answer of $5 \times \frac{1}{2015} = \boxed{\frac{1}{403}}$.
+\begin{solution}
+The probability that the walrus does not catch the fish right away is $\frac{2}{3}$. The probability that the walrus does not catch the fish on the second try means that the walrus catches the fish, then the whale catches the fish, and then the walrus does not catch the fish: $\frac{1}{3}\cdot\frac{1}{3}\cdot\frac{2}{3}$. If we continue in this manner (the walrus does not catch the fish on its third try, fourth try, etc.), we can notice that these probabilities form a geometric sequence, where the first term is $\frac{2}{3}$ and we are multiplying by a ratio of $\frac{1}{3}\cdot\frac{1}{3} = \frac{1}{9}$ each time. We can plug these values into the formula for an infinite geometric series, and we get $\frac{\frac{2}{3}}{1 - \frac{1}{9}} = \small\boxed{\frac{3}{4}\normalsize}$
 \end{solution}
 
 \begin{problem}
@@ -357,5 +367,4 @@ P(0) &= \boxed{\frac{24}{31}}
 \end{align*}
 
 \end{solution}
-
 \end{document}
