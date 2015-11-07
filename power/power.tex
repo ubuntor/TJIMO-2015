@@ -6,14 +6,12 @@
 
 \usepackage{../tjimo}
 
-\def\solution{\comment}
+% \def\solution{\comment}
 
 \newcommand{\sevenpoints}{Time limit: 45 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Power}}
 
 \begin{document}
-
-\section{What is a Power Round?}
 
 Unlike the other rounds, just getting the answer right is not enough on the Power Round. Make sure you explain your answer and use words
 to describe how you arrived at your answer. In the words of middle school math teachers across the nation -- no work, no credit!
@@ -167,7 +165,7 @@ since there is no path from $a$ to $c$.
 \end{center}
 \end{definition}
 
-\begin{problem} % 1
+\begin{problem}[2 points] % 1
 What is the minimum number of edges needed for a graph with $n$ vertices to be connected? Remember to explain your answer!
 \end{problem}
 
@@ -177,7 +175,7 @@ We need $\boxed{n-1}$ edges. Consider the number of parts that are connected to 
 
 From now on, all graphs we consider will be connected.
 
-\begin{problem} % 2
+\begin{problem}[2 points] % 2
 In the following graph, answer the questions below.
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
@@ -258,7 +256,7 @@ In the above graph, the shortest path from $a$ to $e$ is $a$, $b$, $c$, $e$. The
 distance from $a$ to $e$ is then 9. No other path can do better.
 \end{definition}
 
-\begin{problem} % 3
+\begin{problem}[2 points] % 3
 \label{example-computation}
 Determine the shortest path and shortest-path length of each vertex from $a$. List the vertices in increasing order of the distance
 from $a$ to that vertex.
@@ -279,7 +277,7 @@ A \textit{source} is a vertex from which paths begin. In the above problem, $a$ 
 is a single-source algorithm, which means it computes the shortest path from one source to all other vertices.
 \end{definition}
 
-\begin{problem} % 4
+\begin{problem}[3 points] % 4
 Let $u$ be a vertex immediately prior to vertex $v$ along the shortest path from source $s$ to $v$. Show that the shortest path from $s$ to $v$ must
 pass along a shortest path to $u$ before traversing one final edge from $u$ to $v$.
 \end{problem}
@@ -348,7 +346,7 @@ $e$ & 10 & no
 
 $dist(b) = 4$, which agrees with the actual shortest path distance to $b$.
 
-\begin{problem} % 5
+\begin{problem}[2 points] % 5
 What is the next vertex we should visit? (Hint: which unvisited vertex has the minimum $dist$?)
 Copy the table in your answer and update it so that three vertices are visited. Does $dist$ of this vertex agree with the actual
 shortest path distance to it, as you computed in Problem \ref{example-computation}?
@@ -372,7 +370,7 @@ $dist(c) = 6$, which agrees with the actual shortest path distance to $c$.
 
 What you should notice is that $dist(v)$ is the actual shortest distance to $v$ for all visited vertices $v$.
 
-\begin{problem} % 6
+\begin{problem}[4 points] % 6
 Suppose that we have just visited $k$ vertices, where $k > 0$ is some positive integer. Furthermore, suppose that these $k$ vertices
 are the $k$ closest of all the vertices to the source. Show that, of all the unvisited vertices, the vertex $v$ with the minimum $dist(v)$
 is such that $dist(v)$ is equal to the actual shortest distance from the source to $v$. In other words, show that we can visit this vertex
@@ -437,7 +435,7 @@ graph exactly once. In the following graph, one possible Eulerian circuit is $\{
 Notice how each edge is traversed exactly once. Not once in one direction and once in the other -- once in total!
 \end{definition}
 
-\begin{problem} % 7
+\begin{problem}[2 points] % 7
 Can any connected graph have an Eulerian circuit? If not, draw a graph that does not have an Eulerian circuit.
 \end{problem}
 
@@ -452,7 +450,7 @@ No. The following graph is the simplest graph without an Eulerian circuit.
 \end{center}
 \end{solution}
 
-\begin{problem} % 8
+\begin{problem}[3 points] % 8
 Show that, if a connected graph has an Eulerian circuit, the degree of every vertex must be even. Remember that the degree of a vertex is the number of edges
 adjacent to it.
 \end{problem}
@@ -462,7 +460,7 @@ If a graph has an Eulerian circuit, then for every edge into the vertex in the c
 to that vertex must be even.
 \end{solution}
 
-\begin{problem}[Seven Bridges of K\"{o}nigsberg] % 9
+\begin{problem}[2 points, Seven Bridges of K\"{o}nigsberg] % 9
 The port city of K\"{o}nigsberg in Prussia (now Kaliningrad, Russia) lies on two sides of a large river. In addition, there are two islands within the river
 also part of the city. As pictured, seven bridges connect the four land masses: Two from $A$ to $B$, two from $A$ to $C$, one from $A$ to $D$, one from $B$ to $D$, and one from $C$ to $D$.ß Is it possible to walk through the city but cross every bridge exactly once?
 Euler famously solved this problem in 1736; this is his drawing of K\"{o}nigsberg, from his paper ``Solutio problematis ad geometriam situs pertinentis.''
@@ -491,7 +489,7 @@ No, it is not possible. The drawing is equivalent to the following graph:
 The degrees of all vertices is odd, so no Euler circuit exists by the previous problem.
 \end{solution}
 
-\begin{problem} % 10
+\begin{problem}[4 points] % 10
 In connected graph $G$, every vertex has even degree. Suppose we began a walk at vertex $v$. We get stuck if we enter a vertex that has no outgoing edge
 we haven't yet traversed. Show that it is impossible to get stuck at a vertex other than $v$, and use this fact to show that any connected graph $G$, with
 all vertices having even degree, has an Euler circuit.
