@@ -6,7 +6,7 @@
 
 \usepackage{../tjimo}
 
-\def\solution{\comment}
+% \def\solution{\comment}
 
 \newcommand{\sevenpoints}{Time limit: 45 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Power}}
@@ -172,8 +172,7 @@ What is the minimum number of edges needed for a graph with $n$ vertices to be c
 \end{problem}
 
 \begin{solution}
-We need $\boxed{n-1}$ edges. Our graph begins with $n$ parts that are not connected. An edge can connect at most two of these at a time, so
-$n-1$ edges are necessary to merge $n$ parts.
+We need $\boxed{n-1}$ edges. Consider the number of parts that are connected to each other. We can decrease this number by 1 each time we add an edge by adding an edge between two previously unconnected parts. As our graph begins with $n$ parts that are not connected, and we want to end up with 1 unconnected part, we need $n-1$ edges to merge these $n$ parts into 1.
 \end{solution}
 
 From now on, all graphs we consider will be connected.
@@ -465,7 +464,7 @@ to that vertex must be even.
 
 \begin{problem}[Seven Bridges of K\"{o}nigsberg] % 9
 The port city of K\"{o}nigsberg in Prussia (now Kaliningrad, Russia) lies on two sides of a large river. In addition, there are two islands within the river
-also part of the city. Seven bridges connect the four land masses, as pictured. Is it possible to walk through the city but cross every bridge exactly once?
+also part of the city. As pictured, seven bridges connect the four land masses: Two from $A$ to $B$, two from $A$ to $C$, one from $A$ to $D$, one from $B$ to $D$, and one from $C$ to $D$.ß Is it possible to walk through the city but cross every bridge exactly once?
 Euler famously solved this problem in 1736; this is his drawing of K\"{o}nigsberg, from his paper ``Solutio problematis ad geometriam situs pertinentis.''
 \begin{center}
 \includegraphics[width=20cm]{bridges.png}
