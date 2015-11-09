@@ -6,7 +6,7 @@
 
 \usepackage{../tjimo}
 
-%\def\solution{\comment}
+\def\solution{\comment}
 
 \newcommand{\sevenpoints}{Time limit: 45 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Power}}
@@ -16,9 +16,10 @@
 Unlike the other rounds, just getting the answer right is not enough on the Power Round. Make sure you explain your answer and use words
 to describe how you arrived at your answer. In the words of middle school math teachers across the nation -- no work, no credit!
 
-This power round is divided into three sections. In the first section, the definitions from the Practice Power are reproduced for your convenience.
-In the second section, we explore shortest paths. In the third section, we explore Eulerian circuits. Sections 2 and 3 cover different material;
-you do not need section 2 to complete section 3. It might be wise to split up your team, with one half working on section 2 and the other team working
+This power round is divided into three sections. In the first section, the definitions from the Practice Power are reproduced for your convenience,
+along with some extra definitions that will be useful for you.
+In the second section, we explore Eulerian circuits. In the third section, we explore shortest paths. Sections 2 and 3 cover different material;
+you do not need section 2 to complete section 3. It might be wise to split up your team, with one half working on section 2 and the other half working
 on section 3.
 
 Problems are meant to lead into each other. You may use results from previous problems to help you on later problems!
@@ -141,14 +142,36 @@ one in $T$. No edge connects two vertices from $S$, and no edge connects two ver
 
 \subsection{New Definitions}
 
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
+\draw (0, 0) node[vertex] (a) {$a$};
+\draw (-4, 1) node[vertex] (b) {$b$};
+\draw (0, -2) node[vertex] (c) {$c$};
+\draw (2, 2) node[vertex] (d) {$d$};
+\draw (5, 2) node[vertex] (e) {$e$};
+\draw (-4, 2) node[vertex] (f) {$f$};
+\draw (a) -- (b) -- (c) -- (d) -- (e);
+\draw (b) -- (f);
+\draw (c) -- (b);
+\draw (a) -- (d);
+\draw (b) -- (d);
+\draw (a) -- (c);
+\draw (c) -- (e);
+\draw (a) -- (e);
+\end{tikzpicture}
+\end{center}
+
 \begin{definition}
 \label{def:walk}
 A \textit{walk} is a sequence of vertices such that every two consecutive vertices in the walk are connected by an edge.
+One example walk in the above graph is $\{a, d, b, c, a, e\}$. We can imagine walking along the edges;
+every two consecutive vertices in the graph have an edge connecting them.
 \end{definition}
 
 \begin{definition}
 \label{def:path}
 A \textit{path} is a walk in which all edges in the path are distinct and all the vertices are distinct.
+Our example walk from earlier is not a path since we reach $a$ twice. However, $\{a, d, b, c\}$ is a valid path.
 \end{definition}
 
 \begin{definition}
@@ -165,17 +188,17 @@ since there is no path from $a$ to $c$.
 \end{center}
 \end{definition}
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[2 points] % 1
+\begin{problem}[2 points] % 1
 What is the minimum number of edges needed for a graph with $n$ vertices to be connected? Remember to explain your answer!
-\end{problem}\end{minipage}}
+\end{problem}
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
+\begin{solution}
 We need $\boxed{n-1}$ edges. Consider the number of parts that are connected to each other. We can decrease this number by 1 each time we add an edge by adding an edge between two previously unconnected parts. As our graph begins with $n$ parts that are not connected, and we want to end up with 1 unconnected part, we need $n-1$ edges to merge these $n$ parts into 1.
-\end{solution}\end{minipage}}
+\end{solution}
 
 From now on, all graphs we consider will be connected.
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[2 points] % 2
+\begin{problem}[2 points] % 2
 In the following graph, answer the questions below.
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
@@ -195,9 +218,9 @@ In the following graph, answer the questions below.
 \item Is $\{b\}$ a path?
 \end{enumerate}
 If your answer for any of these was ``no,'' explain why.
-\end{problem}\end{minipage}}
+\end{problem}
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
+\begin{solution}
 From Definition \ref{def:path} of a path,
 \begin{enumerate}[label=(\alph*)]
 \item $\{b,c\}$ is a path.
@@ -207,7 +230,94 @@ From Definition \ref{def:path} of a path,
 \item $\{b,c,d,b\}$ is not a path, since $b$ is repeated.
 \item $\{b\}$ is a path.
 \end{enumerate}
-\end{solution}\end{minipage}}
+\end{solution}
+
+\section{Eulerian Circuits}
+
+\begin{definition}
+\label{def:eulerian-circuit}
+An \textit{Eulerian circuit}, named after the Swiss mathematician Leonhard Euler, is a walk that begins and ends on the same vertex and traverses every edge in the
+graph exactly once. In the following graph, one possible Eulerian circuit is $\{a, b, c, d, b, e, d, a\}$.
+\begin{center}
+\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
+\draw (0, 0) node [vertex] (a) {$a$};
+\draw (3, 0) node [vertex] (b) {$b$};
+\draw (3, 3) node [vertex] (c) {$c$};
+\draw (0, 3) node [vertex] (d) {$d$};
+\draw (5, 5) node [vertex] (e) {$e$};
+\draw (a) -- (b) -- (c) -- (d) -- (b) -- (e) -- (d) -- (a);
+\end{tikzpicture}
+\end{center}
+Notice how each edge is traversed exactly once. Not once in one direction and once in the other -- once in total!
+\end{definition}
+
+\begin{problem}[2 points] % 7
+Can any connected graph have an Eulerian circuit? If not, draw a graph that does not have an Eulerian circuit.
+\end{problem}
+
+\begin{solution}
+No. The following graph is the simplest graph without an Eulerian circuit.
+\begin{center}
+\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
+\draw (0, 0) node [vertex] (a) {$a$};
+\draw (3, 0) node [vertex] (b) {$b$};
+\draw (a) -- (b);
+\end{tikzpicture}
+\end{center}
+\end{solution}
+
+\begin{problem}[3 points] % 8
+Show that, if a connected graph has an Eulerian circuit, the degree of every vertex must be even. Remember that the degree of a vertex is the number of edges
+adjacent to it.
+\end{problem}
+
+\begin{solution}
+If a graph has an Eulerian circuit, then for every edge into the vertex in the circuit, there must be an edge leaving it. Therefore, the number of edges adjacent
+to that vertex must be even.
+\end{solution}
+
+\begin{problem}[2 points, Seven Bridges of K\"{o}nigsberg] % 9
+The port city of K\"{o}nigsberg in Prussia (now Kaliningrad, Russia) lies on two sides of a large river. In addition, there are two islands within the river
+also part of the city. As pictured, seven bridges connect the four land masses: Two from $A$ to $B$, two from $A$ to $C$, one from $A$ to $D$, one from $B$ to $D$, and one from $C$ to $D$.ß Is it possible to walk through the city but cross every bridge exactly once?
+Euler famously solved this problem in 1736; this is his drawing of K\"{o}nigsberg, from his paper ``Solutio problematis ad geometriam situs pertinentis.''
+\begin{center}
+\includegraphics[width=17cm]{bridges.png}
+\end{center}
+\end{problem}
+
+\begin{solution}
+No, it is not possible. The drawing is equivalent to the following graph:
+\begin{center}
+\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
+\draw (0, 0) node [vertex] (a) {$a$};
+\draw (0, 3) node [vertex] (c) {$c$};
+\draw (0, -3) node [vertex] (b) {$b$};
+\draw (4, 0) node [vertex] (d) {$d$};
+\path (a) edge [bend left] (c);
+\path (c) edge [bend left] (a);
+\path (a) edge [bend left] (b);
+\path (b) edge [bend left] (a);
+\draw (a) -- (d);
+\draw (b) -- (d);
+\draw (c) -- (d);
+\end{tikzpicture}
+\end{center}
+The degrees of all vertices is odd, so no Euler circuit exists by the previous problem.
+\end{solution}
+
+\begin{problem}[4 points] % 10
+In connected graph $G$, every vertex has even degree. Suppose we began a walk at vertex $v$. We get stuck if we enter a vertex that has no outgoing edge
+we haven't yet traversed. Show that it is impossible to get stuck at a vertex other than $v$, and use this fact to show that any connected graph $G$, with
+all vertices having even degree, has an Euler circuit.
+\end{problem}
+
+\begin{solution}
+We can't get stuck because every vertex has even degree. When we enter a vertex, we use up one edge, but since there are an odd number of edges remaining,
+there must be at least one we can leave through. Therefore the walk must end at vertex $v$.
+
+We use this fact to construct any circuit beginning and ending with $v$ for an arbitrary $v$. The graph that remains after removing all the edges in the first circuit
+also has even degree, so we can simply repeat this process. We can combine multiple circuits to create one larger circuit.
+\end{solution}
 
 \section{Dijkstra's Shortest Path Algorithm}
 
@@ -256,20 +366,20 @@ In the above graph, the shortest path from $a$ to $e$ is $a$, $b$, $c$, $e$. The
 distance from $a$ to $e$ is then 9. No other path can do better.
 \end{definition}
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[2 points] % 3
+\begin{problem}[2 points] % 3
 \label{example-computation}
 Determine the shortest path and shortest-path length of each vertex from $a$. List the vertices in increasing order of the distance
 from $a$ to that vertex.
-\end{problem}\end{minipage}}
+\end{problem}
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
+\begin{solution}
 Shortest paths, in order: \\
 $a$: $\{a\}$; length 0 \\
 $b$: $\{a, b\}$; length 4 \\
 $c$: $\{a, b, c\}$; length 6 \\
 $e$: $\{a, b, c, e\}$; length 9 \\
 $d$: $\{a, b, c, d\}$; length 11
-\end{solution}\end{minipage}}
+\end{solution}
 
 \begin{definition}
 \label{def:source}
@@ -277,17 +387,18 @@ A \textit{source} is a vertex from which paths begin. In the above problem, $a$ 
 is a single-source algorithm, which means it computes the shortest path from one source to all other vertices.
 \end{definition}
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[3 points] % 4
-Let $u$ be a vertex immediately prior to vertex $v$ along the shortest path from source $s$ to $v$. Show that the shortest path from $s$ to $v$ must
+\begin{problem}[3 points] % 4
+Let $u$ be a vertex immediately prior to vertex $v$ along the shortest path from source $s$ to $v$.
+Give a logical explanation for why the shortest path from $s$ to $v$ must
 pass along a shortest path to $u$ before traversing one final edge from $u$ to $v$.
-\end{problem}\end{minipage}}
+\end{problem}
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
+\begin{solution}
 Suppose for the sake of contradiction that the path to $u$ along the shortest path to $v$ is not the shortest path. This means
 there exists a path to $u$ shorter than the one along the path to $v$. But then there must also exist a shorter path to $v$, along
 the shortest path to $u$ first and then along the edge from $u$ to $v$, which is a contradiction. Then the path to $u$ along the path to $v$
 is a shortest path.
-\end{solution}\end{minipage}}
+\end{solution}
 
 Dijkstra's algorithm involves keeping track of a best known distance, which we'll call $dist(v)$ for each vertex $v$. Initially, $dist(v) = \infty$ for
 all vertices $v$, except for the source $s$ of our graph, for which $dist(s) = 0$.
@@ -346,13 +457,13 @@ $e$ & 10 & no
 
 $dist(b) = 4$, which agrees with the actual shortest path distance to $b$.
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[2 points] % 5
+\begin{problem}[2 points] % 5
 What is the next vertex we should visit? (Hint: which unvisited vertex has the minimum $dist$?)
 Copy the table in your answer and update it so that three vertices are visited. Does $dist$ of this vertex agree with the actual
 shortest path distance to it, as you computed in Problem \ref{example-computation}?
-\end{problem}\end{minipage}}
+\end{problem}
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
+\begin{solution}
 The next vertex we visit should be $c$.
 \begin{center}
 \begin{tabular}{ c | c | c }
@@ -366,23 +477,23 @@ $e$ & 9 & no
 \end{tabular}
 \end{center}
 $dist(c) = 6$, which agrees with the actual shortest path distance to $c$.
-\end{solution}\end{minipage}}
+\end{solution}
 
 What you should notice is that $dist(v)$ is the actual shortest distance to $v$ for all visited vertices $v$.
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[4 points] % 6
+\begin{problem}[4 points] % 6
 Suppose that we have just visited $k$ vertices, where $k > 0$ is some positive integer. Furthermore, suppose that these $k$ vertices
 are the $k$ closest of all the vertices to the source. Show that, of all the unvisited vertices, the vertex $v$ with the minimum $dist(v)$
 is such that $dist(v)$ is equal to the actual shortest distance from the source to $v$. In other words, show that we can visit this vertex
 and make it the $(k+1)$-th visited vertex.
-\end{problem}\end{minipage}}
+\end{problem}
 
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
+\begin{solution}
 $dist(v)$ represents the best distance from the source to $v$ using only visited vertices. Suppose $dist(v)$ wasn't actually the least
 distance from the source to $v$. Then the path must have gone through some unvisited vertex. Call that vertex $u$. However, we assumed $v$ to be the unvisited vertex
 with the least $dist$, so $dist(u) \ge dist(v)$. However, this means the length of the path through $u$ is at least as long as $dist(v)$.
 Therefore, $dist(v)$ must be equal to the least distance from the source to $v$.
-\end{solution}\end{minipage}}
+\end{solution}
 
 The previous problem allows us to continue to visit the closest unvisited vertex, until we have visited all the vertices. Once we finish visiting all the vertices,
 $dist(v)$ will represent the shortest distance from the source to $v$. Dijkstra's algorithm in its entirety is outlined below.
@@ -415,93 +526,6 @@ $dist(v)$ will represent the shortest distance from the source to $v$. Dijkstra'
 Dijkstra's algorithm lets us compute the shortest or cheapest path from one vertex to another extremely quickly -- roughly on the order of the number of edges.
 This means that even in a graph with 100,000 vertices and 100,000 edges a computer program can compute the shortest distance from one vertex to another in a fraction of 
 a second! Perhaps in high school, you will code this up yourself and see it in action.
-
-\section{Eulerian Circuits}
-
-\begin{definition}
-\label{def:eulerian-circuit}
-An \textit{Eulerian circuit}, named after the Swiss mathematician Leonhard Euler, is a walk that begins and ends on the same vertex and traverses every edge in the
-graph exactly once. In the following graph, one possible Eulerian circuit is $\{a, b, c, d, b, e, d, a\}$.
-\begin{center}
-\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
-\draw (0, 0) node [vertex] (a) {$a$};
-\draw (3, 0) node [vertex] (b) {$b$};
-\draw (3, 3) node [vertex] (c) {$c$};
-\draw (0, 3) node [vertex] (d) {$d$};
-\draw (5, 5) node [vertex] (e) {$e$};
-\draw (a) -- (b) -- (c) -- (d) -- (b) -- (e) -- (d) -- (a);
-\end{tikzpicture}
-\end{center}
-Notice how each edge is traversed exactly once. Not once in one direction and once in the other -- once in total!
-\end{definition}
-
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[2 points] % 7
-Can any connected graph have an Eulerian circuit? If not, draw a graph that does not have an Eulerian circuit.
-\end{problem}\end{minipage}}
-
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
-No. The following graph is the simplest graph without an Eulerian circuit.
-\begin{center}
-\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
-\draw (0, 0) node [vertex] (a) {$a$};
-\draw (3, 0) node [vertex] (b) {$b$};
-\draw (a) -- (b);
-\end{tikzpicture}
-\end{center}
-\end{solution}\end{minipage}}
-
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[3 points] % 8
-Show that, if a connected graph has an Eulerian circuit, the degree of every vertex must be even. Remember that the degree of a vertex is the number of edges
-adjacent to it.
-\end{problem}\end{minipage}}
-
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
-If a graph has an Eulerian circuit, then for every edge into the vertex in the circuit, there must be an edge leaving it. Therefore, the number of edges adjacent
-to that vertex must be even.
-\end{solution}\end{minipage}}
-
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[2 points, Seven Bridges of K\"{o}nigsberg] % 9
-The port city of K\"{o}nigsberg in Prussia (now Kaliningrad, Russia) lies on two sides of a large river. In addition, there are two islands within the river
-also part of the city. As pictured, seven bridges connect the four land masses: Two from $A$ to $B$, two from $A$ to $C$, one from $A$ to $D$, one from $B$ to $D$, and one from $C$ to $D$.ß Is it possible to walk through the city but cross every bridge exactly once?
-Euler famously solved this problem in 1736; this is his drawing of K\"{o}nigsberg, from his paper ``Solutio problematis ad geometriam situs pertinentis.''
-\begin{center}
-\includegraphics[width=17cm]{bridges.png}
-\end{center}
-\end{problem}\end{minipage}}
-
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
-No, it is not possible. The drawing is equivalent to the following graph:
-\begin{center}
-\begin{tikzpicture}[very thick,edge from parent/.style={draw,<-},level/.style={sibling distance=30mm/#1}]
-\draw (0, 0) node [vertex] (a) {$a$};
-\draw (0, 3) node [vertex] (c) {$c$};
-\draw (0, -3) node [vertex] (b) {$b$};
-\draw (4, 0) node [vertex] (d) {$d$};
-\path (a) edge [bend left] (c);
-\path (c) edge [bend left] (a);
-\path (a) edge [bend left] (b);
-\path (b) edge [bend left] (a);
-\draw (a) -- (d);
-\draw (b) -- (d);
-\draw (c) -- (d);
-\end{tikzpicture}
-\end{center}
-The degrees of all vertices is odd, so no Euler circuit exists by the previous problem.
-\end{solution}\end{minipage}}
-
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{problem}[4 points] % 10
-In connected graph $G$, every vertex has even degree. Suppose we began a walk at vertex $v$. We get stuck if we enter a vertex that has no outgoing edge
-we haven't yet traversed. Show that it is impossible to get stuck at a vertex other than $v$, and use this fact to show that any connected graph $G$, with
-all vertices having even degree, has an Euler circuit.
-\end{problem}\end{minipage}}
-
-\fbox{\begin{minipage}{0.98	\textwidth}\begin{solution}
-We can't get stuck because every vertex has even degree. When we enter a vertex, we use up one edge, but since there are an odd number of edges remaining,
-there must be at least one we can leave through. Therefore the walk must end at vertex $v$.
-
-We use this fact to construct any circuit beginning and ending with $v$ for an arbitrary $v$. The graph that remains after removing all the edges in the first circuit
-also has even degree, so we can simply repeat this process. We can combine multiple circuits to create one larger circuit.
-\end{solution}\end{minipage}}
 
 That concludes the Power Round. We hope you learned something cool!
 
