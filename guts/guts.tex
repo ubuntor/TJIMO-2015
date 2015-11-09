@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage[paperwidth=8.5in, paperheight=5.5in]{geometry}
 
 \usepackage{../tjimo}
 
@@ -10,7 +10,7 @@
 \def\solutiontwo{\comment}
 \end{comment}
 
-\newcommand{\sevenpoints}{}
+\newcommand{\sevenpoints}{Time limit: 30 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Guts}}
 
 %%%%%%%%PUT THIS IN PREAMBLE%%%%%%%%%%
@@ -23,6 +23,8 @@
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \section*{Set 1}
 
 \begin{problem}
@@ -39,10 +41,10 @@ $$\frac{50}{100} \times 100 = \boxed{50}.$$
 \end{solution}
 
 \begin{problem}
-I had 50 cookies yesterday but now I only have 30. If only two people---my brother, Frank, and my sister, Gabriella---ate my cookies, and I know Frank ate 8 of them, how many did my sister eat?
+I had 50 cookies yesterday but now I only have 30. If only two people—my brother, Frank, and my sister, Gabriella—ate my cookies, and I know Frank ate 8 of them, how many did my sister eat?
 \end{problem}
 \begin{answer}
-\boxed{12}.
+\boxed{12} cookies.
 \end{answer}
 \begin{solution}
 Since I had 50 cookies yesterday and now I only have 30, my siblings ate
@@ -130,10 +132,10 @@ We use the property $a^2-b^2 = (a+b)(a-b)$ so
 $$(733+267)(733-267) = (1000)(466) = \boxed{466000}.$$
 \end{solution}
 
-\begin{problem}In a bizarre world far, far away, an apple is worth three bananas, an orange is worth 8 coconuts, and a coconut is worth 7 bananas. If an apple costs $\$1.50$, how much does an orange cost?
+\begin{problem}In a bizarre world far, far away, an apple is worth three bananas, an orange is worth 8 coconuts, and a coconut is worth 7 bananas. If an apple costs $\$1.50$, how many dollars does an orange cost?
 \end{problem}
 \begin{answer}
-\boxed{26}.
+\boxed{28} dollars.
 \end{answer}
 \begin{solution}
 We write the equations that describe the case of the problem, using $a, b, c, o$ to represent the price of apples, bananas, coconuts, and oranges respectively:
@@ -152,8 +154,8 @@ $$b=\frac{a}{3} = \frac{1.50}{3} = 0.50$$
 Then plug in $b$ to find $c,$
 $$c=7b = 7(0.50) = 3.50.$$
 And finally plug in $c$ to find $o$,
-$$o=8c=8(3.50)=26,$$
-So our final answer is $\boxed{\$ 26}$.
+$$o=8c=8(3.50)=28.$$
+So our final answer is $\boxed{\$ 28}$.
 \end{solution}
 
 
@@ -185,14 +187,13 @@ So $66 \cdot 15$ will be less than 100 and the next multiple will be the first m
 \section*{Set 4}
 
 \begin{problem}
-What is the least number of line segments I need to draw in a circle to separate it into 11 distinct regions?
+How many non-congruent isosceles triangles with positive area and integer side lengths have perimeter 14?
 \end{problem}
 \begin{answer}
-\boxed{4}.
+\boxed{3}.
 \end{answer}
 \begin{solution}
-We can do this by trial and error and logic. \par
-With one line segment, we can get a maximum of two regions. With another line segment, we can cut each of our existing regions once, so we get 2 more regions.
+Note that if the sides of the triangle are $a$, $a$, and $b$, we have $b = 14 - 2a = 2(7 - a)$. Since $0 < b < 14$, $0 < a < 7$. However, the triangle inequality also requires that $a + a > b = 14 - 2a$, so $4a > 14$ and $a \geq 4$ because $a$ is an integer. This leaves the cases $a = 4, 5, 6$, all of which are possible: Triangles with side lengths 4-4-6, 5-5-4, and 6-6-2 are all valid. So, there are \boxed{3} such isosceles triangles.
 \end{solution}
 
 \begin{problem}
@@ -231,48 +232,48 @@ So we can write
 x &\geq 7.
 \end{align*}
 So we have
-$$7 \leq x \leq 14$$
+$$7 \leq x \leq 14.$$
 and we have $x = 7, 8, \cdots, 13, 14$ and $\boxed{8}$ solutions for $x$.
 \end{solution}
 
 \begin{problem}
 A stock began at \$1000. If throughout the year it increased in value by 10\%, then increased by 30\%,
-and finally decreased by 40\%, what was its final value?
+and finally decreased by 40\%, what was its final value in dollars?
 \end{problem}
 \begin{answer}
 \boxed{\$858}. 
 \end{answer}
 \begin{solution}
-The following gives the value of the stock over the year
-$$ \$1000 \times \frac{11}{10} \times \frac{13}{10} \times \times \frac{6}{10} = 11 \times 13 \times 6 = \boxed{\$858}$$
+The following gives the value of the stock over the year:
+$$ \$1000 \times \frac{11}{10} \times \frac{13}{10} \times \frac{6}{10} = 11 \times 13 \times 6 = \boxed{\$858}.$$
 \end{solution}
 
 \eject
 
 \section*{Set 5}
 
-\begin{problem}Three VMT officers can write a lecture in two seconds. How many second would it take 5 VMT officers to write 10 lectures?
+\begin{problem}Three VMT officers can write a lecture in two seconds. How many seconds would it take 5 VMT officers to write 10 lectures?
 \end{problem}
 
 \begin{answer} \boxed{12} seconds. \end{answer}
 \begin{solution}
-Since 3 VMT officers can write a lecture in two seconds, 3 VMT officers write half of a lecture in one second, so 1 VMT officer write $\displaystyle \frac{1}{6}$ of a lecture in one second. So, 5 VMT officers write $\displaystyle \frac{5}{6}$ of a lecture in one second and 5 VMT officers can write 10 lectures in $\displaystyle \frac[5pt]{10}{\frac{5}{6}} = \boxed{12}$ seconds.
+Since 3 VMT officers can write a lecture in two seconds, 3 VMT officers write half of a lecture in one second, so 1 VMT officer writes $\displaystyle \frac{1}{6}$ of a lecture in one second. So, 5 VMT officers write $\displaystyle \frac{5}{6}$ of a lecture in one second and 5 VMT officers can write 10 lectures in $\displaystyle \frac[5pt]{10}{\frac{5}{6}} = \boxed{12}$ seconds.
 \end{solution}
 
-\begin{problem}Fill in the blank. Find the next term in the following sequence: $1, \frac{3}{2}, \frac{7}{4}, \frac{15}{8}, \frac{31}{16}, \_\_\_\_.$
+\begin{problem}Fill in the blank in the following sequence: $1, \frac{3}{2}, \frac{7}{4}, \frac{15}{8}, \frac{31}{16}, \underline{\phantom{aaaa}}.$
 \end{problem}
 
 \begin{answer} $\boxed{\displaystyle \frac{63}{32}}$. \end{answer}
 \begin{solution}
-Notice that the $n^{\text{th}}$ term of the series is given by $\displaystyle 2 - \frac{1}{2^{n-1}}$. The next term is the $6^{\text{th}}$ term, so it is $\displaystyle 2 - \frac{1}{2^{5}} = 2 - \frac{1}{32} = \frac{64 - 1}{32} = \boxed{\frac{63}{32}}$.
+Notice that the $n^{\text{th}}$ term of the sequence is given by $\displaystyle 2 - \frac{1}{2^{n-1}}$. The next term is the $6^{\text{th}}$ term, so it is $\displaystyle 2 - \frac{1}{2^{5}} = 2 - \frac{1}{32} = \frac{64 - 1}{32} = \boxed{\frac{63}{32}}$.
 \end{solution}
 
-\begin{problem} Samel is a crazy kid who is only happy if he has his favorite number of camels. Four of these are purple and the others are white. Samel knows when he has his favorite number of camels, three times the number of white camels equals the sum of the number of white camels and the total number of camels. What is Samel's favorite number of camels?
+\begin{problem} Samel is a crazy kid who is only happy if he has his favorite number of camels. Four of these are purple, and the others are white. Samel knows that when he has his favorite number of camels, three times the number of white camels equals the sum of the number of white camels and the total number of camels. What is Samel's favorite number of camels?
 \end{problem}
 
 \begin{answer} \boxed{8} camels. \end{answer}
 \begin{solution}
-Let $x$ be the number of camels. Then, there are 4 purple camels and $x - 4$ white camels. Writing the condition given, $3(x - 4) = x - 4 + x$. Solving, $x = 3 \cdot 4 - 2 = \boxed{8}$ camels.
+Let $x$ be the number of camels. Then, there are 4 purple camels and $x - 4$ white camels. Writing the condition given, $3(x - 4) = x - 4 + x$. Solving, $x = 3 \cdot 4 - 4 = \boxed{8}$ camels.
 \end{solution}
 
 \begin{problem} Compute the number of factors of 900.
@@ -293,14 +294,7 @@ Note that $900 = 2^2 \cdot 3^2 \cdot 5^2$, so it has $(2 + 1)(2 + 1)(2 + 1) = \b
 \boxed{37}.
 \end{answer}
 \begin{solution}
-We can write a system of modular arithmetic equations to describe the problem, calling our number $x$:
-$$ \begin{array}{ll}
-              	x \equiv 2 \pmod{7}\\
-              	x \equiv 1 \pmod{9}
-            	\end{array}
-.
-$$
-We can use the Chinese remainder theorem to solve this system, but we can also use another technique. We can just list out all numbers which satisfy remainder 2 when divided by 7, and remainder 1 when divided by 9, and find the smallest number that appears on both lists.
+We can list out all numbers which satisfy remainder 2 when divided by 7, and remainder 1 when divided by 9, and find the smallest number that appears on both lists.
 \begin{align*}
 2, 9, 16, 23, 30, \underline{37} \\
 1, 10, 19, 28, \underline{37}
@@ -311,28 +305,28 @@ So our answer is $\boxed{37}$.
 \begin{problem}On a $5 \times 7$ grid, Charles can only move upwards or to the right and can only move along gridlines. In how many ways can he move from the lower left corner to the top right corner?
 \end{problem}
 \begin{answer}
-\boxed{792}.
+\boxed{792} ways.
 \end{answer}
 \begin{solution}
 We know in order to get from corner to corner, Charles will have to move right 5 times, and move up 7 times. Therefore, we can think of his sequence of steps from going from corner to corner as a sequence of 5 R's and 7 U's. This is just
 $$\frac{(5+7)!}{5!7!}=\frac{12!}{5!7!} = \frac{12 \cdot 11 \cdot 10 \cdot 9 \cdot 8}{5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = \boxed{792}.$$
 \end{solution}
 
-\begin{problem}What are the last two digits of $7^{1685}$?
+\begin{problem}What are the last two digits of $7^{2015}$?
 \end{problem}
 \begin{answer}
-\boxed{07}. The leading zero is necessary.
+\boxed{43}.
 \end{answer}
 \begin{solution}
 We begin by listing the last two digits of some smaller powers of 7.
 \begin{align*}
-7^1 &= 7 \\
+7^1 &= 07 \\
 7^2 &= 49 \\
 7^3 &= 43 \\
 7^4 &= 01 \\
 7^5 &= 07
 \end{align*}
-So we see the last two digits of seven repeat every four powers. 1685 has a remainder of 1 when divided by 4, so our answer is $\boxed{07}$. (The leading 0 is important!)
+We see that the last two digits of seven repeat every four powers. 2015 has a remainder of 3 when divided by 4, so our answer is $\boxed{43}$.
 \end{solution}
 
 \begin{problem}If $3^{2x-4} = 4$, what is the value of $3^{x}$?
@@ -356,14 +350,16 @@ We now see we can isolate  $3^{x}$ and thus solve for it.
 
 \eject
 
+\pdfpageheight=11in
+
 \section*{Set 7}
 
-\begin{problem}  Shya LeBuff is raising farm animals, but only has mos and joes. A \emph{mo} has 2 heads and a \emph{joe} has 3 heads. A punch is worth two points and a kick is worth 3. If Shya has 29 animals and these animals have 71 heads total, what is the absolute value of the difference between the number of mos and the number of joes on Shya LeBuff's farm?
+\begin{problem}  Bo Schmoe is raising farm animals, but only has mos and joes. A \emph{mo} has 2 heads and a \emph{joe} has 3 heads. If Bo has 29 animals and these animals have 71 heads total, what is the absolute value of the difference between the number of mos and the number of joes on Bo Schmoe's farm?
 \end{problem}
 
 \begin{answer} \boxed{3}. \end{answer}
 \begin{solution}
-Let Shya have $x$ mos and $y$ joes. Then, we can set up the system
+Let Bo have $x$ mos and $y$ joes. Then, we can set up the system
 \begin{align*}
 x + y &= 29 \\
 2x + 3y &= 71
@@ -402,6 +398,8 @@ Note that we have 2 E's, 2 F's, and all other letters are distinct. So, the numb
 \end{solution}
 
 \eject
+
+\pdfpageheight=5.5in
 
 \section*{Set 8}
 
@@ -524,12 +522,12 @@ We see that $\sqrt{10}$ rounds down to 3 because $3.5^2 = 12.25$ so our answer i
 	\end{center}
 \end{problem}
 
-\begin{answer} $\boxed{\displaystyle \frac{53}{2}}$. \end{answer}
+\begin{answer} $\boxed{31}$. \end{answer}
 \begin{solution}
 We consider the rectangle with vertices $(-4, -3), (-4, 4), (5, 4),$ and $(5, -3)$. The area of the shaded area is the area of this rectangle minus the areas that are not shaded. These areas are as follows:
 \begin{itemize}
 	\item The triangle with vertices $(-4, -3), (-4, 2),$ and $(-3, 3)$ has area $\frac{1}{2} 1 \cdot 5 = \frac{5}{2}$.
-	\item The triangle with vertices $(-4, 2), (-4, 4),$ and $(-3, 4)$ has area $\frac{1}{2} 1 \cdot 3 = \frac{3}{2}$.
+	\item The triangle with vertices $(-4, 2), (-4, 4),$ and $(-3, 4)$ has area $\frac{1}{2} 1 \cdot 2 = 1$.
 	\item The triangle with vertices $(-3, 4), (-2, 4),$ and $(-2, 3)$ has area $\frac{1}{2} 1 \cdot 1 = \frac{1}{2}$.
 	\item The trapezoid with vertices $(-2, 4), (0, 4), (0, -1),$ and $(-2, 3)$ has area $\frac{1}{2} 2(1 + 5) = 6$.
 	\item The triangle with vertices $(0, 4), (4, 4),$ and $(0, -1)$ has area $\frac{1}{2} 4 \cdot 5 = 10$.
@@ -537,7 +535,7 @@ We consider the rectangle with vertices $(-4, -3), (-4, 4), (5, 4),$ and $(5, -3
 	\item The triangle with vertices $(3, 0), (5, 0),$ and $(5, -2)$ has area $\frac{1}{2} 2 \cdot 2 = 2$,
 	\item The triangle with vertices $(5, -2), (5, -3),$ and $(-3, -3)$ has area $\frac{1}{2} 8 \cdot 1 = 4$.
 \end{itemize}
-Subtracting the sum of these areas from that of the rectangle, the area of the shaded region is $\displaystyle 9 \cdot 7 - (\frac{5}{2} + \frac{3}{2} + \frac{1}{2} + 6 + 10 + 6 + 2 + 4) = 63 - 36 - \frac{1}{2} =\boxed{\frac{53}{2}}$.
+Subtracting the sum of these areas from that of the rectangle, the area of the shaded region is $\displaystyle 9 \cdot 7 - (\frac{5}{2} + 1 + \frac{1}{2} + 6 + 10 + 6 + 2 + 4) = 63 - 32 =\boxed{31}$.
 \end{solution}
 
 \begin{problem}The time is now 4:00 on an analog clock (a normal clock with hands). In how many minutes will the minute and hour hands of this clock be exactly together? Give your answer to the nearest minute. %variation would be the time is now 4:00 and the minute hand is 120 degrees behind the hour hand. At what time will the minute hand be 120 degrees ahead of the hour hand?
@@ -547,18 +545,18 @@ Subtracting the sum of these areas from that of the rectangle, the area of the s
 $\boxed{22}$ minutes.
 \end{answer}
 \begin{solution}
-At 4:00, the hour hand is $120 \deg$ ahead of the minute hand. Since the rate of the minute hand is $360 \deg / 60 \text{min} = 6 \deg / \text{min}$ and the rate of the hour hand is $30 \deg / 60 \text{min}= \frac{1}{2} \deg / \text{min}$, the minute hand ``catches up'' at a rate of
-$$6 \deg / \text{min}-\frac{1}{2} \deg \text{min} = \frac{11}{2} \deg / \text{min}$$
-So the time it takes the minute hand to close the $120 \deg$ gap is
-$$\frac{120 \deg}{\frac{11}{2} \deg / \text{min}} = \frac{240}{11} \text{min} = 21 \frac{9}{11} \text{min}.$$
-Thus our answer is $\boxed{22}$ minutes.
+At 4:00, the hour hand is $12^{\circ}$ ahead of the minute hand. Since the rate of the minute hand is $360^{\circ} / 60 \text{min} = 6 ^{\circ} / \text{min}$ and the rate of the hour hand is $30 ^{\circ} / 60 \text{min}= \frac{1}{2} ^{\circ} / \text{min}$, the minute hand ``catches up'' at a rate of
+$$6 ^{\circ} / \text{min}-\frac{1}{2} ^{\circ} \text{min} = \frac{11}{2} ^{\circ} / \text{min}$$
+So the time it takes the minute hand to close the $120 ^{\circ}$ gap is
+$$\frac{120 ^{\circ}}{\frac{11}{2} ^{\circ} / \text{min}} = \frac{240}{11} \text{min} = 21 \frac{9}{11} \text{min}.$$
+Rounding to the nearest minute, our answer is $\boxed{22}$ minutes.
 \end{solution}
 
 \begin{problem}Evaluate $1\cdot2^{0} + 2\cdot2^1 + 3\cdot2^2 +\cdots+12\cdot2^{11}$
 \end{problem}
 
 \begin{answer}
-\boxed{45059}.
+\boxed{45057}.
 \end{answer}
 \begin{solution}
 We set the sum equal to $S$. If we multiply $S$ by 2,
@@ -568,11 +566,11 @@ S = 1\cdot2^{0} + 2\cdot2^1 + 3\cdot2^2 +\cdots+12\cdot2^{11} \\
 \end{align*}
 If we subtract the original equation from the second one, we see that we can get some terms and a geometric sequence, which we can easily calculate:
 \begin{align*}
-2S-S=S &=1 \cdot - (2^1+2^2+\cdots+2^11)+2^{12} \\
-&= 12\cdot 2^{12}+1 - (\frac{2(2^11-1)}{2-1}) \\
-&= 12\cdot 2^{12}+1-2^{12}+2 \\
-&= 11 \cdot 2^{12} +3 \\
-&= 11(4096) +3 = 45056+3 = \boxed{45059}.
+2S-S=S &= -(2^0 + 2^1+2^2+\cdots+2^{11})+12 \cdot 2^{12} \\
+&= 12\cdot 2^{12}- (\frac{2^{12}-1}{2-1}) \\
+&= 12\cdot 2^{12}-2^{12}+1 \\
+&= 11 \cdot 2^{12} + 1 \\
+&= 11(4096) + 1 = 45056+1 = \boxed{45057}.
 \end{align*}
 \end{solution}
 
@@ -582,13 +580,13 @@ If we subtract the original equation from the second one, we see that we can get
 \boxed{9}.
 \end{answer}
 \begin{solutionone}
-We can find $a$ and $b$ such that
+We can find integers $a$ and $b$, $0 \leq b \leq 9$, such that
 $$3^{177} = 10a+b$$
 and therefore
 $$3^{177} \cdot 3 = 3(10a+b) = 30a+3b$$
-So our remainder is $3b$. Since it is much easier to find $b$ with the first equation, since
-$$3^2 \equiv 9 \equiv -1 \pmod{10},$$
-We do:
+So our remainder is $3b$. Since
+$$3^2 = 9 \equiv -1 \pmod{10},$$
+we have:
 \begin{align*}
 3^{177} &\equiv (9)^{88} \cdot 3  \pmod{10} \\
 &\equiv (-1)^{88} \cdot 3 \pmod{10} \\
@@ -599,7 +597,7 @@ So we see $b=3$ and our remainder when we divide $3^{178}$ by 30 is $3b = \boxed
 \begin{solutiontwo}
 Since 3 is not relatively prime to 30, we cannot use Euler's totient theorem so we proceed by computation. \par
 We note that
-$$3^3 \equiv 27 \equiv -3 \pmod{30}.$$
+$$3^3 = 27 \equiv -3 \pmod{30}.$$
 So
 \begin{align*}
 3^{178} &\equiv (27)^{59} \cdot 3 \pmod{30} \\
