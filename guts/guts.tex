@@ -3,12 +3,12 @@
 
 \usepackage{../tjimo}
 
-\begin{comment}
+%\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
 \def\solutionone{\comment}
 \def\solutiontwo{\comment}
-\end{comment}
+%\end{comment}
 
 \newcommand{\sevenpoints}{Time limit: 30 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Guts}}
@@ -41,7 +41,7 @@ $$\frac{50}{100} \times 100 = \boxed{50}.$$
 \end{solution}
 
 \begin{problem}
-I had 50 cookies yesterday but now I only have 30. If only two people—my brother, Frank, and my sister, Gabriella—ate my cookies, and I know Frank ate 8 of them, how many did my sister eat?
+I had 50 cookies yesterday but now I only have 30. If only two people --- my brother, Frank, and my sister, Gabriella --- ate my cookies, and I know Frank ate 8 of them, how many did my sister eat?
 \end{problem}
 \begin{answer}
 \boxed{12} cookies.
@@ -109,7 +109,7 @@ Using the formula for the area of a circle of radius $r$, $A = \pi r^2$, the are
 Using the definitions provided, $8 \star (5 \uplus 12) = 8 \star \sqrt{12^2 + 5^2} = 8 \star 13 = 8^2 - 13^2 = 64 - 169 = \boxed{-105}.$
 \end{solution}
 
-\begin{problem}In how many different orders can I write the 4 letters in``WORD''?
+\begin{problem}In how many ways can I order the four letters in ``WORD''? For example, one way is ``ORWD''.
 \end{problem}
 
 \begin{answer} \boxed{24}. \end{answer}
@@ -176,10 +176,11 @@ $$\sqrt{x^{3}+3y}=\sqrt{7^3+3(6)}=\sqrt{343+18}=\sqrt{361}=\boxed{19}.$$
 \end{answer}
 \begin{solution}
 We first find the smallest number that is divisible by 2, 3, and 11. That number is simply the least common multiple of the three numbers, which is
-$$2\cdot 3\cdot 11=66$$
+$$2\cdot 3\cdot 11=66.$$
 Since any multiple of 66 will be divisible by 2, 3, and 11, we need to find the smallest multiple of 66 that is a four digit number. This can be found by
-$$\floor{\frac{1000}{66}}=15$$
-So $66 \cdot 15$ will be less than 100 and the next multiple will be the first multiple greater than 1000 (and thus a four digit number). $66 \cdot 16 = \boxed{1056}.$
+$$\floor{\frac{1000}{66}}=15,$$
+where $\floor{n}$ is the greatest integer less than or equal to $n$. For example, $\floor{\pi}=3$. \\
+So $66 \cdot 15$ will be less than 1000 and the next multiple will be the first multiple greater than 1000 (and thus a four digit number). $66 \cdot 16 = \boxed{1056}.$
 \end{solution}
 
 \eject
@@ -302,7 +303,9 @@ We can list out all numbers which satisfy remainder 2 when divided by 7, and rem
 So our answer is $\boxed{37}$.
 \end{solution}
 
-\begin{problem}On a $5 \times 7$ grid, Charles can only move upwards or to the right and can only move along gridlines. In how many ways can he move from the lower left corner to the top right corner?
+\begin{problem}
+On a $5 \times 7$ grid, Charles can only move upwards one unit or rightwards one unit at a time and can only move along gridlines.
+In how many ways can he move from the lower left corner to the top right corner?
 \end{problem}
 \begin{answer}
 \boxed{792} ways.
@@ -329,7 +332,7 @@ We begin by listing the last two digits of some smaller powers of 7.
 We see that the last two digits of seven repeat every four powers. 2015 has a remainder of 3 when divided by 4, so our answer is $\boxed{43}$.
 \end{solution}
 
-\begin{problem}If $3^{2x-4} = 4$, what is the value of $3^{x}$?
+\begin{problem}If $3^{2x-4} = 4$, where $x$ is a positive number, what is the value of $3^{x}$?
 \end{problem}
 \begin{answer}
 \boxed{18}.
@@ -349,8 +352,6 @@ We now see we can isolate  $3^{x}$ and thus solve for it.
 \end{solution}
 
 \eject
-
-\pdfpageheight=11in
 
 \section*{Set 7}
 
@@ -380,7 +381,7 @@ Note that each cut at most doubles the number of pieces. Now, consider the follo
 Taking the maximum of these two cases, Victoria and Katherine can cut the pizza into \boxed{7} pieces maximum.
 \end{solution}
 
-\begin{problem} What is the  $5^{\text{th}}$ smallest number with 5 factors?
+\begin{problem} What is the  $5^{\text{th}}$ smallest positive number with 5 factors?
 %Katherine Cheng
 \end{problem}
 
@@ -399,11 +400,12 @@ Note that we have 2 E's, 2 F's, and all other letters are distinct. So, the numb
 
 \eject
 
-\pdfpageheight=5.5in
-
 \section*{Set 8}
 
-\begin{problem}Jendy is shipping herself down a river. Paddling furiously in her cardboard box, she travels downstream to her chosen man in 3 hours. However, when she realizes that she chose the wrong man, it takes her 5 hours to paddle upstream to her starting point. What is the ratio of Jendy's paddling speed in still water to the speed of the current?
+\begin{problem}
+Jendy is shipping herself down a river. Paddling furiously in her cardboard box, she travels downstream to her chosen man in 3 hours. 
+However, when she realizes that she chose the wrong man, it takes her 5 hours to paddle upstream to her starting point. Her paddling speed relative to the water
+and the current speed are constant. What is the ratio of Jendy's paddling speed in still water to the speed of the current?
 \end{problem}
 
 \begin{answer} \boxed{4}. \end{answer}
@@ -538,7 +540,10 @@ We consider the rectangle with vertices $(-4, -3), (-4, 4), (5, 4),$ and $(5, -3
 Subtracting the sum of these areas from that of the rectangle, the area of the shaded region is $\displaystyle 9 \cdot 7 - (\frac{5}{2} + 1 + \frac{1}{2} + 6 + 10 + 6 + 2 + 4) = 63 - 32 =\boxed{31}$.
 \end{solution}
 
-\begin{problem}The time is now 4:00 on an analog clock (a normal clock with hands). In how many minutes will the minute and hour hands of this clock be exactly together? Give your answer to the nearest minute. %variation would be the time is now 4:00 and the minute hand is 120 degrees behind the hour hand. At what time will the minute hand be 120 degrees ahead of the hour hand?
+\begin{problem}
+The time is now 4:00 on an analog clock (a normal clock with hands). In how many minutes will the minute and hour hands of this clock be exactly together for the first time? 
+Give your answer to the nearest minute. 
+%variation would be the time is now 4:00 and the minute hand is 120 degrees behind the hour hand. At what time will the minute hand be 120 degrees ahead of the hour hand?
 \end{problem}
 
 \begin{answer}

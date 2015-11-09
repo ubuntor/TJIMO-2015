@@ -6,7 +6,7 @@
 
 \usepackage{../tjimo}
 
-\def\solution{\comment}
+%\def\solution{\comment}
 
 \newcommand{\sevenpoints}{Time limit: 45 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Power}}
@@ -16,7 +16,7 @@
 Unlike the other rounds, just getting the answer right is not enough on the Power Round. Make sure you explain your answer and use words
 to describe how you arrived at your answer. In the words of middle school math teachers across the nation -- no work, no credit!
 
-This power round is divided into three sections. In the first section, the definitions from the Practice Power are reproduced for your convenience,
+This Power Round is divided into three sections. In the first section, the definitions from the Practice Power are reproduced for your convenience,
 along with some extra definitions that will be useful for you.
 In the second section, we explore Eulerian circuits. In the third section, we explore shortest paths. Sections 2 and 3 cover different material;
 you do not need section 2 to complete section 3. It might be wise to split up your team, with one half working on section 2 and the other half working
@@ -95,7 +95,7 @@ meaning the degree of $b$ is 3.
 
 \begin{definition}
 \label{def:clique}
-A \textit{clique} is a graph such that there is exactly one edge covering every pair of distince vertices in the graph.
+A \textit{clique} is a graph such that there is exactly one edge covering every pair of distinct vertices in the graph.
 We denote a clique of $n$ vertices as $K_n$.
 Pictured is a clique of 4 vertices, or $K_4$.
 \begin{center}
@@ -188,17 +188,23 @@ since there is no path from $a$ to $c$.
 \end{center}
 \end{definition}
 
-\begin{problem}[2 points] % 1
-What is the minimum number of edges needed for a graph with $n$ vertices to be connected? Remember to explain your answer!
+\begin{problem}[2 points total] % 1
+Answer the following questions:
+\begin{enumerate}[label=(\alph*)]
+\item What is the minimum number of edges needed for a graph with $4$ vertices to be connected?
+\item What is the minimum number of edges needed for a graph with $n$ vertices to be connected? Remember to explain your answer!
+\end{enumerate}
 \end{problem}
 
 \begin{solution}
-We need $\boxed{n-1}$ edges. Consider the number of parts that are connected to each other. We can decrease this number by 1 each time we add an edge by adding an edge between two previously unconnected parts. As our graph begins with $n$ parts that are not connected, and we want to end up with 1 unconnected part, we need $n-1$ edges to merge these $n$ parts into 1.
+We need $\boxed{n-1}$ edges. Consider the number of parts that are connected to each other. We can decrease this number by 1 each time we
+add an edge by adding an edge between two previously unconnected parts. As our graph begins with $n$ parts that are not connected, and we want
+to end up with 1 unconnected part, we need $n-1$ edges to merge these $n$ parts into 1.
 \end{solution}
 
-From now on, all graphs we consider will be connected.
+\textbf{For the remainder of the Power Round, all graphs we consider will be connected.}
 
-\begin{problem}[2 points] % 2
+\begin{problem}[2 points total] % 2
 In the following graph, answer the questions below.
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=70mm/#1}]
@@ -267,8 +273,8 @@ No. The following graph is the simplest graph without an Eulerian circuit.
 \end{solution}
 
 \begin{problem}[3 points] % 8
-Show that, if a connected graph has an Eulerian circuit, the degree of every vertex must be even. Remember that the degree of a vertex is the number of edges
-adjacent to it.
+Give a logical explanation for the statement: if a connected graph has an Eulerian circuit, the degree of every vertex must be even.
+Remember that the degree of a vertex is the number of edges adjacent to it.
 \end{problem}
 
 \begin{solution}
@@ -276,6 +282,7 @@ If a graph has an Eulerian circuit, then for every edge into the vertex in the c
 to that vertex must be even.
 \end{solution}
 
+\begin{minipage}{\textwidth}
 \begin{problem}[2 points, Seven Bridges of K\"{o}nigsberg] % 9
 The port city of K\"{o}nigsberg in Prussia (now Kaliningrad, Russia) lies on two sides of a large river. In addition, there are two islands within the river
 also part of the city. As pictured, seven bridges connect the four land masses: Two from $A$ to $B$, two from $A$ to $C$, one from $A$ to $D$, one from $B$ to $D$, and one from $C$ to $D$.ß Is it possible to walk through the city but cross every bridge exactly once?
@@ -284,6 +291,7 @@ Euler famously solved this problem in 1736; this is his drawing of K\"{o}nigsber
 \includegraphics[width=17cm]{bridges.png}
 \end{center}
 \end{problem}
+\end{minipage}
 
 \begin{solution}
 No, it is not possible. The drawing is equivalent to the following graph:
@@ -307,7 +315,7 @@ The degrees of all vertices is odd, so no Euler circuit exists by the previous p
 
 \begin{problem}[4 points] % 10
 In connected graph $G$, every vertex has even degree. Suppose we began a walk at vertex $v$. We get stuck if we enter a vertex that has no outgoing edge
-we haven't yet traversed. Show that it is impossible to get stuck at a vertex other than $v$, and use this fact to show that any connected graph $G$, with
+we haven't yet traversed. Explain logically why it is impossible to get stuck at a vertex other than $v$, and use this fact to show that any connected graph $G$, with
 all vertices having even degree, has an Euler circuit.
 \end{problem}
 
@@ -322,7 +330,7 @@ also has even degree, so we can simply repeat this process. We can combine multi
 \section{Dijkstra's Shortest Path Algorithm}
 
 Graphs represent connections between different objects. We might, for example, have different cities connected in some way.
-It takes a certain amount of time to get in between different neighboring cities. Perhaps to travel from D.C. to St. Louis,
+It takes a certain amount of time to get between different neighboring cities. Perhaps to travel from D.C. to St. Louis,
 we must either stop at Chicago or Cincinnati along the way. It might be faster to travel through Cincinnati, but it might be
 cheaper to stop at Chicago. Either way, we need to devise some kind of system to determine for us the best way to travel between
 vertices in our graph, through following some kind of path.
@@ -483,7 +491,7 @@ What you should notice is that $dist(v)$ is the actual shortest distance to $v$ 
 
 \begin{problem}[4 points] % 6
 Suppose that we have just visited $k$ vertices, where $k > 0$ is some positive integer. Furthermore, suppose that these $k$ vertices
-are the $k$ closest of all the vertices to the source. Show that, of all the unvisited vertices, the vertex $v$ with the minimum $dist(v)$
+are the $k$ closest of all the vertices to the source. Explain logically why the vertex $v$ with the minimum $dist(v)$ of all the vertices
 is such that $dist(v)$ is equal to the actual shortest distance from the source to $v$. In other words, show that we can visit this vertex
 and make it the $(k+1)$-th visited vertex.
 \end{problem}
