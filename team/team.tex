@@ -3,12 +3,12 @@
 
 \usepackage{../tjimo}
 
-%\begin{comment}
+\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
 \def\solutionone{\comment}
 \def\solutiontwo{\comment}
-%\end{comment}
+\end{comment}
 
 \newcommand{\sevenpoints}{Time limit: 30 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Team}}
@@ -119,7 +119,24 @@ Kevlin and Kelvin are playing a game where they normally each start out with 150
 We can picture the probability space of Kevlin's and Kelvin's money on a coordinate grid. Take the first quadrant of the Cartesian plane; let the $x$-value denote Kevlin's points and let the $y$-value denote Kelvin's points. The probability space is thus the square with coordinates (0, 0), (2000, 0), (0, 2000), and (2000, 2000). We can then see that the regions where the point difference is over 1800 is the shaded area in the diagram below:
 
 \begin{center}
-\includegraphics[width=9cm]{probspace.png}
+\begin{asy}
+size(5.5cm);
+
+draw((-250, 0)--(2250, 0), linewidth(1.5));
+draw((0, -250)--(0, 2250), linewidth(1.5));
+
+draw((0,0)--(0,2000)--(2000,2000)--(2000,0)--cycle, linewidth(1.5));
+
+filldraw((0, 1600)--(400, 2000)--(0, 2000)--cycle, black, black);
+filldraw((1600, 0)--(2000, 400)--(2000, 0)--cycle, black, black);
+
+label("0", (0, 0), SE);
+label("1800", (0, 1600), W);
+label("2000", (0, 2000), W);
+label("1800", (1600, 0), S);
+label("2000", (2000, 0), SE);
+\end{asy}
+%\includegraphics[width=9cm]{probspace.png}
 \end{center}
 
 The shaded area thus has a total area of two triangles of base 200 and height 200, or a total of $2\cdot\frac{1}{2}\cdot200\cdot200 = 40000$. The total area of the probability space is $2000\cdot2000=400000$. Thus, the probability that we need to run the computer randomizer again is $\frac{40000}{400000} = \frac{1}{100}$. However, we want the probability that we don't need to run the computer randomizer again, which is $1 - \frac{1}{100} = \boxed{\frac{99}{100}}$.
@@ -142,7 +159,19 @@ Note that $7 + 4\sqrt{3} = (2 + \sqrt{3})^2$ and $7 - 4\sqrt{3} = (2 - \sqrt{3})
 % (5) (2016skim + 2016azhang) 
 A shuriken-shaped design is made by cutting off four quarter-circles from the corners of a square of side length 8 inches. A circle is then inscribed in the shuriken, as shown below. Find the area of the shuriken outside the circle, in square inches.
 \begin{center}
-\includegraphics[width=9cm]{shuriken.png}
+\begin{asy}
+import graph;
+
+size(5cm);
+
+draw((0,0)--(0,2)--(2,2)--(2,0)--cycle, linewidth(1.5));
+
+draw((1,0){up}..{left}(0,1){right}..{up}(1,2){down}..{right}(2,1){left}..{down}(1,0), linewidth(1.5));
+fill((1,0){up}..{left}(0,1){right}..{up}(1,2){down}..{right}(2,1){left}..{down}(1,0)..cycle, black);
+
+filldraw(Circle((1, 1), 0.4141), white, black);
+\end{asy}
+% \includegraphics[width=9cm]{shuriken.png}
 \end{center}
 \end{problem}
 

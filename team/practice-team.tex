@@ -3,12 +3,12 @@
 
 \usepackage{../tjimo}
 
-%\begin{comment}
+\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
 \def\solutionone{\comment}
 \def\solutiontwo{\comment}
-%\end{comment}
+\end{comment}
 
 \newcommand{\sevenpoints}{Time limit: 30 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Practice Team}}
@@ -117,6 +117,18 @@ Let's consider the people in order. A can sit anywhere, so there are 6 ways. B c
 \end{solution}
 
 \begin{problem}
+A polynomial $f(x)$ satisfies the property $f(3+x) = f(3-x)$, for all real $x$. $f(x)$ also has 7 distinct roots, or in other words, 7 different values of $x$ that satisfies the equation $f(x) = 0$. Find the sum of these roots.
+\end{problem}
+
+\begin{answer}
+\boxed{21}.
+\end{answer}
+
+\begin{solution}
+Since $f(3+x) = f(3-x)$, $f(x)$ must be symmetric about the vertical line $x = 3$. This means that if a root $x = 3 + r$ exists for some positive $r$, then $x = 3 - r$ must also be a root. Since there are an odd number of roots, we realize that one of the roots must also be $x = 3$. This leaves 6 more roots; which must be 3 pairs ${3+r, 3-r}$ of roots for various $r$. Each of these pairs must add up to 6, so adding up all 7 roots gives us $3\text{pairs}\cdot6 + 3 = \boxed{21}$.
+\end{solution}
+
+\begin{problem}
 % (3-3.5) (2016azhang) 
 The figure below shows an isosceles triangle ABC and its inscribed circle O. Given that OD = 3 and AE = 4, where D is the midpoint of BC and E is the point of tangency of the circle with side AC, find OC. Express your answer in simplest radical form. (Note: Figure not drawn to scale.)
 %\includegraphics[width=6cm]{triangle.png}
@@ -151,19 +163,6 @@ label("4", (1.2, 6.4), NE);
 
 \begin{solution}
 Note that line segments OE and AC are perpendicular, and line segments BC and AD are perpendicular, as both D and E are points of tangency. Thus, by the Pythagorean Theorem on triangle AOE, we find that AO = 5. Next, note that triangles AOE and ACD are similar, so we have that $\frac{OE}{EA} = \frac{3}{4} = \frac{CD}{DA} = \frac{CD}{3+5} = \frac{CD}{8}$. Thus, $\frac{3}{4} = \frac{CD}{8}$, so CD = 6. Finally, applying the Pythagorean Theorem on triangle ODC gives OC = \boxed{3\sqrt{5}}.
-\end{solution}
-
-\begin{problem}
-% (3-3.5) (2016azhang) 
-Archer is currently doing target practice. Archer is also extremely accurate, as he has a $\frac{9}{10}$ chance of hitting the bulls-eye of a target. If Archer has set up 3 targets for himself, what is the chance that he will only hit 1 bulls-eye of a target?
-\end{problem}
-
-\begin{answer}
-\boxed{\frac{27}{1000}}.
-\end{answer}
-
-\begin{solution}
-Let Y represent the event that Archer hits a bulls-eye of one target, and N represent the event that Archer does not hit the bulls-eye of that target. Then we have three possible courses of events where Archer only hits one bulls-eye: YNN, NYN, and NNY. The probability of each event is $\frac{9}{10}\cdot(\frac{1}{10})^2 = \frac{9}{1000}$, and adding up the probabilities gives $3\cdot\frac{9}{1000} = \boxed{\frac{27}{1000}}$.
 \end{solution}
 
 \begin{problem} Winston and Allen are playing a game with Allen's collection of 2015 tennis racquets that are numbered from 1 to 2015. Allen will choose a tennis racquet at random and will tell Winston the number of factors of 5 it has. Winston wins if he correctly guesses the number on the tennis racquet given what Allen tells him. If Winston guesses one of the racquets which agrees with Allen's statement, what is the probability that Winston will guess the right racquet number? 

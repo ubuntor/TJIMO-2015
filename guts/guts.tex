@@ -1,16 +1,16 @@
 \documentclass[11pt]{article}
-\usepackage[paperwidth=8.5in, paperheight=5.5in]{geometry}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
 
 \usepackage{../tjimo}
 
-%\begin{comment}
+\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
 \def\solutionone{\comment}
 \def\solutiontwo{\comment}
-%\end{comment}
+\end{comment}
 
-\newcommand{\sevenpoints}{Time limit: 30 minutes.}
+\newcommand{\sevenpoints}{}
 \newcommand{\righthead}{\fdbox{Round}{Guts}}
 
 %%%%%%%%PUT THIS IN PREAMBLE%%%%%%%%%%
@@ -356,8 +356,6 @@ We now see we can isolate  $3^{x}$ and thus solve for it.
 
 \eject
 
-\pdfpageheight=11in
-
 \section*{Set 7}
 
 \begin{problem}  Shya LeBuff is raising farm animals, but only has mos and joes. A \emph{mo} has 2 heads and a \emph{joe} has 3 heads. A punch is worth two points and a kick is worth 3. If Shya has 29 animals and these animals have 71 heads total, what is the absolute value of the difference between the number of mos and the number of joes on Shya LeBuff's farm?
@@ -405,8 +403,6 @@ Note that we have 2 E's, 2 F's, and all other letters are distinct. So, the numb
 
 \eject
 
-\pdfpageheight=5.5in
-
 \section*{Set 8}
 
 \begin{problem}Jendy is shipping herself down a river. Paddling furiously in her cardboard box, she travels downstream to her chosen man in 3 hours. However, when she realizes that she chose the wrong man, it takes her 5 hours to paddle upstream to her starting point. What is the ratio of Jendy's paddling speed in still water to the speed of the current?
@@ -433,13 +429,84 @@ Everyone in VMT is either an Akshaj, who always tells the truth, or a Franklyn, 
 Notice that neither an Akshaj nor a Franklyn can say that they are a Franklyn. So, Alex is lying and is a Franklyn. That means that since it is not true that both Will and Alex are Franklyns and Alex is a Franklyn, Will must be an Akshaj. Therefore, Michael is a Franklyn. Since Will is an Akshaj and he says only Franklyns get sweaty, he does not get sweaty, and Ruiran is telling the truth. So, only Michael and Alex are Franklyns, and our answer is \boxed{2}.
 \end{solution}
 
-\begin{problem} How many convex hexagons are there drawn below? A polygon is said to be convex if all of its interior angles have measure less than $180^{\circ}$. \emph{SEE HIS EMAIL FOR DIAGRAM}
+\begin{problem} How many convex hexagons are there drawn below? A polygon is said to be convex if all of its interior angles have measure less than $180^{\circ}$.
+
+\begin{center}
+\begin{asy}
+size(6cm);
+
+pair a1=(5,0), a2=(6,0), a3=(7,0), a4=(8, 0);
+pair b1=(0, 8.66), b2=(0.5, 9.526), b3=(1, 10.39), b4=(1.5, 11.26);
+draw(a1--b1, linewidth(1.5));
+draw(a2--b2, linewidth(1.5));
+draw(a3--b3, linewidth(1.5));
+draw(a4--b4, linewidth(1.5));
+
+pair c1=(5,17.32), c2=(6,17.32), c3=(7,17.32), c4=(8, 17.32);
+pair d1=(0, 8.66), d2=(0.5, 7.794), d3=(1, 6.93), d4=(1.5, 6.06);
+draw(c1--d1, linewidth(1.5));
+draw(c2--d2, linewidth(1.5));
+draw(c3--d3, linewidth(1.5));
+draw(c4--d4, linewidth(1.5));
+
+pair e1=(5,17.32), e2=(4.5,16.455), e3=(4,15.59), e4=(3.5, 14.72);
+pair f1=(15,17.32), f2=(15.5,16.455), f3=(16,15.59), f4=(16.5, 14.72);
+draw(e1--f1, linewidth(1.5));
+draw(e2--f2, linewidth(1.5));
+draw(e3--f3, linewidth(1.5));
+draw(e4--f4, linewidth(1.5));
+
+pair g1=(12,17.32), g2=(13,17.32), g3=(14,17.32), g4=(15, 17.32);
+pair h1=(20, 8.66), h2=(19.5, 7.794), h3=(19, 6.93), h4=(18.5, 6.06);
+draw(g4--h1, linewidth(1.5));
+draw(g3--h2, linewidth(1.5));
+draw(g2--h3, linewidth(1.5));
+draw(g1--h4, linewidth(1.5));
+
+pair i1=(15,0), i2=(14,0), i3=(13,0), i4=(12, 0);
+pair j1=(20, 8.66), j2=(19.5, 9.526), j3=(19, 10.39), j4=(18.5, 11.26);
+draw(i1--j1, linewidth(1.5));
+draw(i2--j2, linewidth(1.5));
+draw(i3--j3, linewidth(1.5));
+draw(i4--j4, linewidth(1.5));
+
+pair k1=(5,0), k2=(4.5,0.866), k3=(4,1.73), k4=(3.5, 2.60);
+pair l1=(15,0), l2=(15.5,0.866), l3=(16,1.73), l4=(16.5, 2.60);
+draw(k1--l1, linewidth(1.5));
+draw(k2--l2, linewidth(1.5));
+draw(k3--l3, linewidth(1.5));
+draw(k4--l4, linewidth(1.5));
+\end{asy}
+\end{center}
+
 \end{problem}
 
 \begin{answer} \boxed{4096}. \end{answer}
 \begin{solution}
 Note that for each side of the hexagon, we may choose any of the 4 segments there grouped together to be that side. As there are 6 sides and we have 4 choices for each side, we have $4 \cdot 4 \cdot 4 \cdot 4 \cdot 4 \cdot 4 = 4^6 = \boxed{4096}$.
 \end{solution}
+
+\begin{problem}If $\frac{1}{x} + 3 = \sqrt{10}$, what is $x$ to the nearest integer?
+\end{problem}
+
+\begin{answer}
+\boxed{6}.
+\end{answer}
+\begin{solution}
+Since we want to know what $x$ is closest to, we can subtract both sides by 3 and take the reciprocal of both sides of the given equation.
+$$x = \frac{1}{\sqrt{10}-3}$$.
+We now rationalize the denominator
+\begin{align*}
+x &= \frac{1}{\sqrt{10}-3} \times \frac{\sqrt{10}+3}{\sqrt{10}+3} \\
+&= \frac{\sqrt{10}+3}{10-9} \\
+&= \sqrt{10}+3.
+\end{align*}
+We see that $\sqrt{10}$ rounds down to 3 because $3.5^2 = 12.25$ so our answer is $3+3=\boxed{6}$.
+\end{solution}
+
+\eject
+
+\section*{Set 9}
 
 \begin{problem}Find the area of the shaded region.
 	\begin{center}
@@ -471,28 +538,6 @@ We consider the rectangle with vertices $(-4, -3), (-4, 4), (5, 4),$ and $(5, -3
 	\item The triangle with vertices $(5, -2), (5, -3),$ and $(-3, -3)$ has area $\frac{1}{2} 8 \cdot 1 = 4$.
 \end{itemize}
 Subtracting the sum of these areas from that of the rectangle, the area of the shaded region is $\displaystyle 9 \cdot 7 - (\frac{5}{2} + \frac{3}{2} + \frac{1}{2} + 6 + 10 + 6 + 2 + 4) = 63 - 36 - \frac{1}{2} =\boxed{\frac{53}{2}}$.
-\end{solution}
-
-\eject
-
-\section*{Set 9}
-
-\begin{problem}If $\frac{1}{x} + 3 = \sqrt{10}$, what is $x$ to the nearest integer?
-\end{problem}
-
-\begin{answer}
-\boxed{6}.
-\end{answer}
-\begin{solution}
-Since we want to know what $x$ is closest to, we can subtract both sides by 3 and take the reciprocal of both sides of the given equation.
-$$x = \frac{1}{\sqrt{10}-3}$$.
-We now rationalize the denominator
-\begin{align*}
-x &= \frac{1}{\sqrt{10}-3} \times \frac{\sqrt{10}+3}{\sqrt{10}+3} \\
-&= \frac{\sqrt{10}+3}{10-9} \\
-&= \sqrt{10}+3.
-\end{align*}
-We see that $\sqrt{10}$ rounds down to 3 because $3.5^2 = 12.25$ so our answer is $3+3=\boxed{6}$.
 \end{solution}
 
 \begin{problem}The time is now 4:00 on an analog clock (a normal clock with hands). In how many minutes will the minute and hour hands of this clock be exactly together? Give your answer to the nearest minute. %variation would be the time is now 4:00 and the minute hand is 120 degrees behind the hour hand. At what time will the minute hand be 120 degrees ahead of the hour hand?
