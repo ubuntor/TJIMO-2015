@@ -5,6 +5,10 @@ Warning
 ---
 Do NOT make this repository public until the date of the competition.
 
+Known Issues to be Resolved on Day of Competition
+---
+- Individual Round question 2 should read "travels 80 spaces in 10 seconds".
+
 
 Usage
 ---
