@@ -5,10 +5,12 @@ Warning
 ---
 Do NOT make this repository public until the date of the competition.
 
-Known Issues to be Resolved on Day of Competition
+Clarifications
 ---
 - Individual Round question 2 should read "travels 80 spaces in 10 seconds".
-
+- Practice Team 6 answer and solution are incorrect. The answer should be 12000.
+Furthermore, the problem doesn't exactly make sense since the cost of
+a biology textbook then comes out to -$10.
 
 Usage
 ---

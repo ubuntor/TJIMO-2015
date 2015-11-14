@@ -3,12 +3,12 @@
 
 \usepackage{../tjimo}
 
-\begin{comment}
+%\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
 \def\solutionone{\comment}
 \def\solutiontwo{\comment}
-\end{comment}
+%\end{comment}
 
 \newcommand{\sevenpoints}{Time limit: 30 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Practice Team}}
@@ -96,11 +96,14 @@ TJHSST is currently selling biology, chemistry, and physics textbooks. Bary-Cent
 \end{problem}
 
 \begin{answer}
-\boxed{15000}.
+\boxed{12000}.
 \end{answer}
 
 \begin{solution}
-Letting b = the cost of a biology textbook in dollars, c = the cost of a chemistry textbook in dollars, and p = the cost of a physics textbook in dollars, we have the three equations $3b + c + p = 100$, $b + 3c + p = 200$, and $b + c + 3p = 300$. Adding up the three equations gets us $4b + 4c + 4p = 600$, or $b + c + p = 150$. However, we want the cost of $b + c + p$ in cents, so we multiply \$150 by 100 to get \boxed{15000} cents.
+Letting b = the cost of a biology textbook in dollars, c = the cost of a chemistry textbook in dollars, and p = the cost of a physics textbook in dollars, we have the three equations $3b + c + p = 100$, $b + 3c + p = 200$, and $b + c + 3p = 300$. Adding up the three equations gets us $5b + 5c + 5p = 600$, or $b + c + p = 120$. However, we want the cost of $b + c + p$ in cents, so we multiply \$120 by 100 to get \boxed{12000} cents.
+
+\textbf{Known mistake: The answer was previously reported to be 15000. Furthermore, the problem doesn't exactly make sense since the cost of
+a biology textbook then comes out to -\$10.}
 \end{solution}
 
 \begin{problem}
@@ -113,7 +116,7 @@ A, B, C, D, E, and F want to sit at a round table with 6 equally spaced out seat
 \end{answer}
 
 \begin{solution}
-Let's consider the people in order. A can sit anywhere, so there are 6 ways. B can only sit in the seats not directly across A, so there are 4 ways. The other people can sit anywhere, so there are $4*3*2*1 = 24$ ways. However, since rotation doesn't matter, we overcounted by a factor of $6$, meaning that we need to divide by $6$ at the end, giving us $6*4*24/6 = 96$ total ways.
+Let's consider the people in order. A can sit anywhere, so there are 6 ways. B can only sit in the seats not directly across A, so there are 4 ways. The other people can sit anywhere, so there are $4\cdot 3\cdot 2\cdot 1 = 24$ ways. However, since rotation doesn't matter, we overcounted by a factor of $6$, meaning that we need to divide by $6$ at the end, giving us $6\cdot 4\cdot 24/6 = 96$ total ways.
 \end{solution}
 
 \begin{problem}
